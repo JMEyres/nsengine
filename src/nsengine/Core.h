@@ -1,5 +1,7 @@
+#pragma once
 #include <memory>;
 #include <vector>;
+#include <list>
 
 namespace nsengine
 {
@@ -11,6 +13,6 @@ namespace nsengine
         std::shared_ptr<Entity> addEntity(); // constructs addEntity function
 
     private:
-        std::vector<std::shared_ptr<Entity> > entities; // List of entities
+        std::list<std::shared_ptr<Entity> > entities; // List of entities
     };
 }

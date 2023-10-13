@@ -1,4 +1,6 @@
+#pragma once
 #include <memory>
+#include <list>
 
 namespace nsengine
 {
@@ -9,6 +11,7 @@ namespace nsengine
 		std::shared_ptr<Component> addComponent(); // constructing addComponent
 
 	private:
-		std::vector<std::shared_ptr<Component> > components; // List of components
+		friend struct core;
+		std::list<std::shared_ptr<Component> > components; // List of components
 	};
 }
