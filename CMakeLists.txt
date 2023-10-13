@@ -13,4 +13,10 @@ add_executable(demo
 add_library(nsengine
 	src/nsengine/Core.cpp
 	src/nsengine/Core.h
+	src/nsengine/Entity.cpp
+	src/nsengine/Entity.h
+	src/nsengine/Component.cpp
+	src/nsengine/Component.h
 )
+
+target_link_libraries(demo nsengine)
