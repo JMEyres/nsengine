@@ -1,13 +1,27 @@
 #include "Entity.h"
 #include "Component.h"
+#include "Core.h"
 
 namespace nsengine
 {
-	std::shared_ptr<Component> Entity::addComponent()
+	void Entity::tick()
 	{
-		std::shared_ptr<Component> component = std::make_shared<Component>();
-		components.push_back(component);
+		for (size_t ci = 0; ci < components.size(); ++ci)
+		{
+			components.at(ci)->tick();
+		}
+	}
 
-		return component;
+	void Entity::display()
+	{
+		for (size_t ci = 0; ci < components.size(); ++ci)
+		{
+			components.at(ci)->display();
+		}
+	}
+
+	std::shared_ptr<Core> Entity::getCore()
+	{
+		return core.lock();
 	}
 }
