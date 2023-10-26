@@ -1,6 +1,8 @@
 #include "Core.h"
 #include "Entity.h"
 
+#include <rend/rend.h>
+
 #include <stdexcept>
 
 namespace nsengine
@@ -26,7 +28,7 @@ std::shared_ptr<Core> Core::initialize()
 		throw std::runtime_error("Failed to create window");
 	}
 
-	rtn->context = SDL_GL_CreateContext(rtn->window);
+	rtn->context = SDL_Rend_CreateContext(rtn->window);
 
 	if (!rtn->context)
 	{
@@ -54,12 +56,27 @@ void Core::start()
 		{
 			entities.at(ei)->tick();
 		}
+
+		
+
+		rend::Model model("data/models/curuthers/curuthers.obj");
+		rend::ModelShader modelShader;
+
+		modelShader.projection(rend::perspective(
+			rend::radians(45.0f), 1.0f, 0.1f, 100.0f
+		));
+
+		modelShader.model(rend::translate(rend::mat4(1.0f), rend::vec3(0, 0, -10)));
+
+		modelShader.model(model);
+		modelShader.render();
+
 		for (size_t ei = 0; ei < entities.size(); ++ei)
 		{
 			entities.at(ei)->display();
 		}
 
-		SDL_GL_SwapWindow(window);
+		SDL_Rend_SwapWindow(window);
 	}
 }
 
