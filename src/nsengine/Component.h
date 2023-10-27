@@ -12,6 +12,7 @@ namespace nsengine
 	struct Component
 	{
 	public:
+		virtual void onInitialize();
 		virtual void onTick();
 		virtual void onDisplay();
 
@@ -22,6 +23,7 @@ namespace nsengine
 
 		std::weak_ptr<Entity> entity; // entity owns component object
 
+		void initialize();
 		void tick();
 		void display();
 	};

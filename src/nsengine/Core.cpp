@@ -43,6 +43,11 @@ void Core::start()
 	running = true;
 	SDL_Event event = { 0 };
 
+	for (size_t ei = 0; ei < entities.size(); ++ei)
+	{
+		entities.at(ei)->initialize();
+	}
+
 	while (running)
 	{
 		while (SDL_PollEvent(&event))
@@ -57,19 +62,7 @@ void Core::start()
 			entities.at(ei)->tick();
 		}
 
-		
-
-		rend::Model model("data/models/curuthers/curuthers.obj");
-		rend::ModelShader modelShader;
-
-		modelShader.projection(rend::perspective(
-			rend::radians(45.0f), 1.0f, 0.1f, 100.0f
-		));
-
-		modelShader.model(rend::translate(rend::mat4(1.0f), rend::vec3(0, 0, -10)));
-
-		modelShader.model(model);
-		modelShader.render();
+		SDL_Rend_ClearWindow(window);
 
 		for (size_t ei = 0; ei < entities.size(); ++ei)
 		{

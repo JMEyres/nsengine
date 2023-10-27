@@ -32,7 +32,9 @@ int main()
 	std::shared_ptr<Core> core = Core::initialize(); // initializes core
 
 	std::shared_ptr<Entity> entity = core->addEntity(); // creating entity, core holds on list
-	std::shared_ptr<Component> component = entity->addComponent<Player>(); // creating component, entity holds on list
+	entity->addComponent<Player>(); // creating component, entity holds on list
+	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
+	
 
 	core->start();
 

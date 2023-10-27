@@ -62,6 +62,12 @@ add_library(nsengine
 	src/nsengine/Component.h
 	src/nsengine/TriangleRenderer.cpp
 	src/nsengine/TriangleRenderer.h
+	src/nsengine/Resource.cpp
+	src/nsengine/Resource.h
+	src/nsengine/Resources.cpp
+	src/nsengine/Resources.h
+	src/nsengine/Transform.cpp
+	src/nsengine/Transform.h
 )
 
 target_link_libraries(nsengine rend SDL2)

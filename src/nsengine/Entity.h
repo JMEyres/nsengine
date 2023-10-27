@@ -32,6 +32,7 @@ namespace nsengine
 		bool alive;
 		std::vector<std::shared_ptr<Component> > components; // List of components
 
+		void initialize();
 		void tick();
 		void display();
 	};
