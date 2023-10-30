@@ -1,13 +1,16 @@
 #include "Component.h"
 #include <rend/rend.h>
+#include<memory>
 
 namespace nsengine
 {
 	struct Transform : Component
 	{
-		// transform self?
+		rend::vec3 position;
+		rend::vec3 rotation;
+		rend::vec3 scale;
 
-		void Rotate();
+		rend::mat4 Rotate(rend::mat4, float, rend::vec3);
 		void Model();
 	};
 }

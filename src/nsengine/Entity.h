@@ -27,7 +27,7 @@ namespace nsengine
 		friend struct Core;
 		
 		std::weak_ptr<Core> core; // core owns entities
-		std::weak_ptr<Entity> self; // core owns entities
+		std::weak_ptr<Entity> self;
 
 		bool alive;
 		std::vector<std::shared_ptr<Component> > components; // List of components
