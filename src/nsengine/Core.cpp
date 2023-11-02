@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "Entity.h"
+#include "Transform.h"
 
 #include <rend/rend.h>
 
@@ -42,6 +43,7 @@ void Core::start()
 {
 	running = true;
 	SDL_Event event = { 0 };
+	pos = rend::vec3(1.0f);
 
 	for (size_t ei = 0; ei < entities.size(); ++ei)
 	{
@@ -84,6 +86,8 @@ std::shared_ptr<Entity> Core::addEntity()
 
 	rtn->core = self; // allows entity to point upwards
 	rtn->self = rtn; // will allow component to point upwards
+
+	rtn->addComponent<Transform>();
 
 	entities.push_back(rtn);
 

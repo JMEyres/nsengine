@@ -15,6 +15,7 @@ struct Player : Component
 
 		if (count > 10)
 		{
+			//getEntity()->getTransform()->Rotate(rend::vec3(0.0f, 10.0f , 0.0f));
 			//getEntity()->getCore()->stop();
 #			
 			// Potential shortcuts for later	
@@ -34,6 +35,7 @@ int main()
 	std::shared_ptr<Entity> entity = core->addEntity(); // creating entity, core holds on list
 	entity->addComponent<Player>(); // creating component, entity holds on list
 	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
+	//entity->addComponent<Transform>();// creating component, entity holds on list
 
 	core->start();
 

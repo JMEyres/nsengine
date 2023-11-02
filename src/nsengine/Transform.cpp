@@ -1,15 +1,18 @@
 #include "Transform.h"
+#include <iostream>
 
 namespace nsengine
 {
-	rend::mat4 Transform::Rotate(rend::mat4 mat, float angle, rend::vec3 axis)
+	void Transform::Rotate(rend::vec3 angle)
 	{
-		mat = rend::rotate(mat, angle, axis);
-		return mat;
+		rotation = angle;
+		//std::cout << rotation.y << std::endl;
+		mat = rend::rotate_xyz(mat, rotation);
 	}
 
-	void Transform::Model()
+	rend::mat4 Transform::Model()
 	{
-	
+		mat = rend::translate(mat, position);
+		return mat;
 	}
 }
