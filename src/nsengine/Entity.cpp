@@ -10,7 +10,7 @@ namespace nsengine
 	{
 		for (size_t ci = 0; ci < components.size(); ++ci)
 		{
-			std::cout << typeid(components.at(ci)->self).name() << std::endl;
+			//std::cout << typeid(components.at(ci)->self).name() << std::endl;
 			components.at(ci)->initialize();
 		}
 	}
