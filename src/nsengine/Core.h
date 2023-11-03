@@ -7,7 +7,7 @@
 
 namespace nsengine
 {
-    struct Entity; // just says it exists - not defined yet
+    struct Environment;
 
     struct Core
     {
@@ -16,15 +16,14 @@ namespace nsengine
         void start();
         void stop();
 
-        std::shared_ptr<Entity> addEntity(); // constructs addEntity function
-        rend::vec3 pos;
+        std::shared_ptr<Environment> createEnvironment();
+
     private:
         std::weak_ptr<Core> self;
         bool running;
 
-        rend::vec3 test();
+        std::vector<std::shared_ptr<Environment> > environments;
 
-        std::vector<std::shared_ptr<Entity> > entities; // List of entities
         SDL_Window* window;
         SDL_GLContext context;
     };

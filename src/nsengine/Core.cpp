@@ -1,4 +1,5 @@
 #include "Core.h"
+#include "Environment.h"
 #include "Entity.h"
 #include "Transform.h"
 
@@ -43,11 +44,13 @@ void Core::start()
 {
 	running = true;
 	SDL_Event event = { 0 };
-	pos = rend::vec3(1.0f);
 
-	for (size_t ei = 0; ei < entities.size(); ++ei)
+	for(size_t i = 0; i < environments.size(); ++i)
 	{
-		entities.at(ei)->initialize();
+		for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+		{
+			environments.at(i)->entities.at(ei)->initialize();
+		}
 	}
 
 	while (running)
@@ -59,16 +62,22 @@ void Core::start()
 				running = false;
 			}
 		}
-		for (size_t ei = 0; ei < entities.size(); ++ei)
-		{
-			entities.at(ei)->tick();
-		}
 
+		for (size_t i = 0; i < environments.size(); ++i)
+		{
+			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+			{
+				environments.at(i)->entities.at(ei)->tick();
+			}
+		}
 		SDL_Rend_ClearWindow(window);
 
-		for (size_t ei = 0; ei < entities.size(); ++ei)
+		for (size_t i = 0; i < environments.size(); ++i)
 		{
-			entities.at(ei)->display();
+			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+			{
+				environments.at(i)->entities.at(ei)->display();
+			}
 		}
 
 		SDL_Rend_SwapWindow(window);
@@ -80,16 +89,14 @@ void Core::stop()
 	running = false;
 }
 
-std::shared_ptr<Entity> Core::addEntity()
+std::shared_ptr<Environment> Core::createEnvironment()
 {
-	std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
+	std::shared_ptr<Environment> rtn = std::make_shared<Environment>();
 
-	rtn->core = self; // allows entity to point upwards
-	rtn->self = rtn; // will allow component to point upwards
+	rtn->core = self; // allows environment to point upwards
+	rtn->self = rtn; // will allow entity to point upwards
 
-	rtn->addComponent<Transform>();
-
-	entities.push_back(rtn);
+	environments.push_back(rtn);
 
 	return rtn;
 }

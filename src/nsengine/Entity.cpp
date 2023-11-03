@@ -31,8 +31,8 @@ namespace nsengine
 		}
 	}
 
-	std::shared_ptr<Core> Entity::getCore()
+	std::shared_ptr<Environment> Entity::getEnvironment()
 	{
-		return core.lock();
+		return environment.lock();
 	}
 }

@@ -7,6 +7,7 @@
 namespace nsengine
 {
 	struct Core; // forward declare
+	struct Environment;
 	struct Component;
 	struct Transform;
 
@@ -36,14 +37,17 @@ namespace nsengine
 			}
 		}
 
-		std::shared_ptr<Core> getCore();
+		
+		std::shared_ptr<Environment> getEnvironment();
 
 	private:
 		friend struct Core;
+		friend struct Environment;
 		
-		std::weak_ptr<Core> core; // core owns entities
+		std::weak_ptr<Environment> environment;
 		std::weak_ptr<Entity> self;
 		std::weak_ptr<Transform> transform;
+
 
 		bool alive;
 		std::vector<std::shared_ptr<Component> > components; // List of components

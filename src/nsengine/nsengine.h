@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <nsengine/Core.h>
+#include <nsengine/Environment.h>
 #include <nsengine/Entity.h>
 #include <nsengine/Component.h>
 #include <nsengine/TriangleRenderer.h>

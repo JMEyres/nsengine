@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "Time.h"
 #include <rend/rend.h>
 #include <rend/glm/glm.hpp>
 #include <memory>

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <rend/rend.h>
 #include "nsengine/Transform.h"
+#include "Environment.h"
 
 namespace nsengine
 {
