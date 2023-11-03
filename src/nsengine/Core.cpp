@@ -61,6 +61,11 @@ void Core::start()
 			{
 				running = false;
 			}
+
+			switch (event.key.keysym.sym)
+			{
+				case SDLK_ESCAPE: running = false; break;
+			}
 		}
 
 		for (size_t i = 0; i < environments.size(); ++i)
