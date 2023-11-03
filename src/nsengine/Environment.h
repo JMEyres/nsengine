@@ -1,6 +1,11 @@
 #pragma once
 #include<memory>
 #include<vector>
+#include <iostream>
+
+#include "Core.h"
+#include "Entity.h"
+#include "Transform.h"
 
 namespace nsengine
 {
@@ -20,7 +25,7 @@ namespace nsengine
 
 		std::vector<std::shared_ptr<Entity> > entities; // List of entities
 
-		float lastTime;
+		float lastTime = SDL_GetTicks();
 		float deltaTime;
 	};
 }
