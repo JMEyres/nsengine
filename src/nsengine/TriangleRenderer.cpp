@@ -14,18 +14,10 @@ namespace nsengine
 
 	void TriangleRenderer::onDisplay()
 	{
-		float angle = 1.0f;
-
-		float dt = getEntity()->getEnvironment()->getDeltaTime();
-	
-		getEntity()->getComponent<Transform>()->setRotation(rend::vec3(angle * dt, angle * dt, angle * dt));
-		getEntity()->getComponent<Transform>()->setPosition(rend::vec3(0.0f, 0.0f, -10.0f));
-		getEntity()->getComponent<Transform>()->setScale(rend::vec3(5.0f, 5.0f, 1.0f));
-
 		shader.uniform("u_Projection", rend::perspective( // set perspective
 			rend::radians(45.0f), 1.0f, 0.1f, 100.0f));
 		
-		shader.uniform("u_Model", getEntity()->getComponent<Transform>()->Model());
+		shader.uniform("u_Model", getEntity()->getTransform()->Model());
 
 		shader.render();
 	}

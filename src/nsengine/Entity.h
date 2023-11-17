@@ -37,7 +37,8 @@ namespace nsengine
 			}
 		}
 
-		
+		std::shared_ptr<Transform> getTransform();
+
 		std::shared_ptr<Environment> getEnvironment();
 
 	private:

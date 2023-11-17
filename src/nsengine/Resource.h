@@ -2,24 +2,34 @@
 #include<memory>
 #include<rend/rend.h>
 
-struct Resource
+namespace nsengine
 {
-	virtual void onLoad() = 0;
+	struct Resources;
+	struct Resource
+	{
+		virtual void onLoad() = 0;
 
-	std::string getPath() const;
+		std::string getPath() const;
 
-private:
-	std::string path;
+	private:
+		std::weak_ptr<Resources> resources;
+		std::string path;
+		void load();
 
-	void load();
+	};
 
-};
+	struct Texture : Resource
+	{
+		void onCreate(int width, int height);
+	private:
+		void onLoad() override;
+		std::shared_ptr<rend::Texture> texture;
 
-struct Texture : Resource
-{
-	void onLoad();
+	};
 
-private:
-	std::shared_ptr<rend::Texture> texture;
-
-};
+	struct Sound : Resource
+	{
+	private:
+		void onLoad() override;
+	};
+}

@@ -70,6 +70,8 @@ add_library(nsengine
 	src/nsengine/Transform.h
 	src/nsengine/Environment.cpp
 	src/nsengine/Environment.h
+	src/nsengine/Input.cpp
+	src/nsengine/Input.h
 )
 
 target_link_libraries(nsengine rend SDL2)

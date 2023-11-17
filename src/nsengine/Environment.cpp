@@ -9,7 +9,7 @@ namespace nsengine
 		rtn->environment = self; // allows entity to point upwards
 		rtn->self = rtn; // will allow component to point upwards
 
-		rtn->addComponent<Transform>();
+		rtn->transform = rtn->addComponent<Transform>(); // add transform component and set transform pointer
 
 		entities.push_back(rtn);
 

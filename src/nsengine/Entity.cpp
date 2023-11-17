@@ -35,4 +35,9 @@ namespace nsengine
 	{
 		return environment.lock();
 	}
+
+	std::shared_ptr<Transform> Entity::getTransform()
+	{
+		return transform.lock();
+	}
 }

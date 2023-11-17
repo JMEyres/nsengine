@@ -7,25 +7,16 @@ using namespace nsengine;
 struct Player : Component
 {
 	Player() :
-		count(0) { }
+		angle(0) { }
 	void onTick()
 	{
-		++count;
-		//std::cout << "Ticking..." << std::endl;
-
-		if (count > 10)
-		{
-			//getEntity()->getTransform()->Rotate(rend::vec3(0.0f, 10.0f , 0.0f));
-			//getEntity()->getCore()->stop();
-#			
-			// Potential shortcuts for later	
-			//getEntity()->kill(); 
-			//getCore()->stop();
-		}
+		float dt = getEntity()->getEnvironment()->getDeltaTime();
+		angle += 360.0f*dt;
+		getEntity()->getTransform()->setRotation(rend::vec3(0, angle, 0));
 	}
 
 private:
-	int count;
+	float angle;
 };
 
 int main()
@@ -36,7 +27,9 @@ int main()
 	std::shared_ptr<Entity> entity = environment->addEntity(); // creating entity, core holds on list
 	entity->addComponent<Player>(); // creating component, entity holds on list
 	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
-	//entity->addComponent<Transform>();// creating component, entity holds on list
+
+	entity->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
+	entity->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
 	core->start();
 

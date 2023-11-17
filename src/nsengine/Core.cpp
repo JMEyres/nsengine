@@ -2,6 +2,7 @@
 #include "Environment.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Input.h"
 
 #include <rend/rend.h>
 
@@ -15,6 +16,7 @@ std::shared_ptr<Core> Core::initialize()
 
 	rtn->self = rtn;
 	rtn->running = false;
+	rtn->input = std::make_shared<Input>();
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
@@ -62,11 +64,32 @@ void Core::start()
 				running = false;
 			}
 
+			else if (event.type == SDL_KEYDOWN)
+			{
+				input->keys.push_back(event.key.keysym.sym);
+				input->pressedKeys.push_back(event.key.keysym.sym);
+			}
+
+			else if (event.type == SDL_KEYUP)
+			{
+				for (size_t ki = 0; ki < input->keys.size(); ++ki)
+				{
+					if (input->keys.at(ki) == event.key.keysym.sym)
+					{
+						input->keys.erase(input->keys.begin() + ki);
+					}
+				}
+
+				input->releasedKeys.push_back(event.key.keysym.sym);
+			}
+
 			switch (event.key.keysym.sym)
 			{
 				case SDLK_ESCAPE: running = false; break;
 			}
 		}
+
+		input->isKeyHeld('a');
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{
@@ -104,6 +127,11 @@ std::shared_ptr<Environment> Core::createEnvironment()
 	environments.push_back(rtn);
 
 	return rtn;
+}
+
+std::shared_ptr<Input> Core::getInput()
+{
+	return input;
 }
 
 }
