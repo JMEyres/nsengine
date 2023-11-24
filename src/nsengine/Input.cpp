@@ -1,5 +1,4 @@
 #include "Input.h"
-#include<iostream>
 
 namespace nsengine
 {
@@ -9,7 +8,7 @@ namespace nsengine
 		{
 			if (key == keys.at(ki))
 			{
-				std::cout << key << std::endl;
+				std::cout << "keyHeld: " << key << std::endl;
 				return key;
 			}
 			else
@@ -21,12 +20,39 @@ namespace nsengine
 
 	int Input::isKeyPressed(int key)
 	{
-		return 0;
+		for (size_t ki = 0; ki < pressedKeys.size(); ++ki)
+		{
+			if (key == pressedKeys.at(ki))
+			{
+				std::cout << "keyPressed: " << key << std::endl;
+				return key;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	}
 
 	int Input::isKeyReleased(int key)
 	{
-		return 0;
+		for (size_t ki = 0; ki < releasedKeys.size(); ++ki)
+		{
+			if (key == releasedKeys.at(ki))
+			{
+				std::cout << "keyReleased: " << key << std::endl;
+				return key;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	}
 
+	void Input::clearInput()
+	{
+		pressedKeys.clear();
+		releasedKeys.clear();
+	}
 }

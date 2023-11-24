@@ -1,9 +1,5 @@
 #pragma once
-#ifndef NSENGINE_COMPONENT_H
-#define NSENGINGE_COMPONENT_H
-
 #include <memory>
-#include "Entity.h"
 
 namespace nsengine
 {
@@ -29,5 +25,3 @@ namespace nsengine
 		void display();
 	};
 }
-
-#endif // !NSENGINE_COMPONENT_H

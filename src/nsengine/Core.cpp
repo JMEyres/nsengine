@@ -1,12 +1,5 @@
 #include "Core.h"
-#include "Environment.h"
-#include "Entity.h"
-#include "Transform.h"
-#include "Input.h"
 
-#include <rend/rend.h>
-
-#include <stdexcept>
 
 namespace nsengine
 {
@@ -66,7 +59,7 @@ void Core::start()
 
 			else if (event.type == SDL_KEYDOWN)
 			{
-				input->keys.push_back(event.key.keysym.sym);
+				if(std::find(input->keys.begin(), input->keys.end(), event.key.keysym.sym) == input->keys.end()) input->keys.push_back(event.key.keysym.sym);
 				input->pressedKeys.push_back(event.key.keysym.sym);
 			}
 
@@ -90,6 +83,8 @@ void Core::start()
 		}
 
 		input->isKeyHeld('a');
+		input->isKeyPressed('d');
+		input->isKeyReleased(SDLK_LSHIFT);
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{
@@ -107,7 +102,7 @@ void Core::start()
 				environments.at(i)->entities.at(ei)->display();
 			}
 		}
-
+		input->clearInput();
 		SDL_Rend_SwapWindow(window);
 	}
 }

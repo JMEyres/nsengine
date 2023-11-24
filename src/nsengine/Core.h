@@ -4,6 +4,14 @@
 #include <memory>;
 #include <vector>;
 #include <rend/rend.h>
+#include <algorithm>
+#include <stdexcept>
+
+#include "Environment.h"
+#include "Entity.h"
+#include "Transform.h"
+#include "Input.h"
+
 
 namespace nsengine
 {

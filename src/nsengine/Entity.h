@@ -1,8 +1,11 @@
 #pragma once
 #include <memory>
 #include <vector>
-#include<type_traits>
-#include<iostream>
+#include <type_traits>
+#include <iostream>
+
+#include "Component.h"
+#include "Core.h"
 
 namespace nsengine
 {

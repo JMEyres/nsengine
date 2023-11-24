@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <SDL2/SDL.h>
+#include <iostream>
 
 namespace nsengine 
 {
@@ -9,6 +10,7 @@ namespace nsengine
 		int isKeyHeld(int key);
 		int isKeyPressed(int key);
 		int isKeyReleased(int key);
+		void clearInput();
 	private:
 		friend struct Core;
 

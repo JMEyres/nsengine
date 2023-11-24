@@ -1,8 +1,4 @@
 #include "Entity.h"
-#include "Component.h"
-#include "Core.h"
-
-#include<iostream>
 
 namespace nsengine
 {

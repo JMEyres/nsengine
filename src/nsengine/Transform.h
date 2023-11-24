@@ -4,7 +4,7 @@
 
 namespace nsengine
 {
-	struct Transform : Component
+	struct Transform : public Component
 	{
 		Transform();
 
