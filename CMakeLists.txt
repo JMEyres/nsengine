@@ -5,6 +5,7 @@ include_directories(
 	src
 	contrib/windows-cl-amd64/SDL2/include
 	contrib/windows-cl-amd64/glew/include
+	contrib/windows-cl-amd64/stb/include
 )
 
 link_directories(
@@ -72,6 +73,10 @@ add_library(nsengine
 	src/nsengine/Environment.h
 	src/nsengine/Input.cpp
 	src/nsengine/Input.h
+	src/nsengine/Texture.cpp
+	src/nsengine/Texture.h
+	src/nsengine/Model.cpp
+	src/nsengine/Model.h
 )
 
 target_link_libraries(nsengine rend SDL2)

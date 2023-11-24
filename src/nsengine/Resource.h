@@ -1,3 +1,4 @@
+#pragma once
 #include<string>
 #include<memory>
 #include<rend/rend.h>
@@ -9,27 +10,26 @@ namespace nsengine
 	{
 		virtual void onLoad() = 0;
 
-		std::string getPath() const;
+		std::string getPath();
 
 	private:
+		friend struct Resources;
 		std::weak_ptr<Resources> resources;
 		std::string path;
 		void load();
-
 	};
 
-	struct Texture : Resource
-	{
-		void onCreate(int width, int height);
-	private:
-		void onLoad() override;
-		std::shared_ptr<rend::Texture> texture;
 
-	};
-
-	struct Sound : Resource
-	{
-	private:
-		void onLoad() override;
-	};
+	//struct Sound : Resource
+	//{
+	//private:
+	//	virtual void onLoad();
+	//};
+	//
+	//struct Model : Resource
+	//{
+	//
+	//private:
+	//	virtual void onLoad();
+	//};
 }

@@ -9,6 +9,9 @@
 #include <nsengine/TriangleRenderer.h>
 #include <nsengine/Transform.h>
 #include <nsengine/Resources.h>
+#include <nsengine/Resource.h>
+#include <nsengine/Texture.h>
+#include <nsengine/Model.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 

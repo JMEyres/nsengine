@@ -1,4 +1,5 @@
 #include "Core.h"
+#include "Resources.h"
 
 
 namespace nsengine
@@ -10,6 +11,7 @@ std::shared_ptr<Core> Core::initialize()
 	rtn->self = rtn;
 	rtn->running = false;
 	rtn->input = std::make_shared<Input>();
+	rtn->resources = std::make_shared<Resources>();
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
@@ -129,4 +131,8 @@ std::shared_ptr<Input> Core::getInput()
 	return input;
 }
 
+std::shared_ptr<Resources> Core::getResources()
+{
+	return resources;
+}
 }
