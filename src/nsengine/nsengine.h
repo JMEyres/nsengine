@@ -12,6 +12,7 @@
 #include <nsengine/Resource.h>
 #include <nsengine/Texture.h>
 #include <nsengine/Model.h>
+#include <nsengine/Renderer.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 

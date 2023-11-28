@@ -1,19 +1,17 @@
 #pragma once
 #include "Component.h"
-#include <iostream>
+
 #include <rend/rend.h>
-#include "Transform.h"
-#include "Entity.h"
 
 namespace nsengine
 {
+	struct Model;
 	struct Texture;
-	struct TriangleRenderer : Component
+	struct Renderer : Component
 	{
 	private:
-		rend::Mesh mesh;
-		rend::Shader shader;
-
+		rend::Model model;
+		rend::ModelShader modelShader;
 		void onInitialize();
 		void onDisplay();
 	};

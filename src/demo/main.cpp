@@ -25,10 +25,9 @@ int main()
 
 	std::shared_ptr<Environment> environment = core->createEnvironment();
 	std::shared_ptr<Entity> entity = environment->addEntity(); // creating entity, core holds on list
-	std::shared_ptr<Texture> texture = core->getResources()->load<Texture>("src/Resources/Textures/canosprite.png");
-	//std::shared_ptr<Model> texture = core->getResources()->load<Model>("src/Resources/Textures/canosprite.png");
 	entity->addComponent<Player>(); // creating component, entity holds on list
 	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
+	entity->addComponent<Renderer>();
 
 	
 	entity->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));

@@ -77,8 +77,11 @@ add_library(nsengine
 	src/nsengine/Texture.h
 	src/nsengine/Model.cpp
 	src/nsengine/Model.h
-)
-
+	src/nsengine/Renderer.cpp
+	src/nsengine/Renderer.h
+	)
+	
+set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)
 target_link_libraries(nsengine rend SDL2)
 
 add_executable(demo
@@ -86,5 +89,5 @@ add_executable(demo
 	src/demo/main.cpp
 )
 
-
+set_property(TARGET demo PROPERTY CXX_STANDARD 17)
 target_link_libraries(demo nsengine)

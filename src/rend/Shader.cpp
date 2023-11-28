@@ -132,6 +132,8 @@ void Shader::load(int _type)
       "void main()                                          " \
       "{                                                    " \
       "  vec4 tex = texture2D(u_Texture, v_TexCoord);       " \
+      "  if(tex.a < 0.1)                                   " \
+      "     discard;                                        " \
       "  gl_FragColor = tex;                                " \
       "}                                                    " \
       "\n#endif\n                                           ";
