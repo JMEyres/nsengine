@@ -4,7 +4,7 @@ namespace nsengine
 {
 	void Model::onLoad() 
 	{
-		model = std::make_shared<rend::Model>();
-		model->load(getPath().c_str());
+		model = std::make_shared<rend::Model>(getPath().c_str());
+		//model->load();
 	};
 }

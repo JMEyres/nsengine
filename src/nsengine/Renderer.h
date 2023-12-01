@@ -10,7 +10,7 @@ namespace nsengine
 	struct Renderer : Component
 	{
 	private:
-		rend::Model model;
+		std::shared_ptr<rend::Model> model;
 		rend::ModelShader modelShader;
 		void onInitialize();
 		void onDisplay();

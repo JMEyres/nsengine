@@ -7,7 +7,7 @@ namespace nsengine
 	{
 		void onLoad();
 
-	private:
 		std::shared_ptr<rend::Model> model;
+	private:
 	};
 }
