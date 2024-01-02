@@ -17,7 +17,6 @@ namespace nsengine
 		modelShader.projection(rend::perspective(rend::radians(45.0f), 1.0f, 0.1f, 100.0f));
 
 		modelShader.model(getEntity()->getTransform()->Model());
-		std::cout << getEntity()->getTransform()->rotation.y << std::endl;
 		modelShader.model(*model);
 		modelShader.render();
 	}

@@ -84,9 +84,9 @@ void Core::start()
 			}
 		}
 
-		input->isKeyHeld('a');
-		input->isKeyPressed('d');
-		input->isKeyReleased(SDLK_LSHIFT);
+		//input->isKeyHeld('a');
+		//input->isKeyPressed('d');
+		//input->isKeyReleased(SDLK_LSHIFT);
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{
