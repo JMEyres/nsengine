@@ -8,12 +8,17 @@ namespace nsengine
 
 	void Transform::setRotation(rend::vec3 _angle)
 	{
-		rotation = _angle;
+		rotation = _angle; // set this to be in degrees just in case
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)
 	{
 		position = _pos;
+	}
+
+	glm::vec3 Transform::getPosition()
+	{
+		return position;
 	}
 
 	void Transform::setScale(rend::vec3 _scale)

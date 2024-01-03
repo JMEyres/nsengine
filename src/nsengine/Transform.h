@@ -11,6 +11,7 @@ namespace nsengine
 		void setRotation(rend::vec3);
 
 		void setPosition(rend::vec3);
+		glm::vec3 getPosition();
 		void Move(rend::vec3);
 
 		void setScale(rend::vec3);

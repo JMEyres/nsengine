@@ -22,15 +22,24 @@ private:
 
 struct Controller : Component
 {
+	Controller() :
+		angle(0) { }
 	void onTick()
 	{
+		float dt = getEntity()->getEnvironment()->getDeltaTime();
 		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyHeld('a'))
 		{
-			getEntity()->getTransform()->setRotation(glm::vec3(45, 0, 0));
+			angle += 5.0f * dt;
+			getEntity()->getTransform()->setRotation(glm::vec3(0, -angle, 0));
 		}
-		
+		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyHeld('d'))
+		{
+			angle += 5.0f * dt;
+			getEntity()->getTransform()->setRotation(glm::vec3(0, angle, 0));
+		}
 	}
-
+private:
+	float angle;
 };
 
 int main()
@@ -45,7 +54,6 @@ int main()
 	entity->addComponent<Player>(); // creating component, entity holds on list
 	entity2->addComponent<Controller>();
 	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
-
 	entity2->addComponent<Renderer>();
 
 	

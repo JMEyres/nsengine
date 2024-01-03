@@ -31,6 +31,29 @@ namespace nsengine
         std::shared_ptr<Input> getInput();
         std::shared_ptr<Resources> getResources();
 
+        template <typename T>
+        void Find(std::vector<std::shared_ptr<T> >& out)
+        {
+            for (size_t i = 0; i < environments.size(); ++i)
+            {
+                std::shared_ptr<Environment> env = environments.at(i);
+                for (size_t ei = 0; i < env->entities.size(); ++ei)
+                {
+                    std::shared_ptr<Entity> ent = env->entities.at(ei);
+
+                    for (size_t ci = 0; ci < e->components.size(); ++ci)
+                    {
+                        std::shared_ptr<Component> com = e->components.at(ci);
+
+                        std::shared_ptr<T> t = std::dynamic_pointer_cast<T>(com);
+
+                        if (t)
+                            out.push_back(t);
+                    }
+                }
+            }
+        }
+
     private:
         std::weak_ptr<Core> self;
         bool running;

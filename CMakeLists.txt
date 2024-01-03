@@ -79,6 +79,10 @@ add_library(nsengine
 	src/nsengine/Model.h
 	src/nsengine/Renderer.cpp
 	src/nsengine/Renderer.h
+	src/nsengine/BoxCollider.cpp
+	src/nsengine/BoxCollider.h
+	src/nsengine/RigidBody.cpp
+	src/nsengine/RigidBody.h
 	)
 	
 set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)
