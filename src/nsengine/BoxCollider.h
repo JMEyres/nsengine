@@ -6,7 +6,8 @@ namespace nsengine
 {
 	struct BoxCollider : Component
 	{
-		bool Colliding(BoxCollider& other);
+		bool isColliding(glm::vec3 pos, glm::vec3 size);
+		glm::vec3 getCollisionResponse(glm::vec3 pos, glm::vec3 size);
 
 	private:
 		glm::vec3 size;

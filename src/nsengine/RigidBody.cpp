@@ -16,8 +16,11 @@ namespace nsengine
 				continue;
 
 			if (box)
-				if (boxColliders.at(bci)->Colliding(*box))
-					std::cout << "HIT" << std::endl;
+				if (boxColliders.at(bci)->isColliding(box->getEntity()->getTransform()->getPosition(), glm::vec3(2)))
+				{
+					getEntity()->getTransform()->setPosition(box->getCollisionResponse(
+						box->getEntity()->getTransform()->getPosition(), glm::vec3(0)));
+				}
 		}
 	}
 }

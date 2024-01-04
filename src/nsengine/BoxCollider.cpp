@@ -3,12 +3,12 @@
 
 namespace nsengine
 {
-	bool BoxCollider::Colliding(BoxCollider& other)
+	bool BoxCollider::isColliding(glm::vec3 otherPos, glm::vec3 otherSize)
 	{
 		glm::vec3 a = getEntity()->getTransform()->getPosition();
-		glm::vec3 b = other.getEntity()->getTransform()->getPosition();
+		glm::vec3 b = otherPos;
 		glm::vec3 ahs = size / 2.0f;
-		glm::vec3 bhs = other.size / 2.0f;
+		glm::vec3 bhs = otherSize / 2.0f;
 
 		if (a.x > b.x)
 		{
@@ -42,5 +42,36 @@ namespace nsengine
 			if (a.z + ahs.z < b.z - bhs.z)
 				return false;
 		}
+	}
+
+	glm::vec3 BoxCollider::getCollisionResponse(glm::vec3 pos, glm::vec3 size)
+	{
+		float amount = 1.0f;
+		float step = 1.0f;
+
+		while (true)
+		{
+			if (!isColliding(pos, size)) break;
+			pos.x += amount;
+			if (!isColliding(pos, size)) break;
+			pos.x -= amount;
+			pos.x -= amount;
+			if (!isColliding(pos, size)) break;
+			pos.x += amount;
+			pos.z += amount;
+			if (!isColliding(pos, size)) break;
+			pos.z -= amount;
+			pos.z -= amount;
+			if (!isColliding(pos, size)) break;
+			pos.z += amount;
+			pos.y += amount;
+			if (!isColliding(pos, size)) break;
+			pos.y -= amount;
+			pos.y -= amount;
+			if (!isColliding(pos, size)) break;
+			pos.y += amount;
+			amount += step;
+		}
+		return pos;
 	}
 }
