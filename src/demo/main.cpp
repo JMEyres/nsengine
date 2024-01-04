@@ -34,8 +34,8 @@ struct Controller : Component
 		}
 		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyHeld('d'))
 		{
-			angle += 5.0f * dt;
-			getEntity()->getTransform()->setRotation(glm::vec3(0, angle, 0));
+			//angle += 5.0f * dt;
+			getEntity()->getTransform()->setPosition(glm::vec3(0, 0, -5.0f));
 		}
 	}
 private:
@@ -55,6 +55,9 @@ int main()
 	entity2->addComponent<Controller>();
 	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
 	entity2->addComponent<Renderer>();
+	entity->addComponent<BoxCollider>();
+	entity2->addComponent<BoxCollider>();
+	entity2->addComponent<RigidBody>();
 
 	
 	entity->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));

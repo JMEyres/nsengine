@@ -8,7 +8,7 @@ namespace nsengine
 		{
 			if (key == keys.at(ki))
 			{
-				std::cout << "keyHeld: " << key << std::endl;
+				//std::cout << "keyHeld: " << key << std::endl;
 				return key;
 			}
 			else
@@ -24,7 +24,7 @@ namespace nsengine
 		{
 			if (key == pressedKeys.at(ki))
 			{
-				std::cout << "keyPressed: " << key << std::endl;
+				//std::cout << "keyPressed: " << key << std::endl;
 				return key;
 			}
 			else
@@ -40,7 +40,7 @@ namespace nsengine
 		{
 			if (key == releasedKeys.at(ki))
 			{
-				std::cout << "keyReleased: " << key << std::endl;
+				//std::cout << "keyReleased: " << key << std::endl;
 				return key;
 			}
 			else

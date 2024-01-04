@@ -37,13 +37,13 @@ namespace nsengine
             for (size_t i = 0; i < environments.size(); ++i)
             {
                 std::shared_ptr<Environment> env = environments.at(i);
-                for (size_t ei = 0; i < env->entities.size(); ++ei)
+                for (size_t ei = 0; ei < env->entities.size(); ++ei)
                 {
                     std::shared_ptr<Entity> ent = env->entities.at(ei);
 
-                    for (size_t ci = 0; ci < e->components.size(); ++ci)
+                    for (size_t ci = 0; ci < ent->components.size(); ++ci)
                     {
-                        std::shared_ptr<Component> com = e->components.at(ci);
+                        std::shared_ptr<Component> com = ent->components.at(ci);
 
                         std::shared_ptr<T> t = std::dynamic_pointer_cast<T>(com);
 
