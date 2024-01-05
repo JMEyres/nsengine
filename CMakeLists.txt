@@ -50,8 +50,13 @@ add_library(rend
 	src/rend/utils.cpp
 	src/rend/utils.h
 )
-
 target_link_libraries(rend glew32 opengl32)
+
+if(WIN32)
+	list(APPEND CMAKE_PREFIX_PATH "C:\\Users\\joshu\\Github\\nsengine\\src\\ReactPhysics3D")
+endif()
+
+find_package(ReactPhysics3D REQUIRED)
 
 add_library(nsengine
 	src/nsengine/nsengine.h
@@ -94,4 +99,4 @@ add_executable(demo
 )
 
 set_property(TARGET demo PROPERTY CXX_STANDARD 17)
-target_link_libraries(demo nsengine)
+target_link_libraries(demo nsengine ReactPhysics3D::ReactPhysics3D)

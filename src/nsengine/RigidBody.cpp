@@ -1,4 +1,5 @@
 #include "RigidBody.h"
+#include <ReactPhysics3D/include/reactphysics3d/reactphysics3d.h>
 
 namespace nsengine
 {
