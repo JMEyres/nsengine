@@ -24,7 +24,7 @@ namespace nsengine
 		{
 			if (key == pressedKeys.at(ki))
 			{
-				//std::cout << "keyPressed: " << key << std::endl;
+				std::cout << "keyPressed: " << key << std::endl;
 				return key;
 			}
 			else

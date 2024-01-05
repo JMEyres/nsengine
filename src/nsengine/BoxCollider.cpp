@@ -46,8 +46,8 @@ namespace nsengine
 
 	glm::vec3 BoxCollider::getCollisionResponse(glm::vec3 pos, glm::vec3 size)
 	{
-		float amount = 1.0f;
-		float step = 1.0f;
+		float amount = 0.2f; // want this to be equal to the size of the box so it moves to the edge automatically, might need the position difference sorta thang
+		float step = 0.2f;
 
 		while (true)
 		{

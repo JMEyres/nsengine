@@ -32,7 +32,7 @@ struct Controller : Component
 			angle += 5.0f * dt;
 			getEntity()->getTransform()->setRotation(glm::vec3(0, -angle, 0));
 		}
-		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyHeld('d'))
+		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyPressed('d'))
 		{
 			//angle += 5.0f * dt;
 			getEntity()->getTransform()->setPosition(glm::vec3(0, 0, -5.0f));
