@@ -41,6 +41,7 @@ void Core::start()
 {
 	running = true;
 	SDL_Event event = { 0 };
+	dynamicsWorld->setGravity(btVector3(0, -10, 0));
 
 	for(size_t i = 0; i < environments.size(); ++i)
 	{
@@ -107,6 +108,20 @@ void Core::start()
 		input->clearInput();
 		SDL_Rend_SwapWindow(window);
 	}
+
+	//delete dynamics world
+	delete dynamicsWorld;
+
+	//delete solver
+	delete solver;
+
+	//delete broadphase
+	delete overlappingPairCache;
+
+	//delete dispatcher
+	delete dispatcher;
+
+	delete collisionConfiguration;
 }
 
 void Core::stop()

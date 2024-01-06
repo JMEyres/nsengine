@@ -53,6 +53,13 @@ namespace nsengine
                 }
             }
         }
+        
+        btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
+        btCollisionDispatcher* dispatcher = new	btCollisionDispatcher(collisionConfiguration);
+        btBroadphaseInterface* overlappingPairCache = new btDbvtBroadphase();
+        btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
+        btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, overlappingPairCache, solver, collisionConfiguration);
+        btAlignedObjectArray <btCollisionShape*> collisionShapes;
 
     private:
         std::weak_ptr<Core> self;

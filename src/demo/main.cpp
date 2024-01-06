@@ -58,7 +58,7 @@ int main()
 	entity->addComponent<BoxCollider>();
 	entity2->addComponent<BoxCollider>();
 	entity2->addComponent<RigidBody>();
-
+	entity2->getComponent<RigidBody>()->mass = 2.0f;
 	
 	entity->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
 	entity->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));

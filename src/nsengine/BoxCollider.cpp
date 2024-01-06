@@ -74,4 +74,12 @@ namespace nsengine
 		}
 		return pos;
 	}
+
+	void BoxCollider::onInitialize()
+	{
+		btVector3 colSize = btVector3(size.x, size.y, size.z);
+
+		collider = new btBoxShape(btVector3(size.x, size.y, size.z)); // box collider
+		getEntity()->getEnvironment()->getCore()->collisionShapes.push_back(collider); // push back to collision shapes
+	};
 }

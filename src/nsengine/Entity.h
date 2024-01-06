@@ -13,6 +13,7 @@ namespace nsengine
 	struct Environment;
 	struct Component;
 	struct Transform;
+	struct RigidBody;
 
 	struct Entity
 	{
@@ -41,7 +42,6 @@ namespace nsengine
 		}
 
 		std::shared_ptr<Transform> getTransform();
-
 		std::shared_ptr<Environment> getEnvironment();
 
 	private:
@@ -51,7 +51,6 @@ namespace nsengine
 		std::weak_ptr<Environment> environment;
 		std::weak_ptr<Entity> self;
 		std::weak_ptr<Transform> transform;
-
 
 		bool alive;
 		std::vector<std::shared_ptr<Component> > components; // List of components
