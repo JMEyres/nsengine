@@ -11,7 +11,7 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Input.h"
-//#include "Resources.h"
+#include "pellet/btBulletDynamicsCommon.h"
 
 
 namespace nsengine
