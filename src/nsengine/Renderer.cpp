@@ -9,7 +9,7 @@ namespace nsengine
 {
 	void Renderer::onInitialize()
 	{
-		model = getEntity()->getEnvironment()->getCore()->getResources()->load<Model>("../src/Resources/Models/curuthers.obj")->model;
+		model = getEntity()->getEnvironment()->getCore()->getResources()->load<Model>(path)->model;
 	}
 
 	void Renderer::onDisplay()
@@ -18,6 +18,7 @@ namespace nsengine
 
 		modelShader.model(getEntity()->getTransform()->Model());
 		modelShader.model(*model);
+		
 		modelShader.render();
 	}
 }

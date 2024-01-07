@@ -56,7 +56,7 @@ int main()
 	curuthers->addComponent<Controller>(); 
 	triangle->addComponent<TriangleRenderer>(); // creating component, entity holds on list
 	curuthers->addComponent<Renderer>(); // "../src/Resources/Models/curuthers.obj"
-	//floor->addComponent<Renderer>();
+	floor->addComponent<Renderer>();
 
 	triangle->addComponent<BoxCollider>();
 	curuthers->addComponent<BoxCollider>();
@@ -64,18 +64,24 @@ int main()
 
 	triangle->addComponent<RigidBody>();
 	curuthers->addComponent<RigidBody>();
-	//floor->addComponent<CollisionBody>();
+	floor->addComponent<RigidBody>();
 
-	//curuthers->getComponent<Renderer>()->modelPath = "../src/Resources/Models/curuthers.obj";
-	//floor->getComponent<Renderer>()->modelPath = "../src/Resources/Models/floor.obj";
-
+	curuthers->getComponent<Renderer>()->path = "../src/Resources/Models/curuthers.obj";
+	floor->getComponent<Renderer>()->path = "../src/Resources/Models/floor.obj";
+	
+	triangle->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
+	floor->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
 	
 	triangle->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
 	triangle->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
-	curuthers->getTransform()->setPosition(rend::vec3(-2.0f, 0.0f, -10.0f));
+	curuthers->getTransform()->setPosition(rend::vec3(-2.0f, 5.0f, -10.0f));
 	curuthers->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
+	floor->getTransform()->setPosition(rend::vec3(-2.0f, -1.0f, -10.0f));
+	floor->getTransform()->setScale(rend::vec3(100.0f, 1.0f, 100.0f));
+
+	//floor->getComponent<RigidBody>()->
 	core->start();
 
 	return 0;

@@ -2,6 +2,7 @@
 #include "Component.h"
 
 #include <rend/rend.h>
+#include <string>
 
 namespace nsengine
 {
@@ -9,6 +10,7 @@ namespace nsengine
 	struct Texture;
 	struct Renderer : Component
 	{
+		std::string path;
 	private:
 		std::shared_ptr<rend::Model> model;
 		rend::ModelShader modelShader;

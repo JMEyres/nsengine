@@ -1,4 +1,4 @@
- #include "Core.h"
+#include "Core.h"
 #include "Resources.h"
 
 
@@ -92,7 +92,7 @@ namespace nsengine
 			{
 				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 				{
-					for (int t = 0; t < 20; t++) {
+					for (int t = 0; t < 1; t++) {
 
 						physicsWorld->update(timeStep);
 						environments.at(i)->entities.at(ei)->physicsTick();

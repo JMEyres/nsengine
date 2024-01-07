@@ -9,11 +9,13 @@ namespace nsengine
 {
 	struct RigidBody : Component
 	{
-		void onTick();
 		void onPhysicsTick();
 		void onInitialize();
 
+		void setType(rp3d::BodyType type);
+
 	private:
+		rp3d::BodyType rbType = rp3d::BodyType::DYNAMIC;
 		rp3d::RigidBody* rb;
 		rp3d::Collider* collider;
 	};
