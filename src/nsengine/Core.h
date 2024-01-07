@@ -60,6 +60,7 @@ namespace nsengine
         btBroadphaseInterface* overlappingPairCache;
         btSequentialImpulseConstraintSolver* solver;
         btDiscreteDynamicsWorld* dynamicsWorld;
+        btCollisionWorld* collisionWorld;
         btAlignedObjectArray <btCollisionShape*> collisionShapes;
 
     private:

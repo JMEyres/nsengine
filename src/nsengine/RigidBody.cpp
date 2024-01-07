@@ -51,6 +51,7 @@ namespace nsengine
 		{
 			trans = body->getWorldTransform();
 		}
+
 		printf("world pos object = % f, % f, % f\n", float(trans.getOrigin().getX()), float(trans.getOrigin().getY()), float(trans.getOrigin().getZ()));
 	}
 

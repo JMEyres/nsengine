@@ -48,6 +48,8 @@ void Core::start()
 	solver = new btSequentialImpulseConstraintSolver;
 	dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, overlappingPairCache, solver, collisionConfiguration);
 	dynamicsWorld->setGravity(btVector3(0, -9.8f, 0));
+	//dynamicsWorld->getCollisionWorld()->
+	//collisionWorld = new btCollisionWorld(dispatcher, overlappingPairCache, collisionConfiguration);
 
 	for(size_t i = 0; i < environments.size(); ++i)
 	{
@@ -98,21 +100,7 @@ void Core::start()
 		for (int i = 0; i < 60; ++i)
 		{
 			dynamicsWorld->stepSimulation(1.f / 60.f, 10);
-			//for (int j = 0; j < dynamicsWorld->getNumCollisionObjects(); ++j) // collision objects = rigidbody
-			//{
-			//	btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[j];
-			//	btRigidBody* body = btRigidBody::upcast(obj);
-			//	btTransform trans;
-			//	if (body && body->getMotionState())
-			//	{
-			//		body->getMotionState()->getWorldTransform(trans);
-			//	}
-			//	else
-			//	{
-			//		trans = obj->getWorldTransform();
-			//	}
-			//	printf("world pos object % d = % f, % f, % f\n", j, float(trans.getOrigin().getX()), float(trans.getOrigin().getY()), float(trans.getOrigin().getZ()));
-			//}
+	
 			for (size_t i = 0; i < environments.size(); ++i)
 			{
 				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
