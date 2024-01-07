@@ -53,13 +53,15 @@ int main()
 	
 
 	triangle->addComponent<Player>(); // creating component, entity holds on list
-	curuthers->addComponent<Controller>();
+	curuthers->addComponent<Controller>(); 
 	triangle->addComponent<TriangleRenderer>(); // creating component, entity holds on list
 	curuthers->addComponent<Renderer>(); // "../src/Resources/Models/curuthers.obj"
-	floor->addComponent<Renderer>();
+	//floor->addComponent<Renderer>();
+
 	triangle->addComponent<BoxCollider>();
 	curuthers->addComponent<BoxCollider>();
 	floor->addComponent<BoxCollider>();
+
 	triangle->addComponent<RigidBody>();
 	curuthers->addComponent<RigidBody>();
 	//floor->addComponent<CollisionBody>();

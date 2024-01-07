@@ -45,7 +45,7 @@ namespace nsengine
 
 			if (box)
 			{
-				rp3d::AABB colAabb = boxColliders.at(bci)->getEntity()->getComponent<RigidBody>()->rb->getAABB();
+				//rp3d::AABB colAabb = boxColliders.at(bci)->getEntity()->getComponent<RigidBody>()->rb->getAABB();
 				//if (aabb.testCollision(colAabb))
 				//{
 				//	std::cout << "HIT" << std::endl;
