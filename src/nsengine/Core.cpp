@@ -4,135 +4,147 @@
 
 namespace nsengine
 {
-std::shared_ptr<Core> Core::initialize()
-{
-	std::shared_ptr<Core> rtn = std::make_shared<Core>(); // make_shared = new
-
-	rtn->self = rtn;
-	rtn->running = false;
-	rtn->input = std::make_shared<Input>();
-	rtn->resources = std::make_shared<Resources>();
-
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	std::shared_ptr<Core> Core::initialize()
 	{
-		throw std::runtime_error("Failed to initialize SDL");
-	}
+		std::shared_ptr<Core> rtn = std::make_shared<Core>(); // make_shared = new
 
-	rtn->window = SDL_CreateWindow("SDL Window",
-		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		rtn->physicsWorld = rtn->physicsCommon.createPhysicsWorld();
 
-	if (!rtn->window)
-	{
-		throw std::runtime_error("Failed to create window");
-	}
+		rtn->self = rtn;
+		rtn->running = false;
+		rtn->input = std::make_shared<Input>();
+		rtn->resources = std::make_shared<Resources>();
 
-	rtn->context = SDL_Rend_CreateContext(rtn->window);
-
-	if (!rtn->context)
-	{
-		throw std::runtime_error("Failed to create context");
-	}
-
-	return rtn;
-}
-
-void Core::start()
-{
-	running = true;
-	SDL_Event event = { 0 };
-
-	for(size_t i = 0; i < environments.size(); ++i)
-	{
-		for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+		if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		{
-			environments.at(i)->entities.at(ei)->initialize();
+			throw std::runtime_error("Failed to initialize SDL");
 		}
+
+		rtn->window = SDL_CreateWindow("SDL Window",
+			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+			640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+
+		if (!rtn->window)
+		{
+			throw std::runtime_error("Failed to create window");
+		}
+
+		rtn->context = SDL_Rend_CreateContext(rtn->window);
+
+		if (!rtn->context)
+		{
+			throw std::runtime_error("Failed to create context");
+		}
+
+		return rtn;
 	}
 
-	while (running)
+	void Core::start()
 	{
-		while (SDL_PollEvent(&event))
+		running = true;
+		SDL_Event event = { 0 };
+
+		for (size_t i = 0; i < environments.size(); ++i)
 		{
-			if (event.type == SDL_QUIT)
+			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 			{
-				running = false;
+				environments.at(i)->entities.at(ei)->initialize();
 			}
+		}
 
-			else if (event.type == SDL_KEYDOWN)
+		while (running)
+		{
+			while (SDL_PollEvent(&event))
 			{
-				if(std::find(input->keys.begin(), input->keys.end(), event.key.keysym.sym) == input->keys.end()) input->keys.push_back(event.key.keysym.sym);
-				input->pressedKeys.push_back(event.key.keysym.sym);
-			}
-
-			else if (event.type == SDL_KEYUP)
-			{
-				for (size_t ki = 0; ki < input->keys.size(); ++ki)
+				if (event.type == SDL_QUIT)
 				{
-					if (input->keys.at(ki) == event.key.keysym.sym)
-					{
-						input->keys.erase(input->keys.begin() + ki);
-					}
+					running = false;
 				}
 
-				input->releasedKeys.push_back(event.key.keysym.sym);
-			}
+				else if (event.type == SDL_KEYDOWN)
+				{
+					if (std::find(input->keys.begin(), input->keys.end(), event.key.keysym.sym) == input->keys.end()) input->keys.push_back(event.key.keysym.sym);
+					input->pressedKeys.push_back(event.key.keysym.sym);
+				}
 
-			switch (event.key.keysym.sym)
-			{
+				else if (event.type == SDL_KEYUP)
+				{
+					for (size_t ki = 0; ki < input->keys.size(); ++ki)
+					{
+						if (input->keys.at(ki) == event.key.keysym.sym)
+						{
+							input->keys.erase(input->keys.begin() + ki);
+						}
+					}
+
+					input->releasedKeys.push_back(event.key.keysym.sym);
+				}
+
+				switch (event.key.keysym.sym)
+				{
 				case SDLK_ESCAPE: running = false; break;
+				}
 			}
-		}
 
-		//input->isKeyHeld('a');
-		//input->isKeyPressed('d');
-		//input->isKeyReleased(SDLK_LSHIFT);
+			float timeStep = 1.0f / 60.0f;
 
-		for (size_t i = 0; i < environments.size(); ++i)
-		{
-			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+			for (size_t i = 0; i < environments.size(); ++i)
 			{
-				environments.at(i)->entities.at(ei)->tick();
-			}
-		}
-		SDL_Rend_ClearWindow(window);
+				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+				{
+					for (int t = 0; t < 20; t++) {
 
-		for (size_t i = 0; i < environments.size(); ++i)
-		{
-			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
-			{
-				environments.at(i)->entities.at(ei)->display();
+						physicsWorld->update(timeStep);
+						environments.at(i)->entities.at(ei)->physicsTick();
+					}
+				}
 			}
+
+			for (size_t i = 0; i < environments.size(); ++i)
+			{
+				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+				{
+					environments.at(i)->entities.at(ei)->tick();
+				}
+			}
+			SDL_Rend_ClearWindow(window);
+
+			for (size_t i = 0; i < environments.size(); ++i)
+			{
+				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+				{
+					environments.at(i)->entities.at(ei)->display();
+				}
+			}
+			input->clearInput();
+			SDL_Rend_SwapWindow(window);
 		}
-		input->clearInput();
-		SDL_Rend_SwapWindow(window);
 	}
-}
 
-void Core::stop()
-{
-	running = false;
-}
+	void Core::stop()
+	{
+		running = false;
+	}
 
-std::shared_ptr<Environment> Core::createEnvironment()
-{
-	std::shared_ptr<Environment> rtn = std::make_shared<Environment>();
+	std::shared_ptr<Environment> Core::createEnvironment()
+	{
+		std::shared_ptr<Environment> rtn = std::make_shared<Environment>();
 
-	rtn->core = self; // allows environment to point upwards
-	rtn->self = rtn; // will allow entity to point upwards
+		rtn->core = self; // allows environment to point upwards
+		rtn->self = rtn; // will allow entity to point upwards
 
-	environments.push_back(rtn);
+		environments.push_back(rtn);
 
-	return rtn;
-}
+		return rtn;
+	}
 
-std::shared_ptr<Input> Core::getInput()
-{
-	return input;
-}
+	std::shared_ptr<Input> Core::getInput()
+	{
+		return input;
+	}
 
-std::shared_ptr<Resources> Core::getResources()
-{
-	return resources;
-}
+	std::shared_ptr<Resources> Core::getResources()
+	{
+		return resources;
+	}
 }

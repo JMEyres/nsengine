@@ -74,4 +74,9 @@ namespace nsengine
 		}
 		return pos;
 	}
+
+	void BoxCollider::onInitialize()
+	{
+		box = getCore()->physicsCommon.createBoxShape(rp3d::Vector3(1,1,1));
+	}
 }

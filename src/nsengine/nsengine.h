@@ -15,6 +15,7 @@
 #include <nsengine/Renderer.h>
 #include <nsengine/BoxCollider.h>
 #include <nsengine/RigidBody.h>
+//#include <nsengine/CollisionBody.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 

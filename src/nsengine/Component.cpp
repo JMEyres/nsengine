@@ -6,6 +6,8 @@ namespace nsengine
 	{}
 	void Component::onTick()
 	{}
+	void Component::onPhysicsTick()
+	{}
 	void Component::onDisplay()
 	{}
 
@@ -17,6 +19,10 @@ namespace nsengine
 	{
 		onTick();
 	}
+	void Component::physicsTick()
+	{
+		onPhysicsTick();
+	}
 	void Component::display()
 	{
 		onDisplay();
@@ -25,6 +31,11 @@ namespace nsengine
 	std::shared_ptr<Entity> Component::getEntity()
 	{
 		return entity.lock();
+	}
+
+	std::shared_ptr<Core> Component::getCore()
+	{
+		return core.lock();
 	}
 }
 

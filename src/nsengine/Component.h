@@ -4,16 +4,20 @@
 namespace nsengine
 {
 	struct Entity; // forward declare entity
+	struct Core;
 
 	struct Component
 	{
 	public:
 		virtual void onInitialize();
 		virtual void onTick();
+		virtual void onPhysicsTick();
 		virtual void onDisplay();
 
 		std::shared_ptr<Entity> getEntity();
+		std::shared_ptr<Core> getCore();
 
+		std::weak_ptr<Core> core;
 	private:
 		friend struct Entity;
 
@@ -22,6 +26,7 @@ namespace nsengine
 
 		void initialize();
 		void tick();
+		void physicsTick();
 		void display();
 	};
 }

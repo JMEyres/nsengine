@@ -11,6 +11,7 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Input.h"
+#include <reactphysics3d/reactphysics3d.h>
 //#include "Resources.h"
 
 
@@ -53,6 +54,9 @@ namespace nsengine
                 }
             }
         }
+
+        rp3d::PhysicsCommon physicsCommon;
+        rp3d::PhysicsWorld* physicsWorld;
 
     private:
         std::weak_ptr<Core> self;

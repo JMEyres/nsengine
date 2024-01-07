@@ -21,6 +21,7 @@ namespace nsengine
 		{
 			std::shared_ptr<T> rtn = std::make_shared<T>();
 
+			rtn->core = getEnvironment()->getCore();
 			rtn->entity = self;
 			rtn->self = rtn;
 
@@ -58,6 +59,7 @@ namespace nsengine
 
 		void initialize();
 		void tick();
+		void physicsTick();
 		void display();
 	};
 }
