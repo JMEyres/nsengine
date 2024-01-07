@@ -41,7 +41,13 @@ void Core::start()
 {
 	running = true;
 	SDL_Event event = { 0 };
-	dynamicsWorld->setGravity(btVector3(0, -10, 0));
+
+	collisionConfiguration = new btDefaultCollisionConfiguration();
+	dispatcher = new btCollisionDispatcher(collisionConfiguration);
+	overlappingPairCache = new btDbvtBroadphase();
+	solver = new btSequentialImpulseConstraintSolver;
+	dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, overlappingPairCache, solver, collisionConfiguration);
+	dynamicsWorld->setGravity(btVector3(0, -9.8f, 0));
 
 	for(size_t i = 0; i < environments.size(); ++i)
 	{
@@ -88,6 +94,33 @@ void Core::start()
 		//input->isKeyHeld('a');
 		//input->isKeyPressed('d');
 		//input->isKeyReleased(SDLK_LSHIFT);
+
+		for (int i = 0; i < 60; ++i)
+		{
+			dynamicsWorld->stepSimulation(1.f / 60.f, 10);
+			//for (int j = 0; j < dynamicsWorld->getNumCollisionObjects(); ++j) // collision objects = rigidbody
+			//{
+			//	btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[j];
+			//	btRigidBody* body = btRigidBody::upcast(obj);
+			//	btTransform trans;
+			//	if (body && body->getMotionState())
+			//	{
+			//		body->getMotionState()->getWorldTransform(trans);
+			//	}
+			//	else
+			//	{
+			//		trans = obj->getWorldTransform();
+			//	}
+			//	printf("world pos object % d = % f, % f, % f\n", j, float(trans.getOrigin().getX()), float(trans.getOrigin().getY()), float(trans.getOrigin().getZ()));
+			//}
+			for (size_t i = 0; i < environments.size(); ++i)
+			{
+				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
+				{
+					environments.at(i)->entities.at(ei)->physicsTick();
+				}
+			}
+		}
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{

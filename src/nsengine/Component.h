@@ -10,6 +10,7 @@ namespace nsengine
 	public:
 		virtual void onInitialize();
 		virtual void onTick();
+		virtual void onPhysicsTick();
 		virtual void onDisplay();
 
 		std::shared_ptr<Entity> getEntity();
@@ -22,6 +23,7 @@ namespace nsengine
 
 		void initialize();
 		void tick();
+		void physicsTick();
 		void display();
 	};
 }

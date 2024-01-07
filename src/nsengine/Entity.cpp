@@ -19,6 +19,14 @@ namespace nsengine
 		}
 	}
 
+	void Entity::physicsTick()
+	{
+		for (size_t ci = 0; ci < components.size(); ++ci)
+		{
+			components.at(ci)->physicsTick();
+		}
+	}
+
 	void Entity::display()
 	{
 		for (size_t ci = 0; ci < components.size(); ++ci)

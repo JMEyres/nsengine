@@ -13,6 +13,10 @@ namespace nsengine
 		btVector3 localInertia = btVector3(0,0,0);
 		
 		void onTick();
+		void onPhysicsTick();
 		void onInitialize();
+
+	private:
+		btRigidBody* body;
 	};
 }

@@ -6,6 +6,8 @@ namespace nsengine
 	{}
 	void Component::onTick()
 	{}
+	void Component::onPhysicsTick()
+	{}
 	void Component::onDisplay()
 	{}
 
@@ -16,6 +18,10 @@ namespace nsengine
 	void Component::tick()
 	{
 		onTick();
+	}
+	void Component::physicsTick()
+	{
+		onPhysicsTick();
 	}
 	void Component::display()
 	{

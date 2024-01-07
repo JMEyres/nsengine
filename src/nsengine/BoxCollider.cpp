@@ -77,9 +77,17 @@ namespace nsengine
 
 	void BoxCollider::onInitialize()
 	{
-		btVector3 colSize = btVector3(size.x, size.y, size.z);
-
 		collider = new btBoxShape(btVector3(size.x, size.y, size.z)); // box collider
+		
 		getEntity()->getEnvironment()->getCore()->collisionShapes.push_back(collider); // push back to collision shapes
+
+		//delete collision shapes
+		//for (int j = 0; j < getEntity()->getEnvironment()->getCore()->collisionShapes.size(); j++)
+		//{
+		//	btCollisionShape* shape = getEntity()->getEnvironment()->getCore()->collisionShapes[j];
+		//	getEntity()->getEnvironment()->getCore()->collisionShapes[j] = 0;
+		//	delete shape;
+		//}
+
 	};
 }

@@ -47,24 +47,37 @@ int main()
 	std::shared_ptr<Core> core = Core::initialize(); // initializes core
 
 	std::shared_ptr<Environment> environment = core->createEnvironment();
-	std::shared_ptr<Entity> entity2 = environment->addEntity();
-	std::shared_ptr<Entity> entity = environment->addEntity(); // creating entity, core holds on list
+	std::shared_ptr<Entity> curuthers = environment->addEntity();
+	std::shared_ptr<Entity> triangle = environment->addEntity(); // creating entity, core holds on list
+	std::shared_ptr<Entity> floor = environment->addEntity(); // creating entity, core holds on list
 	
 
-	entity->addComponent<Player>(); // creating component, entity holds on list
-	entity2->addComponent<Controller>();
-	entity->addComponent<TriangleRenderer>(); // creating component, entity holds on list
-	entity2->addComponent<Renderer>();
-	entity->addComponent<BoxCollider>();
-	entity2->addComponent<BoxCollider>();
-	entity2->addComponent<RigidBody>();
-	entity2->getComponent<RigidBody>()->mass = 2.0f;
-	
-	entity->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
-	entity->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
+	triangle->addComponent<Player>(); // creating component, entity holds on list
+	curuthers->addComponent<Controller>();
+	triangle->addComponent<TriangleRenderer>(); // creating component, entity holds on list
+	curuthers->addComponent<Renderer>();
+	triangle->addComponent<BoxCollider>();
+	curuthers->addComponent<BoxCollider>();
+	//entity2->getComponent<BoxCollider>()->size = glm::vec3(2.0f,2.0f,2.0f);
 
-	entity2->getTransform()->setPosition(rend::vec3(-2.0f, 0.0f, -10.0f));
-	entity2->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
+	floor->addComponent<BoxCollider>();
+	floor->getComponent<BoxCollider>()->size = glm::vec3(100.0f,1.0f,100.0f);
+
+	floor->addComponent<RigidBody>();
+	floor->getComponent<RigidBody>()->mass = 0.0f;
+
+	triangle->addComponent<RigidBody>();
+	curuthers->addComponent<RigidBody>();
+	curuthers->getComponent<RigidBody>()->mass = 1.0f;
+	
+	triangle->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
+	triangle->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
+
+	curuthers->getTransform()->setPosition(rend::vec3(-2.0f, 0.0f, -10.0f));
+	curuthers->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
+
+	floor->getTransform()->setPosition(rend::vec3(0.0f, -2.0f, 0.0f));
+	floor->getTransform()->setScale(rend::vec3(100.0f, 1.0f, 100.0f));
 
 	core->start();
 

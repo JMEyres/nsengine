@@ -57,6 +57,7 @@ namespace nsengine
 
 		void initialize();
 		void tick();
+		void physicsTick();
 		void display();
 	};
 }

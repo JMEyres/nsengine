@@ -13,9 +13,7 @@ namespace nsengine
 		void onInitialize();
 
 		btCollisionShape* collider;
-	private:
 		glm::vec3 size;
 		glm::vec3 offset;
-
 	};
 }
