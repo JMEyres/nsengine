@@ -13,6 +13,7 @@ namespace nsengine
 	struct Environment;
 	struct Component;
 	struct Transform;
+	struct Camera;
 
 	struct Entity
 	{

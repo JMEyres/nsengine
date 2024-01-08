@@ -61,13 +61,13 @@ namespace nsengine
 					running = false;
 				}
 
-				else if (event.type == SDL_KEYDOWN)
+				if (event.type == SDL_KEYDOWN)
 				{
 					if (std::find(input->keys.begin(), input->keys.end(), event.key.keysym.sym) == input->keys.end()) input->keys.push_back(event.key.keysym.sym);
 					input->pressedKeys.push_back(event.key.keysym.sym);
 				}
 
-				else if (event.type == SDL_KEYUP)
+				if (event.type == SDL_KEYUP)
 				{
 					for (size_t ki = 0; ki < input->keys.size(); ++ki)
 					{
@@ -107,6 +107,10 @@ namespace nsengine
 					environments.at(i)->entities.at(ei)->tick();
 				}
 			}
+			float time = SDL_GetTicks();
+			float diff = time - lastTime;
+			deltaTime = diff / 1000.0f;
+			lastTime = time;
 			SDL_Rend_ClearWindow(window);
 
 			for (size_t i = 0; i < environments.size(); ++i)
@@ -146,5 +150,10 @@ namespace nsengine
 	std::shared_ptr<Resources> Core::getResources()
 	{
 		return resources;
+	}
+
+	float Core::getDeltaTime()
+	{
+		return deltaTime;
 	}
 }

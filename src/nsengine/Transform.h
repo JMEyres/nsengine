@@ -9,6 +9,7 @@ namespace nsengine
 		Transform();
 
 		void setRotation(rend::vec3);
+		void rotate(float x, float y, float z);
 
 		void setPosition(rend::vec3);
 		glm::vec3 getPosition();

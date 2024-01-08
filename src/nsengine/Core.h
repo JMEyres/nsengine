@@ -31,6 +31,7 @@ namespace nsengine
         std::shared_ptr<Environment> createEnvironment();
         std::shared_ptr<Input> getInput();
         std::shared_ptr<Resources> getResources();
+        float getDeltaTime();
 
         template <typename T>
         void Find(std::vector<std::shared_ptr<T> >& out)
@@ -68,5 +69,8 @@ namespace nsengine
 
         SDL_Window* window;
         SDL_GLContext context;
+
+        float lastTime = SDL_GetTicks();
+        float deltaTime;
     };
 }

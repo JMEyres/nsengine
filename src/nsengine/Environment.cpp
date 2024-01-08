@@ -21,13 +21,13 @@ namespace nsengine
 		return core.lock();
 	}
 
-	float Environment::getDeltaTime()
+	void Environment::addCamera(std::shared_ptr<Camera> cam)
 	{
-		float time = SDL_GetTicks();
-		float diff = time - lastTime;
-		deltaTime = diff / 1000.0f;
-		lastTime = time;
+		cameras.push_back(cam);
+	}
 
-		return deltaTime;
+	std::shared_ptr<Camera> Environment::getCamera(int camIndex)
+	{
+		return cameras[camIndex];
 	}
 }

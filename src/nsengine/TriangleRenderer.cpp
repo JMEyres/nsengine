@@ -1,6 +1,7 @@
 #include "TriangleRenderer.h"
 #include "Resources.h"
 #include "Texture.h"
+#include "Camera.h"
 
 namespace nsengine
 {
@@ -16,8 +17,9 @@ namespace nsengine
 
 	void TriangleRenderer::onDisplay()
 	{
-		shader.uniform("u_Projection", rend::perspective( // set perspective
-			rend::radians(45.0f), 1.0f, 0.1f, 100.0f));
+		std::shared_ptr<Camera> cam = getEntity()->getEnvironment()->getCamera(0);
+
+		shader.uniform("u_Projection",cam->projMatrix);
 		
 		shader.uniform("u_Model", getEntity()->getTransform()->Model());
 		glActiveTexture(GL_TEXTURE0); // activate texture at index 0

@@ -22,11 +22,12 @@ namespace nsengine
 		friend struct Entity;
 
 		std::weak_ptr<Entity> entity; // entity owns component object
-		std::weak_ptr<Component> self; // entity owns component object
 
 		void initialize();
 		void tick();
 		void physicsTick();
 		void display();
+	protected:
+		std::weak_ptr<Component> self; // entity owns component object
 	};
 }

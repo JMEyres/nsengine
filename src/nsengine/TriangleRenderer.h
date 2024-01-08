@@ -8,6 +8,7 @@
 namespace nsengine
 {
 	struct Texture;
+	struct Camera;
 	struct TriangleRenderer : Component
 	{
 	private:

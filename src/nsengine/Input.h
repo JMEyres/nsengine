@@ -7,9 +7,9 @@ namespace nsengine
 {
 	struct Input
 	{
-		int isKeyHeld(int key);
-		int isKeyPressed(int key);
-		int isKeyReleased(int key);
+		bool isKeyHeld(int key);
+		bool isKeyPressed(int key);
+		bool isKeyReleased(int key);
 		void clearInput();
 	private:
 		friend struct Core;

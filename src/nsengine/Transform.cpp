@@ -1,4 +1,5 @@
 #include "Transform.h"
+#include <iostream>
 
 namespace nsengine
 {
@@ -9,6 +10,12 @@ namespace nsengine
 	void Transform::setRotation(rend::vec3 _angle)
 	{
 		rotation = _angle; // set this to be in degrees just in case
+	}
+
+	void Transform::rotate(float x, float y, float z)
+	{
+		//std::cout << y << std::endl;
+		rotation += rend::vec3(x, y, z);
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)

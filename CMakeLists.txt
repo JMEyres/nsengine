@@ -61,6 +61,8 @@ add_library(nsengine
 	src/nsengine/nsengine.h
 	src/nsengine/Core.cpp
 	src/nsengine/Core.h
+	src/nsengine/Camera.cpp
+	src/nsengine/Camera.h
 	src/nsengine/Entity.cpp
 	src/nsengine/Entity.h
 	src/nsengine/Component.cpp

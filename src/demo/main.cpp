@@ -3,14 +3,17 @@
 using namespace nsengine;
 
 #undef main // SDL2 Wraps everything in its own main so causes a linker error, this stops it looking for that undefines it
-
+#define KEY_UP    72
+#define KEY_LEFT  75
+#define KEY_RIGHT 77
+#define KEY_DOWN  80
 struct Player : Component
 {
 	Player() :
 		angle(0) { }
 	void onTick()
 	{
-		float dt = getEntity()->getEnvironment()->getDeltaTime();
+		float dt = getCore()->getDeltaTime();
 		angle += 360.0f*dt;
 		getEntity()->getTransform()->setRotation(rend::vec3(0, angle, 0));
 	}
@@ -22,24 +25,36 @@ private:
 
 struct Controller : Component
 {
-	Controller() :
-		angle(0) { }
 	void onTick()
 	{
-		float dt = getEntity()->getEnvironment()->getDeltaTime();
-		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyHeld('a'))
+		float dt = getCore()->getDeltaTime();
+		glm::vec3 currentRot = getEntity()->getTransform()->rotation;
+		if (getCore()->getInput()->isKeyHeld('a'))
 		{
-			angle += 5.0f * dt;
-			getEntity()->getTransform()->setRotation(glm::vec3(0, -angle, 0));
+			getEntity()->getTransform()->rotate(0, -angle * dt, 0);
 		}
-		if (getEntity()->getEnvironment()->getCore()->getInput()->isKeyPressed('d'))
+		if (getCore()->getInput()->isKeyHeld('d'))
 		{
-			//angle += 5.0f * dt;
-			getEntity()->getTransform()->setPosition(glm::vec3(0, 0, -5.0f));
+			getEntity()->getTransform()->rotate(angle * dt, 0, 0);
 		}
 	}
 private:
-	float angle;
+	float angle = 360.0f;
+};
+
+struct CameraController : Component
+{
+	void onTick()
+	{
+		float dt = getCore()->getDeltaTime();
+		
+		if (getCore()->getInput()->isKeyHeld('l'))
+		{
+			getEntity()->getTransform()->rotate(0, -angle * dt, 0);
+		}
+	}
+private:
+	float angle = 360.0f;
 };
 
 int main()
@@ -50,7 +65,11 @@ int main()
 	std::shared_ptr<Entity> curuthers = environment->addEntity();
 	std::shared_ptr<Entity> triangle = environment->addEntity(); // creating entity, core holds on list
 	std::shared_ptr<Entity> floor = environment->addEntity(); 
+	std::shared_ptr<Entity> camera = environment->addEntity(); 
 	
+
+	camera->addComponent<Camera>();
+	camera->addComponent<CameraController>();
 
 	triangle->addComponent<Player>(); // creating component, entity holds on list
 	curuthers->addComponent<Controller>(); 
