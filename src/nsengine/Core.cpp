@@ -35,6 +35,30 @@ namespace nsengine
 			throw std::runtime_error("Failed to create context");
 		}
 
+		// Audio
+
+		rtn->audioDevice = alcOpenDevice(NULL);
+
+		if (!rtn->audioDevice)
+		{
+			throw std::runtime_error("Failed to open audio device");
+		}
+
+		rtn->audioContext = alcCreateContext(rtn->audioDevice, NULL);
+
+		if (!rtn->audioContext)
+		{
+			alcCloseDevice(rtn->audioDevice);
+			throw std::runtime_error("Failed to create audio context");
+		}
+
+		if (!alcMakeContextCurrent(rtn->audioContext))
+		{
+			alcDestroyContext(rtn->audioContext);
+			alcCloseDevice(rtn->audioDevice);
+			throw std::runtime_error("Failed to make context current");
+		}
+
 		return rtn;
 	}
 
@@ -127,6 +151,9 @@ namespace nsengine
 	void Core::stop()
 	{
 		running = false;
+		alcMakeContextCurrent(NULL);
+		alcDestroyContext(audioContext);
+		alcCloseDevice(audioDevice);
 	}
 
 	std::shared_ptr<Environment> Core::createEnvironment()

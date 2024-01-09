@@ -12,6 +12,8 @@
 #include "Transform.h"
 #include "Input.h"
 #include <reactphysics3d/reactphysics3d.h>
+#include <AL/al.h>
+#include <AL/alc.h>
 //#include "Resources.h"
 
 
@@ -69,6 +71,9 @@ namespace nsengine
 
         SDL_Window* window;
         SDL_GLContext context;
+
+        ALCdevice* audioDevice;
+        ALCcontext* audioContext;
 
         float lastTime = SDL_GetTicks();
         float deltaTime;

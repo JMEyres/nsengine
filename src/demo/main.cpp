@@ -19,7 +19,6 @@ private:
 	float angle;
 };
 
-
 struct Controller : Component
 {
 	void onTick()
@@ -31,10 +30,10 @@ struct Controller : Component
 			rend::vec3 test = getEntity()->getTransform()->getForward() * 5.0f * dt;
 			getEntity()->getTransform()->Move(test);
 		}
-		//if (getCore()->getInput()->isKeyHeld('d'))
-		//{
-		//	getEntity()->getTransform()->Rotate(angle * dt, 0, 0);
-		//}
+		if (getCore()->getInput()->isKeyPressed(KEY_LSHIFT))
+		{
+			getEntity()->getComponent<AudioSource>()->play();
+		}
 	}
 private:
 	float angle = 360.0f;
@@ -106,6 +105,7 @@ int main()
 	std::shared_ptr<Core> core = Core::initialize(); // initializes core
 
 	std::shared_ptr<Environment> environment = core->createEnvironment();
+
 	std::shared_ptr<Entity> curuthers = environment->addEntity();
 	std::shared_ptr<Entity> triangle = environment->addEntity(); // creating entity, core holds on list
 	std::shared_ptr<Entity> floor = environment->addEntity(); 
@@ -114,6 +114,8 @@ int main()
 
 	camera->addComponent<Camera>();
 	camera->addComponent<CameraController>();
+	curuthers->addComponent<AudioSource>();
+	curuthers->getComponent<AudioSource>()->setAudio(curuthers->getEnvironment()->getCore()->getResources()->load<Audio>("../src/Resources/Audio/dixie_horn.ogg"));
 
 	triangle->addComponent<Player>(); // creating component, entity holds on list
 	curuthers->addComponent<Controller>(); 
@@ -128,9 +130,10 @@ int main()
 	floor->addComponent<BoxCollider>();
 
 	triangle->addComponent<RigidBody>();
-	//curuthers->addComponent<RigidBody>();
+	curuthers->addComponent<RigidBody>();
 	floor->addComponent<RigidBody>();
 
+	curuthers->getComponent<Renderer>()->path = "../src/Resources/Models/curuthers.obj";
 	curuthers->getComponent<Renderer>()->path = "../src/Resources/Models/curuthers.obj";
 	floor->getComponent<Renderer>()->path = "../src/Resources/Models/floor.obj";
 	

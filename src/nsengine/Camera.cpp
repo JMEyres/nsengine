@@ -29,5 +29,7 @@ namespace nsengine
 	void Camera::UpdateCamera()
 	{
 		viewMatrix = rend::inverse(getEntity()->getTransform()->Model());
+		glm::vec3 pos = getEntity()->getTransform()->getPosition();
+		alListener3f(AL_POSITION, pos.x, pos.y, pos.z);
 	}
 }

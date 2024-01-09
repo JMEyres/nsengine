@@ -1,0 +1,221 @@
+commit 63996931aeb3f5d78a0eceb7f61f2cb3d6ed6beb
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Jan 9 01:35:28 2024 +0000
+
+    Fixed cam
+
+commit c472fd31ef69bfeb0c8737d618e3bcb02dd969cd
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Jan 9 01:10:29 2024 +0000
+
+    Included OpenAL Stuff
+
+commit 8b59b591f7522662140bb98e6436968c11c77075
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Jan 9 00:27:17 2024 +0000
+
+    Full Camera movement
+
+commit b217c8c27f813ad8270cd45b06ca8666234420dc
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Mon Jan 8 19:31:55 2024 +0000
+
+    Camera in, fixed multi input
+
+commit 1ede7293ee131b2067aaa5f60f5a2c2494762aab
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Sun Jan 7 23:43:32 2024 +0000
+
+    Collison working, woohooo
+
+commit 10e039fc24003db87fe951c4fc735d2775e31cb4
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Sun Jan 7 22:51:07 2024 +0000
+
+    stuff be working
+
+commit d6943b59109e8302262ff0e160cb7f588ee9f1af
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Sun Jan 7 22:01:11 2024 +0000
+
+    Pushing physics stuff
+
+commit 3f16cde7dde1b097d548d4484dfdc1c842826817
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Jan 5 22:05:47 2024 +0000
+
+    Included physics react 3d
+
+commit ef70021366cc1d190726af6c6eb79d3414135ba6
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Jan 5 15:34:39 2024 +0000
+
+    Committing to protect small changes before trying to implement pellet
+
+commit cd282c538076bc66fdb1955de9aa66c02393a61a
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Thu Jan 4 21:54:06 2024 +0000
+
+    Now provides very simple collision response
+
+commit 262b954865f4adb793dfd84d79e592dffb8524a9
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Thu Jan 4 16:18:21 2024 +0000
+
+    Collision detection working
+
+commit cdf1a3b99deff39547ebcce8b972e4d73e85a709
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Wed Jan 3 23:16:26 2024 +0000
+
+    03/01/24 Progess
+    
+    General progress on collision component
+
+commit 591c7e5a512bffc54bd9ecfb77f8474ae295648c
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Jan 2 14:35:08 2024 +0000
+
+    Some small changes
+
+commit 8ddccba13f02f5f3478df2ee4c093b3255c3c3ee
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Dec 1 15:55:38 2023 +0000
+
+    Model renderer working-still needs to be improved
+    
+    For some reason rotation is not working, and need to make it so i dont do getResources()->load<Model>("string")->model. Need to cut out the ->model bit
+
+commit 5d737366431b325beb91e4a3abbf71097b02b925
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Nov 28 16:04:54 2023 +0000
+
+    Texture loading in triangle renderer
+    
+    Need to abstract it out so that it can be done outside of the class and in main, also started working on the renderer component for models - does not currently work
+
+commit ebfaf9e6c0a96c03b20c14410f0e33fac96f4f90
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 24 15:59:31 2023 +0000
+
+    Progress on texture resource
+
+commit 2123f807565bf087707d725859c8aed3ca5981df
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 24 13:18:47 2023 +0000
+
+    Spring cleaning
+
+commit 7d374d4e0f8d4aa3dbda9bd4fd9ab67bc66cdbdd
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 17 15:58:04 2023 +0000
+
+    Transform and input class changes
+    
+    Changed Transform to be outsdide of trianglerenderer and started on input class
+
+commit 7824cf0867a784fdb44cb6bb662ec53a5b8b9717
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 3 15:56:13 2023 +0000
+
+    Added esc close event
+
+commit a89dcc781356eb2d385d651518392a3e4d1a937a
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 3 15:37:32 2023 +0000
+
+    Got Delta time setup and working in the environment class
+
+commit bc8799baf90fc00103ace79993420ebb60bc63d3
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 3 15:10:21 2023 +0000
+
+    Setup hierarchy to now have environment class
+    
+    Hierarchy now goes Core->Environment->Entity->Component
+
+commit 911578ca365ec0ac561cff9b8b83cc12e5b07ab1
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Nov 3 12:31:50 2023 +0000
+
+    Got all three parts of transform component working
+    
+    Rotation, Position and Scale
+
+commit 4bdd1d11d1bc85b1a3118385a0e4c2b62ab36602
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Thu Nov 2 14:36:54 2023 +0000
+
+    GetComponent function
+
+commit 77a1b983177cb20a2a9f937df26330e7951fd7f9
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Mon Oct 30 21:59:13 2023 +0000
+
+    More work on the transform component
+
+commit 8b0dcbfb4d6f81fcbcdb624696957a4ffdb5cce3
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Oct 27 15:53:53 2023 +0100
+
+    Triangle is now rendering
+    
+    Also started work on the resources classes and the transform component
+
+commit ea41dd7ceebce85ac98ec4b97dcc11f444f36d41
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Thu Oct 26 15:25:57 2023 +0100
+
+    Attempted to setup rend to display curuthers
+    
+    some further work needed for this
+
+commit a55f88713d22d1bc3f18c349e44e9b3af6862d57
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Fri Oct 20 16:01:20 2023 +0100
+
+    Got SDL window appearing
+    
+    Basically just lab 2 stuff i apparently forgot, and rearranged files in rend
+
+commit 48194cedbb3049fe7bb05768b8bd104938ce6337
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Thu Oct 19 14:29:48 2023 +0100
+
+    Adding rend to project
+
+commit 70e9bfd55a59d11687dc015b91637c13c6b22791
+Author: Josh Eyres (s5304176) <s5304176@bournemouth.ac.uk>
+Date:   Fri Oct 13 15:59:09 2023 +0100
+
+    Lab 3
+
+commit 98ffe29d91133c2141a6814410eb100dab5ff189
+Author: JMEyres <josh.m.eyres@gmail.com>
+Date:   Fri Oct 13 12:56:59 2023 +0100
+
+    Lab 2
+    
+    GEP Lab 2
+
+commit bc2a2187839f30931fc9277959595ae7ff52dace
+Author: JMEyres <josh.m.eyres@gmail.com>
+Date:   Fri Sep 29 15:49:19 2023 +0100
+
+    Added core files to the nsengine directory
+    
+    Initial files for game engine
+
+commit 5dc777e6741bf934145b5dde9150bf83c31d06b3
+Author: JMEyres <josh.m.eyres@gmail.com>
+Date:   Fri Sep 29 15:03:46 2023 +0100
+
+    Initial commit
+    
+    Contains basic cmake startup
+
+commit d0e18af2e0d767b0f61cd9ed749a56ac3aa1375f
+Author: Josh Eyres <72137589+JMEyres@users.noreply.github.com>
+Date:   Fri Sep 29 14:59:34 2023 +0100
+
+    Create README.md

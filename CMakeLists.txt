@@ -93,6 +93,8 @@ add_library(nsengine
 	src/nsengine/RigidBody.h
 	src/nsengine/Audio.cpp
 	src/nsengine/Audio.h
+	src/nsengine/AudioSource.cpp
+	src/nsengine/AudioSource.h
 	)
 	
 set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)
