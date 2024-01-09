@@ -7,12 +7,14 @@ include_directories(
 	contrib/windows-cl-amd64/glew/include
 	contrib/windows-cl-amd64/stb/include
 	contrib/windows-cl-amd64/ReactPhysics3D/include
+	contrib/windows-cl-amd64/OpenAL/include
 )
 
 link_directories(
 	${PROJECT_SOURCE_DIR}/contrib/windows-cl-amd64/SDL2/lib
 	${PROJECT_SOURCE_DIR}/contrib/windows-cl-amd64/glew/lib
 	${PROJECT_SOURCE_DIR}/contrib/windows-cl-amd64/ReactPhysics3D/lib
+	${PROJECT_SOURCE_DIR}/contrib/windows-cl-amd64/OpenAL/lib
 )
 
 add_subdirectory(contrib/windows-cl-amd64/ReactPhysics3D)
@@ -89,11 +91,12 @@ add_library(nsengine
 	src/nsengine/BoxCollider.h
 	src/nsengine/RigidBody.cpp
 	src/nsengine/RigidBody.h
-
+	src/nsengine/Audio.cpp
+	src/nsengine/Audio.h
 	)
 	
 set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)
-target_link_libraries(nsengine rend SDL2)
+target_link_libraries(nsengine rend SDL2 ReactPhysics3D openal32)
 
 add_executable(demo
 	src/demo/player.h
@@ -101,4 +104,4 @@ add_executable(demo
 )
 
 set_property(TARGET demo PROPERTY CXX_STANDARD 17)
-target_link_libraries(demo nsengine ReactPhysics3D)
+target_link_libraries(demo nsengine)

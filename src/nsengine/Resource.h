@@ -1,7 +1,9 @@
 #pragma once
-#include<string>
-#include<memory>
-#include<rend/rend.h>
+#include <string>
+#include <memory>
+#include <rend/rend.h>
+#include <AL/al.h>
+#include <AL/alc.h>
 
 namespace nsengine
 {
