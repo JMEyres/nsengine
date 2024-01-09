@@ -12,10 +12,14 @@ namespace nsengine
 		rotation = _angle; // set this to be in degrees just in case
 	}
 
-	void Transform::rotate(float x, float y, float z)
+	rend::vec3 Transform::getRotation()
 	{
-		//std::cout << y << std::endl;
-		rotation += rend::vec3(x, y, z);
+		return rotation;
+	}
+
+	void Transform::rotate(rend::vec3 rotate)
+	{
+		rotation += rotate;
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)
@@ -23,7 +27,12 @@ namespace nsengine
 		position = _pos;
 	}
 
-	glm::vec3 Transform::getPosition()
+	void Transform::Move(rend::vec3 movement)
+	{
+		position += movement;
+	}
+
+	rend::vec3 Transform::getPosition()
 	{
 		return position;
 	}
@@ -33,10 +42,47 @@ namespace nsengine
 		scale = _scale;
 	}
 
-	void Transform::Move(rend::vec3 _movement)
+	rend::vec3 Transform::getScale()
 	{
-	
+		return scale;
 	}
+
+	rend::vec3 Transform::getUp()
+	{
+		rend::quat quat(rotation);
+		return quat * rend::vec3(0, 1, 0);
+	}
+
+	rend::vec3 Transform::getDown()
+	{
+		rend::quat quat(rotation);
+		return quat * rend::vec3(0, -1, 0);
+	}
+
+	rend::vec3 Transform::getRight()
+	{
+		rend::quat quat(rotation);
+		return quat * rend::vec3(1, 0, 0);
+	}
+
+	rend::vec3 Transform::getLeft()
+	{
+		rend::quat quat(rotation);
+		return quat * rend::vec3(-1, 0, 0);
+	}
+
+	rend::vec3 Transform::getForward()
+	{
+		rend::quat quat(rotation);
+		return quat * rend::vec3(0, 0, -1); // glm has -z forwards
+	}
+
+	rend::vec3 Transform::getBack()
+	{
+		rend::quat quat(rotation);
+		return quat * rend::vec3(0, 0, 1);
+	}
+
 
 	rend::mat4 Transform::Model()
 	{
@@ -44,7 +90,7 @@ namespace nsengine
 
 		mat = rend::translate(mat, position); // set position of matrix
 
-		mat = rend::rotate(mat, rend::radians(rotation.y), rend::vec3(0, 1, 0)); // set rotations, y first so it favours the y axis rotation because it is the msot commonly used
+		mat = rend::rotate(mat, rend::radians(rotation.y), rend::vec3(0, 1, 0)); // set rotations, y first so it favours the y axis rotation because it is the most commonly used
 		mat = rend::rotate(mat, rend::radians(rotation.x), rend::vec3(1, 0, 0));
 		mat = rend::rotate(mat, rend::radians(rotation.z), rend::vec3(0, 0, 1));
 

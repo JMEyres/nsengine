@@ -3,10 +3,7 @@
 using namespace nsengine;
 
 #undef main // SDL2 Wraps everything in its own main so causes a linker error, this stops it looking for that undefines it
-#define KEY_UP    72
-#define KEY_LEFT  75
-#define KEY_RIGHT 77
-#define KEY_DOWN  80
+
 struct Player : Component
 {
 	Player() :
@@ -28,15 +25,16 @@ struct Controller : Component
 	void onTick()
 	{
 		float dt = getCore()->getDeltaTime();
-		glm::vec3 currentRot = getEntity()->getTransform()->rotation;
-		if (getCore()->getInput()->isKeyHeld('a'))
+		
+		if (getCore()->getInput()->isKeyHeld(KEY_L))
 		{
-			getEntity()->getTransform()->rotate(0, -angle * dt, 0);
+			rend::vec3 test = getEntity()->getTransform()->getForward() * 5.0f * dt;
+			getEntity()->getTransform()->Move(test);
 		}
-		if (getCore()->getInput()->isKeyHeld('d'))
-		{
-			getEntity()->getTransform()->rotate(angle * dt, 0, 0);
-		}
+		//if (getCore()->getInput()->isKeyHeld('d'))
+		//{
+		//	getEntity()->getTransform()->rotate(angle * dt, 0, 0);
+		//}
 	}
 private:
 	float angle = 360.0f;
@@ -48,13 +46,63 @@ struct CameraController : Component
 	{
 		float dt = getCore()->getDeltaTime();
 		
-		if (getCore()->getInput()->isKeyHeld('l'))
+		// Rotate
+		if (getCore()->getInput()->isKeyHeld(KEY_RIGHT))
 		{
-			getEntity()->getTransform()->rotate(0, -angle * dt, 0);
+			rend::vec3 rotation = rend::vec3((0, -angle * dt, 0));
+			getEntity()->getTransform()->rotate(rotation);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_LEFT))
+		{
+			rend::vec3 rotation = rend::vec3((0, angle * dt, 0));
+			getEntity()->getTransform()->rotate(rotation);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_DOWN))
+		{
+			rend::vec3 rotation = rend::vec3((angle * dt, 0, 0));
+			getEntity()->getTransform()->rotate(rotation);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_UP))
+		{
+			rend::vec3 rotation = rend::vec3((-angle * dt, 0, 0));
+			getEntity()->getTransform()->rotate(rotation);
+		}
+
+		// Move
+		if (getCore()->getInput()->isKeyHeld(KEY_A))
+		{
+			rend::vec3 movement = getEntity()->getTransform()->getLeft() * speed * dt;
+			getEntity()->getTransform()->Move(movement);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_D))
+		{
+			rend::vec3 movement = getEntity()->getTransform()->getRight() * speed * dt;
+			getEntity()->getTransform()->Move(movement);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_S))
+		{
+			rend::vec3 movement = getEntity()->getTransform()->getBack() * speed * dt;
+			getEntity()->getTransform()->Move(movement);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_W))
+		{
+			rend::vec3 movement = getEntity()->getTransform()->getForward() * speed * dt;
+			getEntity()->getTransform()->Move(movement);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_SPACE))
+		{
+			rend::vec3 movement = getEntity()->getTransform()->getUp() * speed * dt;
+			getEntity()->getTransform()->Move(movement);
+		}
+		if (getCore()->getInput()->isKeyHeld(KEY_LCTRL))
+		{
+			rend::vec3 movement = getEntity()->getTransform()->getDown() * speed * dt;
+			getEntity()->getTransform()->Move(movement);
 		}
 	}
 private:
-	float angle = 360.0f;
+	float angle = 90.0f;
+	float speed = 10.0f;
 };
 
 int main()
@@ -73,7 +121,9 @@ int main()
 
 	triangle->addComponent<Player>(); // creating component, entity holds on list
 	curuthers->addComponent<Controller>(); 
+
 	triangle->addComponent<TriangleRenderer>(); // creating component, entity holds on list
+
 	curuthers->addComponent<Renderer>(); // "../src/Resources/Models/curuthers.obj"
 	floor->addComponent<Renderer>();
 
@@ -82,7 +132,7 @@ int main()
 	floor->addComponent<BoxCollider>();
 
 	triangle->addComponent<RigidBody>();
-	curuthers->addComponent<RigidBody>();
+	//curuthers->addComponent<RigidBody>();
 	floor->addComponent<RigidBody>();
 
 	curuthers->getComponent<Renderer>()->path = "../src/Resources/Models/curuthers.obj";

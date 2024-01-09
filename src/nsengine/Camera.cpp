@@ -20,10 +20,10 @@ namespace nsengine
 
 		// Set up the viewing matrix
 		// This represents the camera's orientation and position
-		viewMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -15.0f));
+		viewMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 
 		// Set up a projection matrix
-		projMatrix = glm::perspective(45.0f, 1.0f, 0.1f, 100.0f);
+		projMatrix = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
 	}
 
 	void Camera::UpdateCamera()
