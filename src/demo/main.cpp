@@ -33,7 +33,7 @@ struct Controller : Component
 		}
 		//if (getCore()->getInput()->isKeyHeld('d'))
 		//{
-		//	getEntity()->getTransform()->rotate(angle * dt, 0, 0);
+		//	getEntity()->getTransform()->Rotate(angle * dt, 0, 0);
 		//}
 	}
 private:
@@ -49,23 +49,19 @@ struct CameraController : Component
 		// Rotate
 		if (getCore()->getInput()->isKeyHeld(KEY_RIGHT))
 		{
-			rend::vec3 rotation = rend::vec3((0, -angle * dt, 0));
-			getEntity()->getTransform()->rotate(rotation);
+			getEntity()->getTransform()->Rotate(0, -angle * dt, 0);
 		}
 		if (getCore()->getInput()->isKeyHeld(KEY_LEFT))
 		{
-			rend::vec3 rotation = rend::vec3((0, angle * dt, 0));
-			getEntity()->getTransform()->rotate(rotation);
+			getEntity()->getTransform()->Rotate(0, angle * dt, 0);
 		}
 		if (getCore()->getInput()->isKeyHeld(KEY_DOWN))
 		{
-			rend::vec3 rotation = rend::vec3((angle * dt, 0, 0));
-			getEntity()->getTransform()->rotate(rotation);
+			getEntity()->getTransform()->Rotate(angle * dt, 0, 0);
 		}
 		if (getCore()->getInput()->isKeyHeld(KEY_UP))
 		{
-			rend::vec3 rotation = rend::vec3((-angle * dt, 0, 0));
-			getEntity()->getTransform()->rotate(rotation);
+			getEntity()->getTransform()->Rotate(-angle * dt, 0, 0);
 		}
 
 		// Move

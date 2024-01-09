@@ -10,7 +10,7 @@ namespace nsengine
 
 		void setRotation(rend::vec3);
 		rend::vec3 getRotation();
-		void rotate(rend::vec3);
+		void Rotate(float x, float y, float z);
 
 		void setPosition(rend::vec3);
 		rend::vec3 getPosition();

@@ -1,7 +1,6 @@
 #include "Core.h"
 #include "Resources.h"
 
-
 namespace nsengine
 {
 	std::shared_ptr<Core> Core::initialize()

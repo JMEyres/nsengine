@@ -17,9 +17,9 @@ namespace nsengine
 		return rotation;
 	}
 
-	void Transform::rotate(rend::vec3 rotate)
+	void Transform::Rotate(float x, float y, float z)
 	{
-		rotation += rotate;
+		rotation += rend::vec3 (x,y,z);
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)

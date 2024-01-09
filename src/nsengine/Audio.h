@@ -6,5 +6,7 @@ namespace nsengine
 	struct Audio : Resource
 	{
 		void onLoad();
+	private:
+		//std::shared_ptr<Audiosource> texture;
 	};
 }
