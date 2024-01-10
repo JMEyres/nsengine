@@ -102,6 +102,11 @@ namespace nsengine
 
 					input->releasedKeys.push_back(event.key.keysym.sym);
 				}
+				
+				if (event.type == SDL_MOUSEMOTION)
+				{
+					std::cout << event.motion.x << std::endl;
+				}
 
 				switch (event.key.keysym.sym)
 				{

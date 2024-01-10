@@ -47,7 +47,7 @@ struct Controller : Component
 		}
 		if (getCore()->getInput()->isKeyHeld(KEY_H))
 		{
-			getEntity()->getTransform()->Rotate(0, -angle * dt, 0);
+			getEntity()->getTransform()->Rotate(-angle * dt, 0, 0);
 		}
 	}
 private:
