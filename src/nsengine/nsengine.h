@@ -15,6 +15,7 @@
 #include <nsengine/Model.h>
 #include <nsengine/Renderer.h>
 #include <nsengine/BoxCollider.h>
+#include <nsengine/CapsuleCollider.h>
 #include <nsengine/RigidBody.h>
 #include <nsengine/Audio.h>
 #include <nsengine/AudioSource.h>

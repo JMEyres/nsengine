@@ -12,6 +12,7 @@ namespace nsengine
 		virtual void onInitialize();
 		virtual void onTick();
 		virtual void onPhysicsTick();
+		virtual void onCreate();
 		virtual void onDisplay();
 
 		std::shared_ptr<Entity> getEntity();
@@ -26,6 +27,7 @@ namespace nsengine
 		void initialize();
 		void tick();
 		void physicsTick();
+		void create();
 		void display();
 	protected:
 		std::weak_ptr<Component> self; // entity owns component object

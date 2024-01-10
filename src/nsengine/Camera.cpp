@@ -11,6 +11,7 @@ namespace nsengine
 
 	void Camera::onTick()
 	{
+		//Follow();
 		UpdateCamera();
 	}
 
@@ -28,9 +29,33 @@ namespace nsengine
 
 	void Camera::UpdateCamera()
 	{
-		viewMatrix = rend::inverse(getEntity()->getTransform()->Model());
+		if(!follow)
+			viewMatrix = rend::inverse(getEntity()->getTransform()->Model());
 
 		glm::vec3 pos = getEntity()->getTransform()->getPosition();
 		alListener3f(AL_POSITION, pos.x, pos.y, pos.z);
+	}
+
+	void Camera::Follow()
+	{
+		follow = true;
+		glm::vec3 pos = target->getTransform()->getPosition();
+		glm::vec3 rot = target->getTransform()->getRotation();
+		pos = pos + offset;
+		getEntity()->getTransform()->setPosition(pos);
+
+		glm::vec3 targetPos = target->getTransform()->getPosition() + glm::vec3(3,1,0);
+		glm::vec3 cameraPos = getEntity()->getTransform()->getPosition();
+		viewMatrix = glm::lookAt(cameraPos, targetPos, glm::vec3(0, 1, 0));
+	}
+
+	void Camera::SetTarget(std::shared_ptr<Entity> entity)
+	{
+		target = entity;
+	}
+
+	void Camera::SetOffset(float x, float y, float z)
+	{
+		offset = glm::vec3(x, y, z);
 	}
 }

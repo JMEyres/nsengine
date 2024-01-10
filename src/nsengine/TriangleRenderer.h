@@ -17,5 +17,6 @@ namespace nsengine
 
 		void onInitialize();
 		void onDisplay();
+		int id;
 	};
 }

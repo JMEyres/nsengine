@@ -17,11 +17,18 @@ namespace nsengine
 		void SetupCamera();
 		void UpdateCamera();
 
+		void SetTarget(std::shared_ptr<Entity> entity);
+		void SetOffset(float x, float y, float z);
+		void Follow();
+
 		glm::mat4 viewMatrix;
 		glm::mat4 projMatrix;
 
 		float cameraAngleX;
 		float cameraAngleY;
 	private:
+		std::shared_ptr<Entity> target;
+		glm::vec3 offset = glm::vec3(0);
+		bool follow;
 	};
 }

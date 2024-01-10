@@ -27,6 +27,7 @@ namespace nsengine
 			rtn->self = rtn;
 
 			components.push_back(rtn);
+			rtn->onCreate();
 
 			return rtn;
 		}

@@ -7,14 +7,10 @@ namespace nsengine
 {
 	struct BoxCollider : Component
 	{
-		bool isColliding(glm::vec3 pos, glm::vec3 size);
-		glm::vec3 getCollisionResponse(glm::vec3 pos, glm::vec3 size);
+		void createCollider(float x, float y, float z);
 
-		void onInitialize();
-		void setSize(float x, float y, float z);
 		rp3d::BoxShape* box;
 	private:
-		glm::vec3 size = glm::vec3(1);
-		glm::vec3 offset;
+		rp3d::Vector3 size = rp3d::Vector3(1,1,1);
 	};
 }

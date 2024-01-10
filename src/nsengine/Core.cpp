@@ -66,6 +66,8 @@ namespace nsengine
 	{
 		running = true;
 		SDL_Event event = { 0 };
+		physicsWorld->setGravity(rp3d::Vector3(0, -2, 0));
+		int mx, my;
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{
@@ -79,34 +81,33 @@ namespace nsengine
 		{
 			while (SDL_PollEvent(&event))
 			{
-				if (event.type == SDL_QUIT)
+				switch (event.type)
 				{
-					running = false;
-				}
-
-				if (event.type == SDL_KEYDOWN)
-				{
-					if (std::find(input->keys.begin(), input->keys.end(), event.key.keysym.sym) == input->keys.end()) input->keys.push_back(event.key.keysym.sym);
-					input->pressedKeys.push_back(event.key.keysym.sym);
-				}
-
-				if (event.type == SDL_KEYUP)
-				{
-					for (size_t ki = 0; ki < input->keys.size(); ++ki)
-					{
-						if (input->keys.at(ki) == event.key.keysym.sym)
+					case SDL_QUIT:
+						running = false;
+						break;
+					case SDL_KEYDOWN:
+						if (std::find(input->keys.begin(), input->keys.end(), event.key.keysym.sym) == input->keys.end()) input->keys.push_back(event.key.keysym.sym);
+						input->pressedKeys.push_back(event.key.keysym.sym);
+						break;
+					case SDL_KEYUP:
+						for (size_t ki = 0; ki < input->keys.size(); ++ki)
 						{
-							input->keys.erase(input->keys.begin() + ki);
+							if (input->keys.at(ki) == event.key.keysym.sym)
+							{
+								input->keys.erase(input->keys.begin() + ki);
+							}
 						}
-					}
 
-					input->releasedKeys.push_back(event.key.keysym.sym);
+						input->releasedKeys.push_back(event.key.keysym.sym);
+						break;
+					case SDL_MOUSEMOTION:
+						SDL_SetRelativeMouseMode(SDL_TRUE);
+						std::cout << event.motion.x << std::endl;
+						break;
 				}
-				
-				if (event.type == SDL_MOUSEMOTION)
-				{
-					std::cout << event.motion.x << std::endl;
-				}
+				//SDL_GetRelativeMouseState(&mx, &my);
+				//std::cout << mx << " " << my << std::endl;
 
 				switch (event.key.keysym.sym)
 				{

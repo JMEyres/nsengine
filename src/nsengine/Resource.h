@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <memory>
+#include <filesystem>
 #include <rend/rend.h>
 #include <AL/al.h>
 #include <AL/alc.h>
@@ -14,9 +15,10 @@ namespace nsengine
 
 		std::string getPath();
 
-	private:
+	protected:
 		friend struct Resources;
 		std::weak_ptr<Resources> resources;
+		std::string cwd = std::filesystem::current_path().string();
 		std::string path;
 		void load();
 	};

@@ -13,6 +13,7 @@ namespace nsengine
 		void onInitialize();
 
 		void setType(rp3d::BodyType type);
+		void addCollisionShape(rp3d::CollisionShape* shape);
 		
 		void move(float x, float y, float z);
 		void rotate(float x, float y, float z);
@@ -21,5 +22,6 @@ namespace nsengine
 		rp3d::BodyType rbType = rp3d::BodyType::DYNAMIC;
 		rp3d::RigidBody* rb;
 		rp3d::Collider* collider;
+		rp3d::CollisionShape* collisionShape;
 	};
 }

@@ -97,6 +97,8 @@ add_library(nsengine
 	src/nsengine/AudioSource.h
 	src/nsengine/Gui.cpp
 	src/nsengine/Gui.h
+	src/nsengine/CapsuleCollider.cpp
+	src/nsengine/CapsuleCollider.h
 	)
 	
 set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)

@@ -8,6 +8,8 @@ namespace nsengine
 	{}
 	void Component::onPhysicsTick()
 	{}
+	void Component::onCreate()
+	{}
 	void Component::onDisplay()
 	{}
 
@@ -22,6 +24,10 @@ namespace nsengine
 	void Component::physicsTick()
 	{
 		onPhysicsTick();
+	}
+	void Component::create()
+	{
+		onCreate();
 	}
 	void Component::display()
 	{

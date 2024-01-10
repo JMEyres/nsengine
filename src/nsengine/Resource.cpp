@@ -5,5 +5,10 @@ namespace nsengine
 {
 	void Resource::load() { onLoad(); }
 
-	std::string Resource::getPath() { return path; }
+	std::string Resource::getPath() 
+	{ 
+		cwd = cwd + "/Resources";
+		std::string test = cwd + path;
+		return test;
+	}
 }
