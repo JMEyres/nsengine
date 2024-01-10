@@ -20,7 +20,6 @@ namespace nsengine
 	void Transform::Rotate(float x, float y, float z)
 	{
 		rotation += rend::vec3 (x,y,z);
-
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)
@@ -28,8 +27,9 @@ namespace nsengine
 		position = _pos;
 	}
 
-	void Transform::Move(rend::vec3 movement)
+	void Transform::Move(float x, float y, float z)
 	{
+		rend::vec3 movement = Model() * rend::vec4(x, y, z, 0);
 		position += movement;
 	}
 
@@ -46,28 +46,6 @@ namespace nsengine
 	rend::vec3 Transform::getScale()
 	{
 		return scale;
-	}
-
-	rend::vec3 Transform::getForward(rend::vec3 movement)
-	{
-		rend::vec3 fwd = Model() * rend::vec4(movement, 0);
-		fwd = rend::normalize(fwd);
-		return fwd;
-	}
-
-	rend::vec3 Transform::getRight(rend::vec3 movement)
-	{
-		rend::vec3 fwd = Model() * rend::vec4(movement, 0);
-		fwd = rend::normalize(fwd);
-		rend::vec3 right = rend::cross(fwd, rend::vec3(0, 1, 0));
-		right = rend::normalize(right);
-		return right;
-	}
-
-	rend::vec3 Transform::getUp(rend::vec3 movement)
-	{
-		rend::quat quat(rotation);
-		return quat * rend::vec3(0, 1, 0);
 	}
 
 	rend::mat4 Transform::Model()

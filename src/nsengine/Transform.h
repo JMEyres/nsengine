@@ -14,25 +14,16 @@ namespace nsengine
 
 		void setPosition(rend::vec3);
 		rend::vec3 getPosition();
-		void Move(rend::vec3);
-		void setSpeed(float);
+		void Move(float x, float y, float z);
 
 		void setScale(rend::vec3);
 		rend::vec3 getScale();
 
 		rend::mat4 Model();
-
-		rend::vec3 getForward(rend::vec3 movement);
-		rend::vec3 getRight(rend::vec3 movement);
-		rend::vec3 getUp(rend::vec3 movement);
-
 	private:
 		rend::mat4 mat;
 		rend::vec3 rotation;
 		rend::vec3 position;
 		rend::vec3 scale;
-		//rend::vec3 fwd;
-		//rend::vec3 right;
-		//rend::vec3 up;
 	};
 }
