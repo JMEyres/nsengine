@@ -95,6 +95,8 @@ add_library(nsengine
 	src/nsengine/Audio.h
 	src/nsengine/AudioSource.cpp
 	src/nsengine/AudioSource.h
+	src/nsengine/Gui.cpp
+	src/nsengine/Gui.h
 	)
 	
 set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)

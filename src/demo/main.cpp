@@ -21,14 +21,31 @@ private:
 
 struct Controller : Component
 {
+	void onPhysicsTick()
+	{
+		float dt = getCore()->getDeltaTime();
+
+		if (getCore()->getInput()->isKeyHeld(KEY_L))
+		{
+			//rend::vec3 test = getEntity()->getTransform()->getForward() * -5.0f * dt;
+			//getEntity()->getComponent()->Move(test);
+		}
+		if (getCore()->getInput()->isKeyPressed(KEY_LSHIFT))
+		{
+			getEntity()->getComponent<AudioSource>()->play();
+		}
+	}
+
 	void onTick()
 	{
 		float dt = getCore()->getDeltaTime();
 		
 		if (getCore()->getInput()->isKeyHeld(KEY_L))
 		{
-			rend::vec3 test = getEntity()->getTransform()->getForward() * 5.0f * dt;
-			getEntity()->getTransform()->Move(test);
+			//rend::vec3 test = getEntity()->getTransform()->getForward() * -5.0f * dt;
+
+			//getEntity()->getComponent<RigidBody>()->move(test.x, test.y, test.z);
+			//getEntity()->getTransform()->Move(test);
 		}
 		if (getCore()->getInput()->isKeyPressed(KEY_LSHIFT))
 		{
@@ -64,36 +81,45 @@ struct CameraController : Component
 		}
 
 		// Move
-		if (getCore()->getInput()->isKeyHeld(KEY_A))
-		{
-			rend::vec3 movement = getEntity()->getTransform()->getLeft() * speed * dt;
-			getEntity()->getTransform()->Move(movement);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_D))
-		{
-			rend::vec3 movement = getEntity()->getTransform()->getRight() * speed * dt;
-			getEntity()->getTransform()->Move(movement);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_S))
-		{
-			rend::vec3 movement = getEntity()->getTransform()->getBack() * speed * dt;
-			getEntity()->getTransform()->Move(movement);
-		}
+		//if (getCore()->getInput()->isKeyHeld(KEY_A))
+		//{
+		//	rend::vec3 movement = getEntity()->getTransform()->getLeft() * speed * dt;
+		//	getEntity()->getTransform()->Move(movement);
+		//}
+		//if (getCore()->getInput()->isKeyHeld(KEY_D))
+		//{
+		//	rend::vec3 movement = getEntity()->getTransform()->getRight() * speed * dt;
+		//	getEntity()->getTransform()->Move(movement);
+		//}
+		//if (getCore()->getInput()->isKeyHeld(KEY_S))
+		//{
+		//	rend::vec3 movement = getEntity()->getTransform()->getBack() * speed * dt;
+		//	getEntity()->getTransform()->Move(movement);
+		//}
 		if (getCore()->getInput()->isKeyHeld(KEY_W))
 		{
-			rend::vec3 movement = getEntity()->getTransform()->getForward() * speed * dt;
-			getEntity()->getTransform()->Move(movement);
+			//rend::vec3 movement = getEntity()->getTransform()->getForward() * speed * dt;
+			rend::vec3 movement = rend::vec3(0, 0, -speed * dt);
+
+			rend::vec3 fwd = getEntity()->getTransform()->Model() * rend::vec4(movement, 0);
+			fwd = rend::normalize(fwd);
+			rend::vec3 right = rend::cross(fwd, rend::vec3(0,1,0));
+			right = rend::normalize(right);
+			rend::vec3 up = rend::cross(right, fwd);
+			up = rend::normalize(up);
+			getEntity()->getTransform()->Move(fwd);
 		}
-		if (getCore()->getInput()->isKeyHeld(KEY_SPACE))
-		{
-			rend::vec3 movement = getEntity()->getTransform()->getUp() * speed * dt;
-			getEntity()->getTransform()->Move(movement);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_LCTRL))
-		{
-			rend::vec3 movement = getEntity()->getTransform()->getDown() * speed * dt;
-			getEntity()->getTransform()->Move(movement);
-		}
+		//if (getCore()->getInput()->isKeyHeld(KEY_SPACE))
+		//{
+		//	rend::vec3 movement = getEntity()->getTransform()->getUp() * speed * dt;
+		//	std::cout << movement.x << " " << movement.y << " " << movement.z << std::endl;
+		//	getEntity()->getTransform()->Move(movement);
+		//}
+		//if (getCore()->getInput()->isKeyHeld(KEY_LCTRL))
+		//{
+		//	rend::vec3 movement = getEntity()->getTransform()->getDown() * speed * dt;
+		//	getEntity()->getTransform()->Move(movement);
+		//}
 	}
 private:
 	float angle = 90.0f;
@@ -126,8 +152,12 @@ int main()
 	floor->addComponent<Renderer>();
 
 	triangle->addComponent<BoxCollider>();
+
 	curuthers->addComponent<BoxCollider>();
+	curuthers->getComponent<BoxCollider>()->setSize(2.0f, 2.0f, 2.0f);
+
 	floor->addComponent<BoxCollider>();
+	floor->getComponent<BoxCollider>()->setSize(100.0f, 1.0f, 100.0f);
 
 	triangle->addComponent<RigidBody>();
 	curuthers->addComponent<RigidBody>();
@@ -144,6 +174,7 @@ int main()
 	triangle->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
 	curuthers->getTransform()->setPosition(rend::vec3(-2.0f, 5.0f, -10.0f));
+	curuthers->getTransform()->setRotation(rend::vec3(0.0f, 90.0f, 0.0f));
 	curuthers->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
 	floor->getTransform()->setPosition(rend::vec3(-2.0f, -1.0f, -10.0f));

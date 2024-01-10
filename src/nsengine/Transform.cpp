@@ -20,6 +20,7 @@ namespace nsengine
 	void Transform::Rotate(float x, float y, float z)
 	{
 		rotation += rend::vec3 (x,y,z);
+
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)
@@ -47,46 +48,31 @@ namespace nsengine
 		return scale;
 	}
 
-	rend::vec3 Transform::getUp()
+	rend::vec3 Transform::getForward(rend::vec3 movement)
+	{
+		rend::vec3 fwd = Model() * rend::vec4(movement, 0);
+		fwd = rend::normalize(fwd);
+		return fwd;
+	}
+
+	rend::vec3 Transform::getRight(rend::vec3 movement)
+	{
+		rend::vec3 fwd = Model() * rend::vec4(movement, 0);
+		fwd = rend::normalize(fwd);
+		rend::vec3 right = rend::cross(fwd, rend::vec3(0, 1, 0));
+		right = rend::normalize(right);
+		return right;
+	}
+
+	rend::vec3 Transform::getUp(rend::vec3 movement)
 	{
 		rend::quat quat(rotation);
 		return quat * rend::vec3(0, 1, 0);
 	}
 
-	rend::vec3 Transform::getDown()
-	{
-		rend::quat quat(rotation);
-		return quat * rend::vec3(0, -1, 0);
-	}
-
-	rend::vec3 Transform::getRight()
-	{
-		rend::quat quat(rotation);
-		return quat * rend::vec3(1, 0, 0);
-	}
-
-	rend::vec3 Transform::getLeft()
-	{
-		rend::quat quat(rotation);
-		return quat * rend::vec3(-1, 0, 0);
-	}
-
-	rend::vec3 Transform::getForward()
-	{
-		rend::quat quat(rotation);
-		return quat * rend::vec3(0, 0, -1); // glm has -z forwards
-	}
-
-	rend::vec3 Transform::getBack()
-	{
-		rend::quat quat(rotation);
-		return quat * rend::vec3(0, 0, 1);
-	}
-
-
 	rend::mat4 Transform::Model()
 	{
-		rend::mat4 mat = rend::mat4(1.0f); // mat = matrix
+		mat = rend::mat4(1.0f); // mat = matrix
 
 		mat = rend::translate(mat, position); // set position of matrix
 

@@ -77,6 +77,11 @@ namespace nsengine
 
 	void BoxCollider::onInitialize()
 	{
-		box = getCore()->physicsCommon.createBoxShape(rp3d::Vector3(1,1,1));
+		box = getCore()->physicsCommon.createBoxShape(rp3d::Vector3(size.x, size.y, size.z));
+	}
+
+	void BoxCollider::setSize(float x, float y, float z)
+	{
+		size = glm::vec3(x, y, z);
 	}
 }

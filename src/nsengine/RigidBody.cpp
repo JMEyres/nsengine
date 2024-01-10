@@ -7,6 +7,14 @@ namespace nsengine
 		rbType = type;
 	}
 
+	void RigidBody::move(float x, float y, float z)
+	{
+		rp3d::Transform transform = rb->getTransform();
+		rp3d::Vector3 newPos = transform.getPosition() + (rp3d::Vector3(x,y, z));
+		transform.setPosition(newPos);
+		rb->setTransform(transform);
+	}
+
 	void RigidBody::onPhysicsTick()
 	{
 		rp3d::Transform transform = rb->getTransform();
@@ -31,6 +39,7 @@ namespace nsengine
 
 		rb = getCore()->physicsWorld->createRigidBody(transform);
 		rb->setType(rbType);
+		rb->enableGravity(true);
 		collider = rb->addCollider(getEntity()->getComponent<BoxCollider>()->box, rp3d::Transform::identity()); // Collider has to have a separate transform because its local. - this is what you would use to offset collider from object
 	}
 }

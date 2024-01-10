@@ -13,6 +13,8 @@ namespace nsengine
 		void onInitialize();
 
 		void setType(rp3d::BodyType type);
+		//void setRigidBodyPos(float x, float y, float z);
+		void move(float x, float y, float z);
 
 	private:
 		rp3d::BodyType rbType = rp3d::BodyType::DYNAMIC;
