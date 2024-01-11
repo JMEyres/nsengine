@@ -67,7 +67,8 @@ namespace nsengine
 		running = true;
 		SDL_Event event = { 0 };
 		physicsWorld->setGravity(rp3d::Vector3(0, -2, 0));
-		int mx, my;
+
+		SDL_SetRelativeMouseMode(SDL_TRUE);
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{
@@ -79,6 +80,9 @@ namespace nsengine
 
 		while (running)
 		{
+			int middleX = 320;
+			int middleY = 240;
+			//SDL_WarpMouseInWindow(window,middleX, middleY);
 			while (SDL_PollEvent(&event))
 			{
 				switch (event.type)
@@ -101,20 +105,10 @@ namespace nsengine
 
 						input->releasedKeys.push_back(event.key.keysym.sym);
 						break;
-					case SDL_MOUSEMOTION:
-						SDL_SetRelativeMouseMode(SDL_TRUE);
-						std::cout << event.motion.x << std::endl;
-						break;
-				}
-				//SDL_GetRelativeMouseState(&mx, &my);
-				//std::cout << mx << " " << my << std::endl;
-
-				switch (event.key.keysym.sym)
-				{
-				case SDLK_ESCAPE: running = false; break;
 				}
 			}
 
+			SDL_GetRelativeMouseState(&input->mouseX, &input->mouseY);
 			float timeStep = 1.0f / 60.0f;
 
 			for (size_t i = 0; i < environments.size(); ++i)

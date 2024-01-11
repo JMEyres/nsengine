@@ -14,6 +14,11 @@ struct Player : Component
 		float dt = getCore()->getDeltaTime();
 		angle += 360.0f*dt;
 		getEntity()->getTransform()->setRotation(rend::vec3(0, angle, 0));
+
+		if (getCore()->getInput()->isKeyPressed(KEY_ESCAPE))
+		{
+			getCore()->stop();
+		}
 	}
 
 private:
@@ -25,7 +30,7 @@ struct Controller : Component
 	void onTick()
 	{
 		float dt = getCore()->getDeltaTime();
-		
+
 		if (getCore()->getInput()->isKeyHeld(KEY_W))
 		{
 			getEntity()->getComponent<RigidBody>()->move(0, 0, speed * dt);
@@ -64,6 +69,17 @@ struct CameraController : Component
 {
 	void onTick()
 	{
+		float dt = getCore()->getDeltaTime();
+
+		glm::vec2 oldMouse;
+
+		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
+		glm::vec2 mouseDelta = oldMouse - currentMouse;
+
+		getEntity()->getTransform()->Rotate(0, mouseDelta.x*0.1f, 0);
+		getEntity()->getTransform()->Rotate(mouseDelta.y*0.1f, 0, 0);
+
+		oldMouse = currentMouse;
 		getEntity()->getComponent<Camera>()->Follow();
 	}
 };
@@ -74,7 +90,16 @@ struct DebugCameraController : Component
 	void onTick()
 	{
 		float dt = getCore()->getDeltaTime();
-		
+		glm::vec2 oldMouse;
+
+		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
+		glm::vec2 mouseDelta = oldMouse - currentMouse;
+
+		getEntity()->getTransform()->Rotate(0, mouseDelta.x, 0);
+		getEntity()->getTransform()->Rotate(mouseDelta.y, 0, 0);
+
+		oldMouse = currentMouse;
+	
 		// Rotate
 		if (getCore()->getInput()->isKeyHeld(KEY_RIGHT))
 		{
@@ -142,9 +167,9 @@ int main()
 	
 	camera->addComponent<Camera>();
 	camera->getComponent<Camera>()->SetTarget(curuthers);
-	camera->getComponent<Camera>()->SetOffset(-15,5,0);
+	camera->getComponent<Camera>()->SetOffset(1,2.5f,0);
 	camera->addComponent<CameraController>();
-	camera->addComponent<DebugCameraController>();
+	//camera->addComponent<DebugCameraController>();
 
 	curuthers->addComponent<AudioSource>();
 	curuthers->getComponent<AudioSource>()->setAudio(curuthers->getEnvironment()->getCore()->getResources()->load<Audio>("/Audio/dixie_horn.ogg"));

@@ -29,7 +29,7 @@ namespace nsengine
 
 	void Camera::UpdateCamera()
 	{
-		if(!follow)
+		//if(!follow)
 			viewMatrix = rend::inverse(getEntity()->getTransform()->Model());
 
 		glm::vec3 pos = getEntity()->getTransform()->getPosition();
@@ -40,13 +40,14 @@ namespace nsengine
 	{
 		follow = true;
 		glm::vec3 pos = target->getTransform()->getPosition();
-		glm::vec3 rot = target->getTransform()->getRotation();
+		//glm::vec3 rot = target->getTransform()->getRotation();
 		pos = pos + offset;
 		getEntity()->getTransform()->setPosition(pos);
+		//getEntity()->getTransform()->setRotation(-rot);
 
 		glm::vec3 targetPos = target->getTransform()->getPosition() + glm::vec3(3,1,0);
 		glm::vec3 cameraPos = getEntity()->getTransform()->getPosition();
-		viewMatrix = glm::lookAt(cameraPos, targetPos, glm::vec3(0, 1, 0));
+		//viewMatrix = glm::lookAt(cameraPos, targetPos, glm::vec3(0, 1, 0));
 	}
 
 	void Camera::SetTarget(std::shared_ptr<Entity> entity)

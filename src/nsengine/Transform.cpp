@@ -19,7 +19,9 @@ namespace nsengine
 
 	void Transform::Rotate(float x, float y, float z)
 	{
-		rotation += rend::vec3 (x,y,z);
+		//rend::vec3 orientation = Model() * rend::vec4(x, y, z, 0);
+		//rotation += orientation;
+		rotation += rend::vec3(x, y, z);
 	}
 
 	void Transform::setPosition(rend::vec3 _pos)

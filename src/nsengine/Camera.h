@@ -30,5 +30,7 @@ namespace nsengine
 		std::shared_ptr<Entity> target;
 		glm::vec3 offset = glm::vec3(0);
 		bool follow;
+		glm::vec3 viewDirection;
+
 	};
 }

@@ -36,6 +36,7 @@
 #define KEY_UP 1073741906
 #define KEY_LSHIFT 1073742049
 #define KEY_LCTRL 1073742048
+#define KEY_ESCAPE 27
 
 namespace nsengine 
 {
@@ -45,6 +46,9 @@ namespace nsengine
 		bool isKeyPressed(int key);
 		bool isKeyReleased(int key);
 		void clearInput();
+
+		int mouseX, mouseY;
+		int oldMousePosX, oldMousPosY;
 	private:
 		friend struct Core;
 
