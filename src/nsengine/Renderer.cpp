@@ -19,7 +19,7 @@ namespace nsengine
 		std::shared_ptr<Camera> cam = getEntity()->getEnvironment()->getCamera(0);
 		modelShader.projection(cam->projMatrix);
 		modelShader.view(cam->viewMatrix);
-
+	
 		modelShader.model(getEntity()->getTransform()->Model());
 		modelShader.model(*model);
 		

@@ -22,18 +22,4 @@ namespace nsengine
 		std::string path;
 		void load();
 	};
-
-
-	//struct Sound : Resource
-	//{
-	//private:
-	//	virtual void onLoad();
-	//};
-	//
-	//struct Model : Resource
-	//{
-	//
-	//private:
-	//	virtual void onLoad();
-	//};
 }

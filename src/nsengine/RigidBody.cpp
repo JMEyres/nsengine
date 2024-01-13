@@ -16,13 +16,8 @@ namespace nsengine
 	{
 		rend::vec3 movement = getEntity()->getTransform()->Model() * rend::vec4(x, y, z, 0);
 
-		//rp3d::Transform transform = rb->getTransform();
-		//rp3d::Vector3 newPos = transform.getPosition() + (rp3d::Vector3(movement.x, movement.y, movement.z));
-
 		rb->applyLocalForceAtCenterOfMass(rp3d::Vector3(movement.x, movement.y, movement.z));
 
-		//transform.setPosition(newPos);
-		//rb->setTransform(transform);
 	}
 
 	void RigidBody::rotate(float x, float y, float z)
@@ -39,14 +34,6 @@ namespace nsengine
 		glm::vec3 newPos = glm::vec3(position.x, position.y, position.z);
 
 		getEntity()->getTransform()->setPosition(newPos);
-
-		//rend::vec3 entityRot = getEntity()->getTransform()->getRotation();
-		//rp3d::Vector3 newRot = rp3d::Vector3(entityRot.x, entityRot.y, entityRot.z);
-		//rp3d::Quaternion quat = quat.fromEulerAngles(newRot);
-		//transform.setOrientation(quat);
-
-		//std::cout << "Body Position: (" << position.x << ", " <<
-		//	position.y << ", " << position.z << ")" << std::endl;
 	}
 
 	void RigidBody::onInitialize()

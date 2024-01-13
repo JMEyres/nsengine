@@ -20,6 +20,9 @@ namespace nsengine
 		rend::vec3 getScale();
 
 		rend::mat4 Model();
+		rend::vec3 getForward();
+		rend::vec3 getRight();
+		rend::vec3 getUp();
 	private:
 		rend::mat4 mat;
 		rend::vec3 rotation;

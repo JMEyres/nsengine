@@ -24,7 +24,7 @@ namespace nsengine
 		viewMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 
 		// Set up a projection matrix
-		projMatrix = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
+		projMatrix = glm::perspective(glm::radians(60.0f), 1.0f, 0.1f, 1500.0f);
 	}
 
 	void Camera::UpdateCamera()
@@ -38,12 +38,25 @@ namespace nsengine
 
 	void Camera::Follow()
 	{
+		float dt = getCore()->getDeltaTime();
+
+		glm::vec2 oldMouse;
+
+		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
+		glm::vec2 mouseDelta = oldMouse - currentMouse;
+
+		getEntity()->getTransform()->Rotate(mouseDelta.y * 0.075f, 0, 0);
+
+		oldMouse = currentMouse;
+
+		glm::vec3 camRot = getEntity()->getTransform()->getRotation();
+
 		follow = true;
 		glm::vec3 pos = target->getTransform()->getPosition();
-		//glm::vec3 rot = target->getTransform()->getRotation();
+		glm::vec3 rot = target->getTransform()->getRotation();
 		pos = pos + offset;
 		getEntity()->getTransform()->setPosition(pos);
-		//getEntity()->getTransform()->setRotation(-rot);
+		getEntity()->getTransform()->setRotation(glm::vec3(camRot.x,rot.y+180,0));
 
 		glm::vec3 targetPos = target->getTransform()->getPosition() + glm::vec3(3,1,0);
 		glm::vec3 cameraPos = getEntity()->getTransform()->getPosition();

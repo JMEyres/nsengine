@@ -21,7 +21,7 @@ namespace nsengine
 
 		rtn->window = SDL_CreateWindow("SDL Window",
 			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-			640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+			1152, 864, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 		if (!rtn->window)
 		{
@@ -80,9 +80,6 @@ namespace nsengine
 
 		while (running)
 		{
-			int middleX = 320;
-			int middleY = 240;
-			//SDL_WarpMouseInWindow(window,middleX, middleY);
 			while (SDL_PollEvent(&event))
 			{
 				switch (event.type)

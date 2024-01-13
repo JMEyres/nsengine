@@ -32,6 +32,7 @@ namespace nsengine
 	void Transform::Move(float x, float y, float z)
 	{
 		rend::vec3 movement = Model() * rend::vec4(x, y, z, 0);
+		//rend::vec3 movement = rend::vec3(0,0,-1) * getRight();
 		position += movement;
 	}
 
@@ -49,6 +50,32 @@ namespace nsengine
 	{
 		return scale;
 	}
+
+	rend::vec3 Transform::getForward()
+	{
+		rend::vec3 forward;
+		forward.x = glm::cos(getRotation().x) * glm::sin(getRotation().y);
+		forward.y = -glm::sin(getRotation().x);
+		forward.z = glm::cos(getRotation().x) * glm::cos(getRotation().y);
+		return forward;
+	}
+
+	rend::vec3 Transform::getRight()
+	{
+		rend::vec3 right;
+		right.x = glm::cos(getRotation().y);
+		right.y = 0;
+		right.z = -glm::sin(getRotation().y);
+		return right;
+	}
+
+	rend::vec3 Transform::getUp()
+	{
+		rend::vec3 up;
+		up = glm::cross(getForward(), getRight());
+		return up;
+	}
+
 
 	rend::mat4 Transform::Model()
 	{

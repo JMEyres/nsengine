@@ -19,7 +19,8 @@
 #include <nsengine/RigidBody.h>
 #include <nsengine/Audio.h>
 #include <nsengine/AudioSource.h>
-//#include <nsengine/CollisionBody.h>
+#include <nsengine/SpriteRenderer.h>
+#include <nsengine/Gui.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 

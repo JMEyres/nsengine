@@ -31,6 +31,15 @@ struct Controller : Component
 	{
 		float dt = getCore()->getDeltaTime();
 
+		glm::vec2 oldMouse;
+
+		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
+		glm::vec2 mouseDelta = oldMouse - currentMouse;
+
+		getEntity()->getTransform()->Rotate(0, mouseDelta.x * 0.1f, 0);
+
+		oldMouse = currentMouse;
+
 		if (getCore()->getInput()->isKeyHeld(KEY_W))
 		{
 			getEntity()->getComponent<RigidBody>()->move(0, 0, speed * dt);
@@ -50,14 +59,7 @@ struct Controller : Component
 		if (getCore()->getInput()->isKeyReleased(KEY_SPACE))
 		{
 			getEntity()->getComponent<RigidBody>()->move(0, 500, 0);
-		}
-		if (getCore()->getInput()->isKeyPressed(KEY_LSHIFT))
-		{
 			getEntity()->getComponent<AudioSource>()->play();
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_H))
-		{
-			getEntity()->getTransform()->Rotate(-angle * dt, 0, 0);
 		}
 	}
 private:
@@ -70,81 +72,41 @@ struct CameraController : Component
 	void onTick()
 	{
 		float dt = getCore()->getDeltaTime();
+		
+		if (getCore()->getInput()->isKeyHeld(KEY_TAB))
+			follow = !follow;
 
-		glm::vec2 oldMouse;
+		if(follow)
+			getEntity()->getComponent<Camera>()->Follow();
+		else
+		{
+			if (getCore()->getInput()->isKeyHeld(KEY_RIGHT))
+				getEntity()->getTransform()->Rotate(0, -angle * dt, 0);
+			if (getCore()->getInput()->isKeyHeld(KEY_LEFT))
+				getEntity()->getTransform()->Rotate(0, angle * dt, 0);
+			if (getCore()->getInput()->isKeyHeld(KEY_DOWN))
+				getEntity()->getTransform()->Rotate(angle * dt, 0, 0);
+			if (getCore()->getInput()->isKeyHeld(KEY_UP))
+				getEntity()->getTransform()->Rotate(-angle * dt, 0, 0);
 
-		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
-		glm::vec2 mouseDelta = oldMouse - currentMouse;
-
-		getEntity()->getTransform()->Rotate(0, mouseDelta.x*0.1f, 0);
-		getEntity()->getTransform()->Rotate(mouseDelta.y*0.1f, 0, 0);
-
-		oldMouse = currentMouse;
-		getEntity()->getComponent<Camera>()->Follow();
-	}
-};
-
-
-struct DebugCameraController : Component
-{
-	void onTick()
-	{
-		float dt = getCore()->getDeltaTime();
-		glm::vec2 oldMouse;
-
-		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
-		glm::vec2 mouseDelta = oldMouse - currentMouse;
-
-		getEntity()->getTransform()->Rotate(0, mouseDelta.x, 0);
-		getEntity()->getTransform()->Rotate(mouseDelta.y, 0, 0);
-
-		oldMouse = currentMouse;
-	
-		// Rotate
-		if (getCore()->getInput()->isKeyHeld(KEY_RIGHT))
-		{
-			getEntity()->getTransform()->Rotate(0, -angle * dt, 0);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_LEFT))
-		{
-			getEntity()->getTransform()->Rotate(0, angle * dt, 0);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_DOWN))
-		{
-			getEntity()->getTransform()->Rotate(angle * dt, 0, 0);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_UP))
-		{
-			getEntity()->getTransform()->Rotate(-angle * dt, 0, 0);
-		}
-
-		// Move
-		if (getCore()->getInput()->isKeyHeld(KEY_J))
-		{
-			getEntity()->getTransform()->Move(-speed * dt, 0, 0);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_L))
-		{
-			getEntity()->getTransform()->Move(speed * dt, 0, 0);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_K))
-		{
-			getEntity()->getTransform()->Move(0, 0, speed * dt);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_I))
-		{
-			getEntity()->getTransform()->Move(0, 0, -speed * dt);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_O))
-		{
-			getEntity()->getTransform()->Move(0, speed * dt, 0);
-		}
-		if (getCore()->getInput()->isKeyHeld(KEY_U))
-		{
-			getEntity()->getTransform()->Move(0, -speed * dt, 0);
+			// Move
+			if (getCore()->getInput()->isKeyHeld(KEY_J))
+				getEntity()->getTransform()->Move(-speed * dt, 0, 0);
+			if (getCore()->getInput()->isKeyHeld(KEY_L))
+				getEntity()->getTransform()->Move(speed * dt, 0, 0);
+			if (getCore()->getInput()->isKeyHeld(KEY_K))
+				getEntity()->getTransform()->Move(0, 0, speed * dt);
+			if (getCore()->getInput()->isKeyHeld(KEY_I))
+				getEntity()->getTransform()->Move(0, 0, -speed * dt);
+			if (getCore()->getInput()->isKeyHeld(KEY_O))
+				getEntity()->getTransform()->Move(0, speed * dt, 0);
+			if (getCore()->getInput()->isKeyHeld(KEY_U))
+				getEntity()->getTransform()->Move(0, -speed * dt, 0);
 		}
 	}
 private:
+	
+	bool follow = true;
 	float angle = 90.0f;
 	float speed = 5.0f;
 };
@@ -157,6 +119,7 @@ int main()
 
 	std::shared_ptr<Entity> curuthers = environment->addEntity();
 	std::shared_ptr<Entity> triangle = environment->addEntity(); // creating entity, core holds on list
+	std::shared_ptr<Entity> quad = environment->addEntity(); // creating entity, core holds on list
 	std::shared_ptr<Entity> floor = environment->addEntity(); 
 	std::shared_ptr<Entity> box = environment->addEntity(); 
 	std::shared_ptr<Entity> box2 = environment->addEntity(); 
@@ -166,18 +129,32 @@ int main()
 	std::shared_ptr<Entity> camera = environment->addEntity(); 
 	
 	camera->addComponent<Camera>();
+	camera->addComponent<Gui>();
 	camera->getComponent<Camera>()->SetTarget(curuthers);
-	camera->getComponent<Camera>()->SetOffset(1,2.5f,0);
+	camera->getComponent<Camera>()->SetOffset(1,4.5f,0);
 	camera->addComponent<CameraController>();
-	//camera->addComponent<DebugCameraController>();
 
 	curuthers->addComponent<AudioSource>();
-	curuthers->getComponent<AudioSource>()->setAudio(curuthers->getEnvironment()->getCore()->getResources()->load<Audio>("/Audio/dixie_horn.ogg"));
+	curuthers->getComponent<AudioSource>()->setAudio(curuthers->getEnvironment()->getCore()->getResources()->load<Audio>("/Audio/jump.ogg"));
 
 	triangle->addComponent<Player>(); // creating component, entity holds on list
 	curuthers->addComponent<Controller>(); 
 
 	//triangle->addComponent<TriangleRenderer>(); // creating component, entity holds on list
+	quad->addComponent<SpriteRenderer>(); // creating component, entity holds on list
+
+	std::vector<std::shared_ptr<Texture>> spriteAnim;
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_1.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_2.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_3.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_4.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_5.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_6.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_7.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_9.png"));
+	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_8.png"));
+	
+	quad->getComponent<SpriteRenderer>()->Animate(spriteAnim);
 
 	curuthers->addComponent<Renderer>();
 	floor->addComponent<Renderer>();
@@ -188,28 +165,26 @@ int main()
 	box4->addComponent<Renderer>();
 	box5->addComponent<Renderer>();
 
-	triangle->addComponent<BoxCollider>();
-
 	curuthers->addComponent<CapsuleCollider>();
-	curuthers->getComponent<CapsuleCollider>()->createCollider(1.0f, 2.0f);
+	curuthers->getComponent<CapsuleCollider>()->createCollider(1.0f, 1.0f);
 
 	floor->addComponent<BoxCollider>();
-	floor->getComponent<BoxCollider>()->createCollider(100.0f, 1.0f, 100.0f);
+	floor->getComponent<BoxCollider>()->createCollider(50.0f, 1.0f, 50.0f);
 	
 	box->addComponent<BoxCollider>();
-	box->getComponent<BoxCollider>()->createCollider(4.0f, 5.0f, 4.0f);
+	box->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
 
 	box2->addComponent<BoxCollider>();
-	box2->getComponent<BoxCollider>()->createCollider(4.0f, 5.0f, 4.0f);
+	box2->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
 
 	box3->addComponent<BoxCollider>();
-	box3->getComponent<BoxCollider>()->createCollider(4.0f, 5.0f, 4.0f);
+	box3->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
 
 	box4->addComponent<BoxCollider>();
-	box4->getComponent<BoxCollider>()->createCollider(4.0f, 5.0f, 4.0f);
+	box4->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
 
 	box5->addComponent<BoxCollider>();
-	box5->getComponent<BoxCollider>()->createCollider(4.0f, 5.0f, 4.0f);
+	box5->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
 
 	curuthers->addComponent<RigidBody>();
 	floor->addComponent<RigidBody>();
@@ -221,11 +196,11 @@ int main()
 
 	curuthers->getComponent<Renderer>()->path = "/Models/curuthers.obj";
 	floor->getComponent<Renderer>()->path = "/Models/floor.obj";
-	box->getComponent<Renderer>()->path = "/Models/Box.obj";
-	box2->getComponent<Renderer>()->path = "/Models/Box.obj";
-	box3->getComponent<Renderer>()->path = "/Models/Box.obj";
-	box4->getComponent<Renderer>()->path = "/Models/Box.obj";
-	box5->getComponent<Renderer>()->path = "/Models/Box.obj";
+	box->getComponent<Renderer>()->path = "/Models/Cube.obj";
+	box2->getComponent<Renderer>()->path = "/Models/Cube.obj";
+	box3->getComponent<Renderer>()->path = "/Models/Cube.obj";
+	box4->getComponent<Renderer>()->path = "/Models/Cube.obj";
+	box5->getComponent<Renderer>()->path = "/Models/Cube.obj";
 	
 	curuthers->getComponent<RigidBody>()->addCollisionShape(curuthers->getComponent<CapsuleCollider>()->capsule);
 	floor->getComponent<RigidBody>()->addCollisionShape(floor->getComponent<BoxCollider>()->box);
@@ -245,6 +220,9 @@ int main()
 	triangle->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
 	triangle->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
+	quad->getTransform()->setPosition(rend::vec3(0,50,-50));
+	quad->getTransform()->setScale(rend::vec3(50));
+
 	curuthers->getTransform()->setPosition(rend::vec3(0.0f, 5.0f, 0.0f));
 	curuthers->getTransform()->setRotation(rend::vec3(0.0f, 90.0f, 0.0f));
 	curuthers->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
@@ -252,7 +230,7 @@ int main()
 	floor->getTransform()->setPosition(rend::vec3(0.0f, -1.0f, 0.0f));
 	floor->getTransform()->setScale(rend::vec3(100.0f, 1.0f, 100.0f));
 
-	box->getTransform()->setPosition(rend::vec3(5.0f, 2.0f, 0.0f));
+	box->getTransform()->setPosition(rend::vec3(-5.0f, 10.0f, 0.0f));
 	box->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
 	box2->getTransform()->setPosition(rend::vec3(15.0f, 4.0f, 0.0f));
@@ -266,9 +244,6 @@ int main()
 
 	box5->getTransform()->setPosition(rend::vec3(45.0f, 10.0f, 0.0f));
 	box5->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
-
-	//floor->getComponent<RigidBody>()->
-	//std::cout << curuthers->getComponent<BoxCollider>()->box->to_string() << std::endl;
 
 	core->start();
 

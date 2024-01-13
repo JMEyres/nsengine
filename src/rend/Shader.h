@@ -18,6 +18,7 @@ struct RenderTexture;
 enum ShaderType
 {
   TEXTURE_SHADER = 0,
+  PLANE_SHADER,
   TEXTURE_LIGHT_SHADER,
   COLOR_SHADER,
   COLOR_LIGHT_SHADER,

@@ -138,6 +138,39 @@ void Shader::load(int _type)
       "}                                                    " \
       "\n#endif\n                                           ";
   }
+  else if (_type == PLANE_SHADER)
+  {
+      m_source =
+          "\n#ifdef VERTEX\n                                    " \
+          "attribute vec4 a_Position;                           " \
+          "attribute vec2 a_TexCoord;                           " \
+          "                                                     " \
+          "uniform mat4 u_Projection;                           " \
+          "uniform mat4 u_Model;                                " \
+          "uniform mat4 u_View;                                 " \
+          "                                                     " \
+          "varying vec2 v_TexCoord;                             " \
+          "                                                     " \
+          "void main()                                          " \
+          "{                                                    " \
+          "  gl_Position = u_Projection * u_View * u_Model * a_Position; " \
+          "  v_TexCoord = a_TexCoord;                           " \
+          "}                                                    " \
+          "\n#endif\n                                           " \
+          "\n#ifdef FRAGMENT\n                                  " \
+          "varying vec2 v_TexCoord;                             " \
+          "                                                     " \
+          "uniform sampler2D u_Texture;                         " \
+          "                                                     " \
+          "void main()                                          " \
+          "{                                                    " \
+          "  vec4 tex = texture2D(u_Texture, v_TexCoord);       " \
+          "  if(tex.a < 0.1)                                   " \
+          "     discard;                                        " \
+          "  gl_FragColor = tex;                                " \
+          "}                                                    " \
+          "\n#endif\n                                           ";
+  }
   else if(_type == TEXTURE_LIGHT_SHADER)
   {
     m_source =

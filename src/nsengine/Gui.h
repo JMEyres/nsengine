@@ -1,13 +1,14 @@
 #pragma once
 #include <rend/rend.h>
+#include "Component.h"
+#include "Entity.h"
 
 namespace nsengine
 {
-	struct Gui
+	struct Camera;
+	struct Gui : Component
 	{
-		void image();
-		bool button();
-		bool button();
-
+		void onLoad();
+		void onDisplay();
 	};
 }
