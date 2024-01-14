@@ -1,29 +1,9 @@
 #include<nsengine/nsengine.h>
-#include<filesystem>
+#include<chrono>
 
 using namespace nsengine;
 
 #undef main // SDL2 Wraps everything in its own main so causes a linker error, this stops it looking for that undefines it
-
-struct Player : Component
-{
-	Player() :
-		angle(0) { }
-	void onTick()
-	{
-		float dt = getCore()->getDeltaTime();
-		angle += 360.0f*dt;
-		getEntity()->getTransform()->setRotation(rend::vec3(0, angle, 0));
-
-		if (getCore()->getInput()->isKeyPressed(KEY_ESCAPE))
-		{
-			getCore()->stop();
-		}
-	}
-
-private:
-	float angle;
-};
 
 struct Controller : Component
 {
@@ -39,29 +19,32 @@ struct Controller : Component
 		getEntity()->getTransform()->Rotate(0, mouseDelta.x * 0.1f, 0);
 
 		oldMouse = currentMouse;
+		glm::vec3 otherPos = box->getTransform()->getPosition();
+		glm::vec3 otherSize = box->getComponent<BoxCollider>()->getSize();
+		if (getEntity()->getComponent<BoxCollider>()->isColliding(otherPos, otherSize))
+			std::cout << "HIT" << std::endl;
+		// ^^^ do same check for pickup, if collision true do pickup logic
+		// then destroy
+		// for anim do sprite animation
 
 		if (getCore()->getInput()->isKeyHeld(KEY_W))
-		{
 			getEntity()->getComponent<RigidBody>()->move(0, 0, speed * dt);
-		}
 		if (getCore()->getInput()->isKeyHeld(KEY_A))
-		{
 			getEntity()->getComponent<RigidBody>()->move(speed * dt, 0, 0);
-		}
 		if (getCore()->getInput()->isKeyHeld(KEY_S))
-		{
 			getEntity()->getComponent<RigidBody>()->move(0, 0, -speed * dt);
-		}
 		if (getCore()->getInput()->isKeyHeld(KEY_D))
-		{
 			getEntity()->getComponent<RigidBody>()->move(-speed * dt, 0, 0);
-		}
 		if (getCore()->getInput()->isKeyReleased(KEY_SPACE))
 		{
 			getEntity()->getComponent<RigidBody>()->move(0, 500, 0);
 			getEntity()->getComponent<AudioSource>()->play();
 		}
+		if (getCore()->getInput()->isKeyPressed(KEY_ESCAPE))
+			getCore()->stop();
+		
 	}
+	std::shared_ptr<Entity> box;
 private:
 	float angle = 360.0f;
 	float speed = 1000.0f;
@@ -118,7 +101,6 @@ int main()
 	std::shared_ptr<Environment> environment = core->createEnvironment();
 
 	std::shared_ptr<Entity> curuthers = environment->addEntity();
-	std::shared_ptr<Entity> triangle = environment->addEntity(); // creating entity, core holds on list
 	std::shared_ptr<Entity> quad = environment->addEntity(); // creating entity, core holds on list
 	std::shared_ptr<Entity> floor = environment->addEntity(); 
 	std::shared_ptr<Entity> box = environment->addEntity(); 
@@ -127,20 +109,22 @@ int main()
 	std::shared_ptr<Entity> box4 = environment->addEntity(); 
 	std::shared_ptr<Entity> box5 = environment->addEntity(); 
 	std::shared_ptr<Entity> camera = environment->addEntity(); 
+	std::shared_ptr<Entity> pickup = environment->addEntity(); 
 	
 	camera->addComponent<Camera>();
 	camera->addComponent<Gui>();
 	camera->getComponent<Camera>()->SetTarget(curuthers);
-	camera->getComponent<Camera>()->SetOffset(1,4.5f,0);
+	camera->getComponent<Camera>()->SetOffset(1.0f, 4.5f, 0.0f);
 	camera->addComponent<CameraController>();
+
+	camera->getComponent<Gui>()->setPath("/Fonts/console.png");
+	camera->getComponent<Gui>()->enableAsTimer(true);
 
 	curuthers->addComponent<AudioSource>();
 	curuthers->getComponent<AudioSource>()->setAudio(curuthers->getEnvironment()->getCore()->getResources()->load<Audio>("/Audio/jump.ogg"));
 
-	triangle->addComponent<Player>(); // creating component, entity holds on list
-	curuthers->addComponent<Controller>(); 
+	curuthers->addComponent<Controller>();
 
-	//triangle->addComponent<TriangleRenderer>(); // creating component, entity holds on list
 	quad->addComponent<SpriteRenderer>(); // creating component, entity holds on list
 
 	std::vector<std::shared_ptr<Texture>> spriteAnim;
@@ -167,6 +151,8 @@ int main()
 
 	curuthers->addComponent<CapsuleCollider>();
 	curuthers->getComponent<CapsuleCollider>()->createCollider(1.0f, 1.0f);
+	curuthers->addComponent<BoxCollider>();
+	curuthers->getComponent<BoxCollider>()->createCollider(10.0f, 10.0f, 10.0f);
 
 	floor->addComponent<BoxCollider>();
 	floor->getComponent<BoxCollider>()->createCollider(50.0f, 1.0f, 50.0f);
@@ -188,6 +174,7 @@ int main()
 
 	curuthers->addComponent<RigidBody>();
 	floor->addComponent<RigidBody>();
+	floor->getComponent<RigidBody>()->setBounciness(1);
 	box->addComponent<RigidBody>();
 	box2->addComponent<RigidBody>();
 	box3->addComponent<RigidBody>();
@@ -203,6 +190,7 @@ int main()
 	box5->getComponent<Renderer>()->path = "/Models/Cube.obj";
 	
 	curuthers->getComponent<RigidBody>()->addCollisionShape(curuthers->getComponent<CapsuleCollider>()->capsule);
+	curuthers->getComponent<RigidBody>()->addTriggerCollisionShape(curuthers->getComponent<BoxCollider>()->box);
 	floor->getComponent<RigidBody>()->addCollisionShape(floor->getComponent<BoxCollider>()->box);
 	box->getComponent<RigidBody>()->addCollisionShape(box->getComponent<BoxCollider>()->box);
 	box2->getComponent<RigidBody>()->addCollisionShape(box2->getComponent<BoxCollider>()->box);
@@ -217,10 +205,7 @@ int main()
 	box4->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
 	box5->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
 	
-	triangle->getTransform()->setPosition(rend::vec3(0.0f, 0.0f, -5.0f));
-	triangle->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
-
-	quad->getTransform()->setPosition(rend::vec3(0,50,-50));
+	quad->getTransform()->setPosition(rend::vec3(0,35,-50));
 	quad->getTransform()->setScale(rend::vec3(50));
 
 	curuthers->getTransform()->setPosition(rend::vec3(0.0f, 5.0f, 0.0f));
@@ -244,6 +229,8 @@ int main()
 
 	box5->getTransform()->setPosition(rend::vec3(45.0f, 10.0f, 0.0f));
 	box5->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
+
+	curuthers->getComponent<Controller>()->box = box;
 
 	core->start();
 

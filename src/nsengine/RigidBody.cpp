@@ -11,6 +11,17 @@ namespace nsengine
 	{
 		collisionShape = shape;
 	}
+	void RigidBody::addTriggerCollisionShape(rp3d::CollisionShape* shape)
+	{
+		isTrigger = true;
+		triggerCollisionShape = shape;
+	}
+
+	void RigidBody::setBounciness(float value)
+	{
+		value = glm::fclamp(value, 0.0f, 1.0f);
+		bounciness = value;
+	}
 
 	void RigidBody::move(float x, float y, float z)
 	{
@@ -18,11 +29,6 @@ namespace nsengine
 
 		rb->applyLocalForceAtCenterOfMass(rp3d::Vector3(movement.x, movement.y, movement.z));
 
-	}
-
-	void RigidBody::rotate(float x, float y, float z)
-	{
-		//rp3d::Vector3 newRotation += rp3d::Vector3(x, y, z);
 	}
 
 	void RigidBody::onPhysicsTick()
@@ -49,9 +55,14 @@ namespace nsengine
 		rb->enableGravity(true);
 		rb->setMass(1);
 		rb->setAngularLockAxisFactor(rp3d::Vector3(0, 0, 0));
-		std::cout << collisionShape->to_string() << std::endl;
 		collider = rb->addCollider(collisionShape, rp3d::Transform::identity()); // Collider has to have a separate transform because its local. - this is what you would use to offset collider from object
 		rp3d::Material& mat = collider->getMaterial();
-		mat.setBounciness(0);
+		mat.setBounciness(bounciness);
+
+		if (isTrigger)
+		{
+			triggerCollider = rb->addCollider(triggerCollisionShape, rp3d::Transform::identity()); // Collider has to have a separate transform because its local. - this is what you would use to offset collider from object
+			triggerCollider->setIsTrigger(isTrigger);
+		}
 	}
 }

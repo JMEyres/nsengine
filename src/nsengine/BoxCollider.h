@@ -7,7 +7,9 @@ namespace nsengine
 {
 	struct BoxCollider : Component
 	{
+		bool isColliding(glm::vec3 otherPos, glm::vec3 otherSize);
 		void createCollider(float x, float y, float z);
+		rend::vec3 getSize();
 
 		rp3d::BoxShape* box;
 	private:
