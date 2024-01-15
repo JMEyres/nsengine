@@ -26,6 +26,7 @@ namespace nsengine
 		glBindTexture(GL_TEXTURE_2D, currentID); // load texture
 		shader.uniform("u_Texture", 0); // assign uniform to index 0
 		shader.attribute("a_TexCoord", *mesh.texcoords()); // have to pass it back in becuase it doesnt have indexes to where it should be
+		shader.depth_test(true);
 		shader.render();
 	}
 

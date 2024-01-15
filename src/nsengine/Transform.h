@@ -18,10 +18,10 @@ namespace nsengine
 		rend::vec3 GetRotation();
 
 		/// @brief Rotate current transform by a specified amount setup to do one at a time
-		/// @param x Rotation in x axis
-		/// @param y Rotation in y axis
-		/// @param z Rotation in z axis
-		void Rotate(float x, float y, float z);
+		/// @param _x Rotation in x axis
+		/// @param _y Rotation in y axis
+		/// @param _z Rotation in z axis
+		void Rotate(float _x, float _y, float _z);
 
 		/// @brief Specifically set the position of the transform
 		/// @param _position Vector3 position to set to in xyz axis
@@ -32,10 +32,10 @@ namespace nsengine
 		rend::vec3 GetPosition();
 
 		/// @brief Move the Transform current position by specified amount
-		/// @param x Movement in x axis
-		/// @param y Movement in y axis
-		/// @param z Movement in z axis
-		void Move(float x, float y, float z);
+		/// @param _x Movement in x axis
+		/// @param _y Movement in y axis
+		/// @param _z Movement in z axis
+		void Move(float _x, float _y, float _z);
 
 		/// @brief Set the scale of the transform
 		/// @param _scale Vector3 Scale in xyz axis

@@ -23,5 +23,6 @@
 #include <nsengine/Gui.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
+#include <rend/rend.h>
 
 #endif

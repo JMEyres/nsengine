@@ -107,7 +107,9 @@ set_property(TARGET nsengine PROPERTY CXX_STANDARD 17)
 target_link_libraries(nsengine rend SDL2 ReactPhysics3D openal32)
 
 add_executable(demo
-	src/demo/player.h
+	src/demo/blocks.h
+	src/demo/controller.h
+	src/demo/cameracontroller.h
 	src/demo/main.cpp
 )
 

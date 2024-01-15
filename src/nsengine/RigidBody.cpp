@@ -2,39 +2,53 @@
 
 namespace nsengine
 {
-	void RigidBody::SetType(rp3d::BodyType type)
+	void RigidBody::SetType(rp3d::BodyType _type)
 	{
-		rbType = type;
+		rbType = _type;
 	}
 
-	void RigidBody::AddCollisionShape(rp3d::CollisionShape* shape)
+	void RigidBody::AddCollisionShape(rp3d::CollisionShape* _shape)
 	{
-		collisionShape = shape;
+		collisionShape = _shape;
 	}
-	void RigidBody::AddTriggerCollisionShape(rp3d::CollisionShape* shape)
+	void RigidBody::AddTriggerCollisionShape(rp3d::CollisionShape* _shape)
 	{
 		isTrigger = true;
-		triggerCollisionShape = shape;
+		triggerCollisionShape = _shape;
 	}
 	void RigidBody::Disable()
 	{
 		disable = true;
-		Move(0, -100000, 0);
+		SetPosition(0, -1000, 0);
 	}
 
-	void RigidBody::SetBounciness(float value)
+	void RigidBody::Enable()
 	{
-		value = glm::fclamp(value, 0.0f, 1.0f);
-		bounciness = value;
+		disable = false;
+		SetPosition(originalPosition.x, originalPosition.y, originalPosition.z);
 	}
 
-	void RigidBody::Move(float x, float y, float z)
+	void RigidBody::SetBounciness(float _value)
 	{
-		rend::vec3 movement = GetEntity()->GetTransform()->Model() * rend::vec4(x, y, z, 0);
+		_value = rend::fclamp(_value, 0.0f, 1.0f);
+		bounciness = _value;
+	}
+
+	void RigidBody::Move(float _x, float _y, float _z)
+	{
+		rend::vec3 movement = GetEntity()->GetTransform()->Model() * rend::vec4(_x, _y, _z, 0);
 
 		rb->applyLocalForceAtCenterOfMass(rp3d::Vector3(movement.x, movement.y, movement.z));
 
 	}
+
+	void RigidBody::SetPosition(float _x, float _y, float _z)
+	{
+		rp3d::Transform transform = rb->getTransform();
+		transform.setPosition(rp3d::Vector3(_x, _y, _z));
+		rb->setTransform(transform);
+	}
+
 	rend::vec3 RigidBody::GetPos()
 	{
 		rp3d::Transform transform = rb->getTransform();
@@ -50,7 +64,7 @@ namespace nsengine
 
 		rp3d::Vector3 position = transform.getPosition();
 
-		glm::vec3 newPos = glm::vec3(position.x, position.y, position.z);
+		rend::vec3 newPos = rend::vec3(position.x, position.y, position.z);
 
 		GetEntity()->GetTransform()->SetPosition(newPos);
 	}
@@ -58,8 +72,9 @@ namespace nsengine
 	void RigidBody::OnInitialize()
 	{
 		rp3d::Transform transform;
-		glm::vec3 pos = GetEntity()->GetTransform()->GetPosition();
+		rend::vec3 pos = GetEntity()->GetTransform()->GetPosition();
 		rp3d::Vector3 physicsPos = rp3d::Vector3(pos.x, pos.y, pos.z);
+		originalPosition = physicsPos;
 
 		transform.setPosition(physicsPos);
 

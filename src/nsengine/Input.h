@@ -38,6 +38,7 @@
 #define KEY_LCTRL 1073742048
 #define KEY_ESCAPE 27
 #define KEY_TAB 9
+#define KEY_RETURN 13
 
 namespace nsengine 
 {
