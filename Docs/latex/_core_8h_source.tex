@@ -1,0 +1,89 @@
+\doxysection{Core.\+h}
+\hypertarget{_core_8h_source}{}\label{_core_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include<SDL2/SDL.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>};}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>};}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Environment.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Transform.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Input.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <reactphysics3d/reactphysics3d.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <AL/al.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <AL/alc.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }Environment;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }Input;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }Resources;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_core}{Core}}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Core>\ \mbox{\hyperlink{structnsengine_1_1_core_a8982be37c32da6bdfa35ff482328d7de}{Initialize}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_core_a94e5bc726f259bd0185c11c4e630a73a}{Start}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_core_a9e6f4d6469625ed95ad23e78b70e80e3}{Stop}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::shared\_ptr<Environment>\ \mbox{\hyperlink{structnsengine_1_1_core_a3693c8366f6ad2132ed89a9e406965d0}{CreateEnvironment}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::shared\_ptr<Input>\ \mbox{\hyperlink{structnsengine_1_1_core_aa27c227a42831956a4156edd96d2ade6}{GetInput}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::shared\_ptr<Resources>\ \mbox{\hyperlink{structnsengine_1_1_core_a4190cab968f2c55ce73bc84adb1b90d8}{GetResources}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structnsengine_1_1_core_aab8cac43df6357670a219d9b61e485ad}{GetDeltaTime}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_core_abd4327662c5c6f345c3d9a5ce70d9ba4}{Find}}(std::vector<std::shared\_ptr<T>\ >\&\ out)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ environments.size();\ ++i)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Environment>\ env\ =\ environments.at(i);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ei\ =\ 0;\ ei\ <\ env-\/>entities.size();\ ++ei)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Entity>\ ent\ =\ env-\/>entities.at(ei);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ci\ =\ 0;\ ci\ <\ ent-\/>components.size();\ ++ci)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Component>\ com\ =\ ent-\/>components.at(ci);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ t\ =\ std::dynamic\_pointer\_cast<T>(com);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(t);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ rp3d::PhysicsCommon\ physicsCommon;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ rp3d::PhysicsWorld*\ physicsWorld;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::weak\_ptr<Core>\ self;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ running;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Environment>\ >\ environments;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::shared\_ptr<Resources>\ resources;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::shared\_ptr<Input>\ input;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ SDL\_Window*\ window;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ SDL\_GLContext\ context;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ ALCdevice*\ audioDevice;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ ALCcontext*\ audioContext;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ lastTime\ =\ SDL\_GetTicks();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ deltaTime;}
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}

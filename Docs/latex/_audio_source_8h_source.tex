@@ -1,0 +1,31 @@
+\doxysection{Audio\+Source.\+h}
+\hypertarget{_audio_source_8h_source}{}\label{_audio_source_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Audio.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <AL/al.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <AL/alc.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_audio_source}{AudioSource}}\ :\ \mbox{\hyperlink{structnsengine_1_1_component}{Component}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_audio_source_a8e5b9a6e54083e489a55335f7a8dc8b6}{OnTick}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_audio_source_ac7861f7ddd1c14bd22c8b976d32ec691}{SetAudio}}(std::shared\_ptr<Audio>\ \_audio);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_audio_source_a1a7f51a20c65a9f5c0d9b6379a7fc887}{Play}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::shared\_ptr<Audio>\ audioPtr;}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}

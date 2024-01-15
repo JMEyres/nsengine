@@ -1,0 +1,23 @@
+<map id="nsengine::Component::GetEntity" name="nsengine::Component::GetEntity">
+<area shape="rect" id="Node000001" title="Gets the current entity." alt="" coords="475,248,622,291"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_camera.html#ac84851abce67f253746fed6c50e5f8b7" title="Enable the camera following the set target." alt="" coords="242,5,414,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="536,234,521,190,498,139,466,89,447,66,425,46,406,35,409,30,429,42,451,62,471,86,503,137,526,189,541,233"/>
+<area shape="rect" id="Node000003" href="$structnsengine_1_1_box_collider.html#a35d65421916709c49b9b8d019d14901c" title="Simple AABB collision between two objects." alt="" coords="254,56,402,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="527,236,485,173,457,141,425,113,401,99,403,94,429,108,461,137,490,170,531,233"/>
+<area shape="rect" id="Node000004" href="$structnsengine_1_1_rigid_body.html#a63cd75dffdec7e3c5e57e2f62f6c443e" title="Move the rigidbody with simulated physics forces." alt="" coords="258,123,398,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="511,240,471,209,426,180,397,167,399,162,428,175,474,204,514,236"/>
+<area shape="rect" id="Node000005" href="$structnsengine_1_1_sprite_renderer.html#a64647653133769d582f588330bf3062c" title="Last function to run, used for displaying to screen i.e. rendering." alt="" coords="244,189,412,232"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="459,248,410,235,412,230,461,243"/>
+<area shape="rect" id="Node000006" href="$structnsengine_1_1_camera.html#a7a88618ff3fb33cfd2c316e7452470dd" title="Runs before the game loop starts, used to setup anything needing to be done once beforehand." alt="" coords="229,256,427,283"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="460,272,428,272,428,267,460,267"/>
+<area shape="rect" id="Node000007" href="$structnsengine_1_1_rigid_body.html#a227721d9b195df01d6b7caa589cd9c66" title="Runs before the game loop starts, used to setup anything needing to be done once beforehand." alt="" coords="258,307,398,349"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="461,295,399,312,398,307,459,290"/>
+<area shape="rect" id="Node000008" href="$structnsengine_1_1_rigid_body.html#a2963a44bdcc0905b917263ad85f5b6e1" title="Runs every frame before on tick used to handle physics, ticks during physics step." alt="" coords="258,373,398,416"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="514,303,474,334,428,364,399,377,397,372,426,359,471,330,511,299"/>
+<area shape="rect" id="Node000009" href="$structnsengine_1_1_audio_source.html#a8e5b9a6e54083e489a55335f7a8dc8b6" title="Runs every single frame, used to update in realtime." alt="" coords="250,440,406,483"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="531,306,490,369,461,402,429,430,407,442,405,438,425,426,457,398,485,366,527,303"/>
+<area shape="rect" id="Node000010" href="$structnsengine_1_1_camera.html#a1a78d469c52b4d03bc7fc5eda0e92441" title="Used to update the camera matrixes when moved/each frame." alt="" coords="240,507,416,549"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="540,307,524,350,501,401,469,452,429,497,411,508,408,504,425,493,465,449,496,398,519,348,535,305"/>
+<area shape="rect" id="Node000011" href="$structnsengine_1_1_camera.html#a1ee750417c8bbddf19f9e8376f9013e9" title="Runs every single frame, used to update in realtime." alt="" coords="5,515,181,541"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="225,531,181,531,181,525,225,525"/>
+</map>

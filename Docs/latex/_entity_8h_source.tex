@@ -1,0 +1,72 @@
+\doxysection{Entity.\+h}
+\hypertarget{_entity_8h_source}{}\label{_entity_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Core.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }Core;\ \textcolor{comment}{//\ forward\ declare}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }Environment;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }Component;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }Transform;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }Camera;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_entity}{Entity}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{structnsengine_1_1_entity_a6c8f15c3c4cf2a9399e40b54834d1a65}{AddComponent}}()}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ rtn\ =\ std::make\_shared<T>();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ rtn-\/>core\ =\ \mbox{\hyperlink{structnsengine_1_1_entity_ae57573e26d72707cde24170fbf87b8a6}{GetEnvironment}}()-\/>GetCore();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ rtn-\/>entity\ =\ self;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ rtn-\/>self\ =\ rtn;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ components.push\_back(rtn);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ rtn-\/>OnCreate();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rtn;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ c>}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::shared\_ptr<c>\ \mbox{\hyperlink{structnsengine_1_1_entity_a39115e1fa2e44fa6c01f65202c63ff2d}{GetComponent}}()}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ ci\ =\ 0;\ ci\ <\ components.size();\ ++ci)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<c>\ rtn\ =\ std::dynamic\_pointer\_cast<c>(components.at(ci));}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rtn)\ \textcolor{keywordflow}{return}\ rtn;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::shared\_ptr<Transform>\ \mbox{\hyperlink{structnsengine_1_1_entity_a595ec94f7d0039551d207a16df4f2466}{GetTransform}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::shared\_ptr<Environment>\ \mbox{\hyperlink{structnsengine_1_1_entity_ae57573e26d72707cde24170fbf87b8a6}{GetEnvironment}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_core}{Core}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_environment}{Environment}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::weak\_ptr<Environment>\ environment;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::weak\_ptr<Entity>\ self;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::weak\_ptr<Transform>\ transform;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ alive;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Component>\ >\ components;\ \textcolor{comment}{//\ List\ of\ components}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Tick();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PhysicsTick();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Display();}
+\DoxyCodeLine{00077\ \ \ \ \ \};}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,121 @@
+\doxysection{nsengine\+::Entity Struct Reference}
+\hypertarget{structnsengine_1_1_entity}{}\label{structnsengine_1_1_entity}\index{nsengine::Entity@{nsengine::Entity}}
+
+
+Class containing all the data for the entities.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{structnsengine_1_1_entity_a6c8f15c3c4cf2a9399e40b54834d1a65}{Add\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a component of the given type to the entity and adds it to a list. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename c $>$ }\\std\+::shared\+\_\+ptr$<$ c $>$ \mbox{\hyperlink{structnsengine_1_1_entity_a39115e1fa2e44fa6c01f65202c63ff2d}{Get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Gets a component of a given type on the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_transform}{Transform}} $>$ \mbox{\hyperlink{structnsengine_1_1_entity_a595ec94f7d0039551d207a16df4f2466}{Get\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Gets the transform on the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_environment}{Environment}} $>$ \mbox{\hyperlink{structnsengine_1_1_entity_ae57573e26d72707cde24170fbf87b8a6}{Get\+Environment}} ()
+\begin{DoxyCompactList}\small\item\em Gets the environment entity is a part pf. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_entity_acd0789873af2006e142a579250891ce8}\label{structnsengine_1_1_entity_acd0789873af2006e142a579250891ce8} 
+struct {\bfseries Core}
+\item 
+\Hypertarget{structnsengine_1_1_entity_a269917dbeda4ece0c6d04cb1a56acb96}\label{structnsengine_1_1_entity_a269917dbeda4ece0c6d04cb1a56acb96} 
+struct {\bfseries Environment}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class containing all the data for the entities. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_entity_a6c8f15c3c4cf2a9399e40b54834d1a65}\label{structnsengine_1_1_entity_a6c8f15c3c4cf2a9399e40b54834d1a65} 
+\index{nsengine::Entity@{nsengine::Entity}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!nsengine::Entity@{nsengine::Entity}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ nsengine\+::\+Entity\+::\+Add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component of the given type to the entity and adds it to a list. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of entity to be added \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Returns the created component 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_entity_a6c8f15c3c4cf2a9399e40b54834d1a65_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_entity_a39115e1fa2e44fa6c01f65202c63ff2d}\label{structnsengine_1_1_entity_a39115e1fa2e44fa6c01f65202c63ff2d} 
+\index{nsengine::Entity@{nsengine::Entity}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!nsengine::Entity@{nsengine::Entity}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily template$<$typename c $>$ \\
+std\+::shared\+\_\+ptr$<$ c $>$ nsengine\+::\+Entity\+::\+Get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a component of a given type on the current entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em c} & type of component \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structnsengine_1_1_component}{Component} of given type 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_entity_ae57573e26d72707cde24170fbf87b8a6}\label{structnsengine_1_1_entity_ae57573e26d72707cde24170fbf87b8a6} 
+\index{nsengine::Entity@{nsengine::Entity}!GetEnvironment@{GetEnvironment}}
+\index{GetEnvironment@{GetEnvironment}!nsengine::Entity@{nsengine::Entity}}
+\doxysubsubsection{\texorpdfstring{GetEnvironment()}{GetEnvironment()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_environment}{Environment}} $>$ nsengine\+::\+Entity\+::\+Get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the environment entity is a part pf. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the environment 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_entity_ae57573e26d72707cde24170fbf87b8a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_entity_a595ec94f7d0039551d207a16df4f2466}\label{structnsengine_1_1_entity_a595ec94f7d0039551d207a16df4f2466} 
+\index{nsengine::Entity@{nsengine::Entity}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!nsengine::Entity@{nsengine::Entity}}
+\doxysubsubsection{\texorpdfstring{GetTransform()}{GetTransform()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_transform}{Transform}} $>$ nsengine\+::\+Entity\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the transform on the current entity. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to transform component of entity 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Entity.\+h\item 
+Entity.\+cpp\end{DoxyCompactItemize}

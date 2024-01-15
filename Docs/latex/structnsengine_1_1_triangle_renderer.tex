@@ -1,0 +1,62 @@
+\doxysection{nsengine\+::Triangle\+Renderer Struct Reference}
+\hypertarget{structnsengine_1_1_triangle_renderer}{}\label{structnsengine_1_1_triangle_renderer}\index{nsengine::TriangleRenderer@{nsengine::TriangleRenderer}}
+
+
+\doxylink{structnsengine_1_1_component}{Component} to simply render a triangle to screen.  
+
+
+
+
+{\ttfamily \#include $<$Triangle\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Triangle\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{structnsengine_1_1_triangle_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Triangle\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{structnsengine_1_1_triangle_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_component}{Component} to simply render a triangle to screen. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Triangle\+Renderer.\+h\item 
+Triangle\+Renderer.\+cpp\end{DoxyCompactItemize}

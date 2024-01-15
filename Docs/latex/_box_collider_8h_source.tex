@@ -1,0 +1,27 @@
+\doxysection{Box\+Collider.\+h}
+\hypertarget{_box_collider_8h_source}{}\label{_box_collider_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <reactphysics3d/reactphysics3d.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_box_collider}{BoxCollider}}\ :\ \mbox{\hyperlink{structnsengine_1_1_component}{Component}}}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnsengine_1_1_box_collider_a35d65421916709c49b9b8d019d14901c}{IsColliding}}(glm::vec3\ otherPos,\ glm::vec3\ otherSize);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_box_collider_ac6ce3bec747f3434c6c01ccd99ad408a}{CreateCollider}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ rend::vec3\ \mbox{\hyperlink{structnsengine_1_1_box_collider_a53732e5e605daa646d01b30dee85a186}{GetSize}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ rp3d::BoxShape*\ \mbox{\hyperlink{structnsengine_1_1_box_collider_adb6dc69c07e7289edd116c05700d4745}{GetCollisionShape}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ rp3d::BoxShape*\ box;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ rp3d::Vector3\ size\ =\ rp3d::Vector3(1,1,1);}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

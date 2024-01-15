@@ -1,0 +1,39 @@
+\doxysection{Transform.\+h}
+\hypertarget{_transform_8h_source}{}\label{_transform_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_transform}{Transform}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structnsengine_1_1_component}{Component}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnsengine_1_1_transform}{Transform}}();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_transform_a1c5ada90925832fe695cc6fdb525a573}{SetRotation}}(rend::vec3\ \_rotation);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ rend::vec3\ \mbox{\hyperlink{structnsengine_1_1_transform_a307e1ecc7d1a709552df90241031c70c}{GetRotation}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_transform_aae1d636f19cb77c08ba5cd3e76f2bb1d}{Rotate}}(\textcolor{keywordtype}{float}\ \_x,\ \textcolor{keywordtype}{float}\ \_y,\ \textcolor{keywordtype}{float}\ \_z);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_transform_a5232b53786c2635ab816b6c60151f2ab}{SetPosition}}(rend::vec3\ \_position);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ rend::vec3\ \mbox{\hyperlink{structnsengine_1_1_transform_ae5bf58a9363957c50eb727ac711efdf1}{GetPosition}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675}{Move}}(\textcolor{keywordtype}{float}\ \_x,\ \textcolor{keywordtype}{float}\ \_y,\ \textcolor{keywordtype}{float}\ \_z);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_transform_afd7ba43ecb9fc46d60327bd29dacfb7b}{SetScale}}(rend::vec3\ \_scale);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ rend::vec3\ \mbox{\hyperlink{structnsengine_1_1_transform_a358b9b6e016a445964e4b861092ffdf2}{GetScale}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ rend::mat4\ \mbox{\hyperlink{structnsengine_1_1_transform_a339ef46ea4e2d6ee4968b2c652464177}{Model}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ rend::mat4\ mat;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ rend::vec3\ rotation;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ rend::vec3\ position;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ rend::vec3\ scale;}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,5 @@
+<map id="nsengine::Entity::AddComponent" name="nsengine::Entity::AddComponent">
+<area shape="rect" id="Node000001" title="Adds a component of the given type to the entity and adds it to a list." alt="" coords="5,5,218,32"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_entity.html#ae57573e26d72707cde24170fbf87b8a6" title="Gets the environment entity is a part pf." alt="" coords="266,5,481,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,16,250,16,250,21,218,21"/>
+</map>

@@ -1,0 +1,35 @@
+\doxysection{Gui.\+h}
+\hypertarget{_gui_8h_source}{}\label{_gui_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sys/string.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }Camera;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_gui}{Gui}}\ :\ \mbox{\hyperlink{structnsengine_1_1_component}{Component}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_gui_a8bfa3d908b210affebc2de04cc38751a}{OnDisplay}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_gui_a26395cf840af8f4e59cb9929302235bf}{SetPath}}(sys::string\ \_path);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9}{SetText}}(sys::string\ \_text);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389}{EnableAsTimer}}(\textcolor{keywordtype}{bool}\ toggle);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structnsengine_1_1_gui_a6e1c1baafc676bd7c41374f3f901f93f}{GetTimer}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342}{SetTimer}}(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ sys::string\ path\ =\ \textcolor{stringliteral}{"{}./Resources/Fonts/Comic.png"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ sys::string\ text\ =\ \textcolor{stringliteral}{"{}2D/OrthoGraphic"{}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ frameTimer;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ timer;}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

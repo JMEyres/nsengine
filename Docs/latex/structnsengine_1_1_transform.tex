@@ -1,0 +1,226 @@
+\doxysection{nsengine\+::Transform Struct Reference}
+\hypertarget{structnsengine_1_1_transform}{}\label{structnsengine_1_1_transform}\index{nsengine::Transform@{nsengine::Transform}}
+
+
+\doxylink{structnsengine_1_1_component}{Component} responsible for the entity position/rotation.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_transform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_transform_a1c5ada90925832fe695cc6fdb525a573}{Set\+Rotation}} (rend\+::vec3 \+\_\+rotation)
+\begin{DoxyCompactList}\small\item\em Set the transform to a specific rotation. \end{DoxyCompactList}\item 
+rend\+::vec3 \mbox{\hyperlink{structnsengine_1_1_transform_a307e1ecc7d1a709552df90241031c70c}{Get\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Get the current rotation of transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_transform_aae1d636f19cb77c08ba5cd3e76f2bb1d}{Rotate}} (float \+\_\+x, float \+\_\+y, float \+\_\+z)
+\begin{DoxyCompactList}\small\item\em Rotate current transform by a specified amount setup to do one at a time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_transform_a5232b53786c2635ab816b6c60151f2ab}{Set\+Position}} (rend\+::vec3 \+\_\+position)
+\begin{DoxyCompactList}\small\item\em Specifically set the position of the transform. \end{DoxyCompactList}\item 
+rend\+::vec3 \mbox{\hyperlink{structnsengine_1_1_transform_ae5bf58a9363957c50eb727ac711efdf1}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Get the current position of transfrom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675}{Move}} (float \+\_\+x, float \+\_\+y, float \+\_\+z)
+\begin{DoxyCompactList}\small\item\em Move the \doxylink{structnsengine_1_1_transform}{Transform} current position by specified amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_transform_afd7ba43ecb9fc46d60327bd29dacfb7b}{Set\+Scale}} (rend\+::vec3 \+\_\+scale)
+\begin{DoxyCompactList}\small\item\em Set the scale of the transform. \end{DoxyCompactList}\item 
+rend\+::vec3 \mbox{\hyperlink{structnsengine_1_1_transform_a358b9b6e016a445964e4b861092ffdf2}{Get\+Scale}} ()
+\begin{DoxyCompactList}\small\item\em Get the current scale of the transform. \end{DoxyCompactList}\item 
+rend\+::mat4 \mbox{\hyperlink{structnsengine_1_1_transform_a339ef46ea4e2d6ee4968b2c652464177}{Model}} ()
+\begin{DoxyCompactList}\small\item\em Compute the model matrix of current transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_component}{Component} responsible for the entity position/rotation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_transform_ae5bf58a9363957c50eb727ac711efdf1}\label{structnsengine_1_1_transform_ae5bf58a9363957c50eb727ac711efdf1} 
+\index{nsengine::Transform@{nsengine::Transform}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily rend\+::vec3 nsengine\+::\+Transform\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current position of transfrom. 
+
+\begin{DoxyReturn}{Returns}
+Vector3 position in xyz axis 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_transform_a307e1ecc7d1a709552df90241031c70c}\label{structnsengine_1_1_transform_a307e1ecc7d1a709552df90241031c70c} 
+\index{nsengine::Transform@{nsengine::Transform}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily rend\+::vec3 nsengine\+::\+Transform\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current rotation of transform. 
+
+\begin{DoxyReturn}{Returns}
+Vector3 containing rotation in xyz axis 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_transform_a358b9b6e016a445964e4b861092ffdf2}\label{structnsengine_1_1_transform_a358b9b6e016a445964e4b861092ffdf2} 
+\index{nsengine::Transform@{nsengine::Transform}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily rend\+::vec3 nsengine\+::\+Transform\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current scale of the transform. 
+
+\begin{DoxyReturn}{Returns}
+Vector3 scale of transform in xyz axis 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_transform_a339ef46ea4e2d6ee4968b2c652464177}\label{structnsengine_1_1_transform_a339ef46ea4e2d6ee4968b2c652464177} 
+\index{nsengine::Transform@{nsengine::Transform}!Model@{Model}}
+\index{Model@{Model}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily rend\+::mat4 nsengine\+::\+Transform\+::\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compute the model matrix of current transform. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structnsengine_1_1_model}{Model} matrix of current transform 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675}\label{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675} 
+\index{nsengine::Transform@{nsengine::Transform}!Move@{Move}}
+\index{Move@{Move}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void nsengine\+::\+Transform\+::\+Move (\begin{DoxyParamCaption}\item[{float}]{\+\_\+x,  }\item[{float}]{\+\_\+y,  }\item[{float}]{\+\_\+z }\end{DoxyParamCaption})}
+
+
+
+Move the \doxylink{structnsengine_1_1_transform}{Transform} current position by specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & Movement in x axis \\
+\hline
+{\em \+\_\+y} & Movement in y axis \\
+\hline
+{\em \+\_\+z} & Movement in z axis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_transform_aae1d636f19cb77c08ba5cd3e76f2bb1d}\label{structnsengine_1_1_transform_aae1d636f19cb77c08ba5cd3e76f2bb1d} 
+\index{nsengine::Transform@{nsengine::Transform}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void nsengine\+::\+Transform\+::\+Rotate (\begin{DoxyParamCaption}\item[{float}]{\+\_\+x,  }\item[{float}]{\+\_\+y,  }\item[{float}]{\+\_\+z }\end{DoxyParamCaption})}
+
+
+
+Rotate current transform by a specified amount setup to do one at a time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & Rotation in x axis \\
+\hline
+{\em \+\_\+y} & Rotation in y axis \\
+\hline
+{\em \+\_\+z} & Rotation in z axis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_transform_a5232b53786c2635ab816b6c60151f2ab}\label{structnsengine_1_1_transform_a5232b53786c2635ab816b6c60151f2ab} 
+\index{nsengine::Transform@{nsengine::Transform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void nsengine\+::\+Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{rend\+::vec3}]{\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Specifically set the position of the transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+position} & Vector3 position to set to in xyz axis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_transform_a1c5ada90925832fe695cc6fdb525a573}\label{structnsengine_1_1_transform_a1c5ada90925832fe695cc6fdb525a573} 
+\index{nsengine::Transform@{nsengine::Transform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}}
+{\footnotesize\ttfamily void nsengine\+::\+Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{rend\+::vec3}]{\+\_\+rotation }\end{DoxyParamCaption})}
+
+
+
+Set the transform to a specific rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+rotation} & Vector3 Rotation in xyz axis ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_transform_afd7ba43ecb9fc46d60327bd29dacfb7b}\label{structnsengine_1_1_transform_afd7ba43ecb9fc46d60327bd29dacfb7b} 
+\index{nsengine::Transform@{nsengine::Transform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void nsengine\+::\+Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{rend\+::vec3}]{\+\_\+scale }\end{DoxyParamCaption})}
+
+
+
+Set the scale of the transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+scale} & Vector3 Scale in xyz axis \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Transform.\+h\item 
+Transform.\+cpp\end{DoxyCompactItemize}

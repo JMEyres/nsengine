@@ -1,0 +1,125 @@
+\doxysection{nsengine\+::Input Struct Reference}
+\hypertarget{structnsengine_1_1_input}{}\label{structnsengine_1_1_input}\index{nsengine::Input@{nsengine::Input}}
+
+
+Class handling the input from keyboard and mouse.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structnsengine_1_1_input_a2d9f6769ce209b96ff9aea97aa45c224}{Is\+Key\+Held}} (int key)
+\begin{DoxyCompactList}\small\item\em Checks if specified key is being held. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structnsengine_1_1_input_ae3039cfbfa29184fe90073aceadf129e}{Is\+Key\+Pressed}} (int key)
+\begin{DoxyCompactList}\small\item\em Checks if specified key has been pressed that frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structnsengine_1_1_input_a2c524ba322ab13ed3037f337d17dc09e}{Is\+Key\+Released}} (int key)
+\begin{DoxyCompactList}\small\item\em Checks if specified key was released that frame. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_input_a564401bad4095dc83b363d93d6084870}\label{structnsengine_1_1_input_a564401bad4095dc83b363d93d6084870} 
+void {\bfseries Clear\+Input} ()
+\begin{DoxyCompactList}\small\item\em Clear the list of held and pressed keys. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structnsengine_1_1_input_aff752a2229d750a596e9ce25a5389661}{Get\+MouseX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the relative x position of the mouse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structnsengine_1_1_input_af3aa805cdd4747975ab0b406624c0a4c}{Get\+MouseY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the relative y position of the mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_input_acd0789873af2006e142a579250891ce8}\label{structnsengine_1_1_input_acd0789873af2006e142a579250891ce8} 
+struct {\bfseries Core}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class handling the input from keyboard and mouse. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_input_aff752a2229d750a596e9ce25a5389661}\label{structnsengine_1_1_input_aff752a2229d750a596e9ce25a5389661} 
+\index{nsengine::Input@{nsengine::Input}!GetMouseX@{GetMouseX}}
+\index{GetMouseX@{GetMouseX}!nsengine::Input@{nsengine::Input}}
+\doxysubsubsection{\texorpdfstring{GetMouseX()}{GetMouseX()}}
+{\footnotesize\ttfamily int nsengine\+::\+Input\+::\+Get\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the relative x position of the mouse. 
+
+\begin{DoxyReturn}{Returns}
+Integer relative x position of the mouse 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_input_af3aa805cdd4747975ab0b406624c0a4c}\label{structnsengine_1_1_input_af3aa805cdd4747975ab0b406624c0a4c} 
+\index{nsengine::Input@{nsengine::Input}!GetMouseY@{GetMouseY}}
+\index{GetMouseY@{GetMouseY}!nsengine::Input@{nsengine::Input}}
+\doxysubsubsection{\texorpdfstring{GetMouseY()}{GetMouseY()}}
+{\footnotesize\ttfamily int nsengine\+::\+Input\+::\+Get\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the relative y position of the mouse. 
+
+\begin{DoxyReturn}{Returns}
+Integer relative y position of the mouse 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_input_a2d9f6769ce209b96ff9aea97aa45c224}\label{structnsengine_1_1_input_a2d9f6769ce209b96ff9aea97aa45c224} 
+\index{nsengine::Input@{nsengine::Input}!IsKeyHeld@{IsKeyHeld}}
+\index{IsKeyHeld@{IsKeyHeld}!nsengine::Input@{nsengine::Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyHeld()}{IsKeyHeld()}}
+{\footnotesize\ttfamily bool nsengine\+::\+Input\+::\+Is\+Key\+Held (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Checks if specified key is being held. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False depending on if key is held 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_input_ae3039cfbfa29184fe90073aceadf129e}\label{structnsengine_1_1_input_ae3039cfbfa29184fe90073aceadf129e} 
+\index{nsengine::Input@{nsengine::Input}!IsKeyPressed@{IsKeyPressed}}
+\index{IsKeyPressed@{IsKeyPressed}!nsengine::Input@{nsengine::Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyPressed()}{IsKeyPressed()}}
+{\footnotesize\ttfamily bool nsengine\+::\+Input\+::\+Is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Checks if specified key has been pressed that frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False depending on if the key was presssed that frame 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_input_a2c524ba322ab13ed3037f337d17dc09e}\label{structnsengine_1_1_input_a2c524ba322ab13ed3037f337d17dc09e} 
+\index{nsengine::Input@{nsengine::Input}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!nsengine::Input@{nsengine::Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyReleased()}{IsKeyReleased()}}
+{\footnotesize\ttfamily bool nsengine\+::\+Input\+::\+Is\+Key\+Released (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Checks if specified key was released that frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False depending on if the key was released that frame 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Input.\+h\item 
+Input.\+cpp\end{DoxyCompactItemize}

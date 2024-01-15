@@ -1,0 +1,91 @@
+\doxysection{nsengine\+::Model Struct Reference}
+\hypertarget{structnsengine_1_1_model}{}\label{structnsengine_1_1_model}\index{nsengine::Model@{nsengine::Model}}
+
+
+\doxylink{structnsengine_1_1_model}{Model} resource for loading models to displayed in game.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{structnsengine_1_1_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{structnsengine_1_1_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_model_a97469dd50f9ac3f2eb4c041c540157d4}{On\+Load}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ rend\+::\+Model $>$ \mbox{\hyperlink{structnsengine_1_1_model_a438028c4b3776820438cf3ad6c09caa1}{Get\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Gets the model loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structnsengine_1_1_resource_a57f1ea61c1f8c8d0f6ac9b22f4919f3b}{Get\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Get the path of resource from current working directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Load} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ {\bfseries resources}
+\item 
+std\+::string {\bfseries cwd} = std\+::filesystem\+::current\+\_\+path().string()
+\item 
+std\+::string {\bfseries path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_model}{Model} resource for loading models to displayed in game. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_model_a438028c4b3776820438cf3ad6c09caa1}\label{structnsengine_1_1_model_a438028c4b3776820438cf3ad6c09caa1} 
+\index{nsengine::Model@{nsengine::Model}!GetModel@{GetModel}}
+\index{GetModel@{GetModel}!nsengine::Model@{nsengine::Model}}
+\doxysubsubsection{\texorpdfstring{GetModel()}{GetModel()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ rend\+::\+Model $>$ nsengine\+::\+Model\+::\+Get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the model loaded. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to loaded model 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_model_a97469dd50f9ac3f2eb4c041c540157d4}\label{structnsengine_1_1_model_a97469dd50f9ac3f2eb4c041c540157d4} 
+\index{nsengine::Model@{nsengine::Model}!OnLoad@{OnLoad}}
+\index{OnLoad@{OnLoad}!nsengine::Model@{nsengine::Model}}
+\doxysubsubsection{\texorpdfstring{OnLoad()}{OnLoad()}}
+{\footnotesize\ttfamily void nsengine\+::\+Model\+::\+On\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Model.\+h\item 
+Model.\+cpp\end{DoxyCompactItemize}

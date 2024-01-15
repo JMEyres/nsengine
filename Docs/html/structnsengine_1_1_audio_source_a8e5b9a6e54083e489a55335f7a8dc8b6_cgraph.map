@@ -1,0 +1,5 @@
+<map id="nsengine::AudioSource::OnTick" name="nsengine::AudioSource::OnTick">
+<area shape="rect" id="Node000001" title="Runs every single frame, used to update in realtime." alt="" coords="5,5,161,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab1810de9f6ab841eb92cde5d9e2f7ffe" title="Gets the current entity." alt="" coords="209,5,356,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,24,193,24,193,29,161,29"/>
+</map>

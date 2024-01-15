@@ -1,0 +1,9 @@
+<map id="nsengine::Resource" name="nsengine::Resource">
+<area shape="rect" id="Node000001" title="Base class for all resources to inherit from." alt="" coords="134,5,271,32"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_audio.html" title="Audio resource hold information on audio clips." alt="" coords="5,80,120,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,42,88,82,86,77,163,37"/>
+<area shape="rect" id="Node000003" href="$structnsengine_1_1_model.html" title="Model resource for loading models to displayed in game." alt="" coords="144,80,261,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,48,205,80,200,80,200,48"/>
+<area shape="rect" id="Node000004" href="$structnsengine_1_1_texture.html" title="Texture resource containing data about loaded textures." alt="" coords="284,80,409,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,37,322,77,320,82,240,42"/>
+</map>

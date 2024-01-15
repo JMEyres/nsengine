@@ -1,0 +1,145 @@
+\doxysection{nsengine\+::Sprite\+Renderer Struct Reference}
+\hypertarget{structnsengine_1_1_sprite_renderer}{}\label{structnsengine_1_1_sprite_renderer}\index{nsengine::SpriteRenderer@{nsengine::SpriteRenderer}}
+
+
+\doxylink{structnsengine_1_1_component}{Component} responsible for rendering sprites.  
+
+
+
+
+{\ttfamily \#include $<$Sprite\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Sprite\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{structnsengine_1_1_sprite_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Sprite\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{structnsengine_1_1_sprite_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_a63bd213db5a4e36104cbd59740053da9}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_a64647653133769d582f588330bf3062c}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_a2068ec6170e8caa38291a9d6d8a964a2}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_abf8e3dc83fc330d5b8ceaa8569e85651}{Animate}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_texture}{Texture}} $>$ $>$ \+\_\+anim\+Frames)
+\begin{DoxyCompactList}\small\item\em Animates the sprite with given frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_component}{Component} responsible for rendering sprites. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_sprite_renderer_abf8e3dc83fc330d5b8ceaa8569e85651}\label{structnsengine_1_1_sprite_renderer_abf8e3dc83fc330d5b8ceaa8569e85651} 
+\index{nsengine::SpriteRenderer@{nsengine::SpriteRenderer}!Animate@{Animate}}
+\index{Animate@{Animate}!nsengine::SpriteRenderer@{nsengine::SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{Animate()}{Animate()}}
+{\footnotesize\ttfamily void nsengine\+::\+Sprite\+Renderer\+::\+Animate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_texture}{Texture}} $>$ $>$}]{\+\_\+anim\+Frames }\end{DoxyParamCaption})}
+
+
+
+Animates the sprite with given frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+anim\+Frames} & Frames of the animation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_sprite_renderer_a64647653133769d582f588330bf3062c}\label{structnsengine_1_1_sprite_renderer_a64647653133769d582f588330bf3062c} 
+\index{nsengine::SpriteRenderer@{nsengine::SpriteRenderer}!OnDisplay@{OnDisplay}}
+\index{OnDisplay@{OnDisplay}!nsengine::SpriteRenderer@{nsengine::SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{OnDisplay()}{OnDisplay()}}
+{\footnotesize\ttfamily void nsengine\+::\+Sprite\+Renderer\+::\+On\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Last function to run, used for displaying to screen i.\+e. rendering. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_sprite_renderer_a64647653133769d582f588330bf3062c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_sprite_renderer_a63bd213db5a4e36104cbd59740053da9}\label{structnsengine_1_1_sprite_renderer_a63bd213db5a4e36104cbd59740053da9} 
+\index{nsengine::SpriteRenderer@{nsengine::SpriteRenderer}!OnInitialize@{OnInitialize}}
+\index{OnInitialize@{OnInitialize}!nsengine::SpriteRenderer@{nsengine::SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{OnInitialize()}{OnInitialize()}}
+{\footnotesize\ttfamily void nsengine\+::\+Sprite\+Renderer\+::\+On\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs before the game loop starts, used to setup anything needing to be done once beforehand. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{nsengine\+::\+Component}}.
+
+\Hypertarget{structnsengine_1_1_sprite_renderer_a2068ec6170e8caa38291a9d6d8a964a2}\label{structnsengine_1_1_sprite_renderer_a2068ec6170e8caa38291a9d6d8a964a2} 
+\index{nsengine::SpriteRenderer@{nsengine::SpriteRenderer}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!nsengine::SpriteRenderer@{nsengine::SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily void nsengine\+::\+Sprite\+Renderer\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs every single frame, used to update in realtime. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_sprite_renderer_a2068ec6170e8caa38291a9d6d8a964a2_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sprite\+Renderer.\+h\item 
+Sprite\+Renderer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,191 @@
+\doxysection{nsengine\+::Camera Struct Reference}
+\hypertarget{structnsengine_1_1_camera}{}\label{structnsengine_1_1_camera}\index{nsengine::Camera@{nsengine::Camera}}
+
+
+\doxylink{structnsengine_1_1_camera}{Camera} component controlling the view the user sees.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_camera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_camera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_camera_a7a88618ff3fb33cfd2c316e7452470dd}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_camera_a1ee750417c8bbddf19f9e8376f9013e9}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_camera_a2c62b7ca5cb2fdff08b309534836fb73}\label{structnsengine_1_1_camera_a2c62b7ca5cb2fdff08b309534836fb73} 
+void {\bfseries Setup\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Initial setup of the camera by default. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_camera_a1a78d469c52b4d03bc7fc5eda0e92441}\label{structnsengine_1_1_camera_a1a78d469c52b4d03bc7fc5eda0e92441} 
+void {\bfseries Update\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Used to update the camera matrixes when moved/each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_camera_adb5bfeb70322a48e57b2790a01c01a2d}{Set\+Target}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Sets the target for the camera to lock on and follow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_camera_abec5beabcd4ffb7ca700ef4a4af6f668}{Set\+Offset}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the offset when locking the camera to an entity. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_camera_ac84851abce67f253746fed6c50e5f8b7}\label{structnsengine_1_1_camera_ac84851abce67f253746fed6c50e5f8b7} 
+void {\bfseries Follow} ()
+\begin{DoxyCompactList}\small\item\em Enable the camera following the set target. \end{DoxyCompactList}\item 
+rend\+::mat4 \mbox{\hyperlink{structnsengine_1_1_camera_abcddd66fa27ff1b554af3fd24d4d98f9}{Get\+View}} ()
+\begin{DoxyCompactList}\small\item\em Get the view matrix of camera. \end{DoxyCompactList}\item 
+rend\+::mat4 \mbox{\hyperlink{structnsengine_1_1_camera_ac115fade93cba933a95b39b4e763a567}{Get\+Proj}} ()
+\begin{DoxyCompactList}\small\item\em Get the projection matrix of camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_camera}{Camera} component controlling the view the user sees. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_camera_ac115fade93cba933a95b39b4e763a567}\label{structnsengine_1_1_camera_ac115fade93cba933a95b39b4e763a567} 
+\index{nsengine::Camera@{nsengine::Camera}!GetProj@{GetProj}}
+\index{GetProj@{GetProj}!nsengine::Camera@{nsengine::Camera}}
+\doxysubsubsection{\texorpdfstring{GetProj()}{GetProj()}}
+{\footnotesize\ttfamily rend\+::mat4 nsengine\+::\+Camera\+::\+Get\+Proj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the projection matrix of camera. 
+
+\begin{DoxyReturn}{Returns}
+Rend 4x4 projection matrix 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_camera_abcddd66fa27ff1b554af3fd24d4d98f9}\label{structnsengine_1_1_camera_abcddd66fa27ff1b554af3fd24d4d98f9} 
+\index{nsengine::Camera@{nsengine::Camera}!GetView@{GetView}}
+\index{GetView@{GetView}!nsengine::Camera@{nsengine::Camera}}
+\doxysubsubsection{\texorpdfstring{GetView()}{GetView()}}
+{\footnotesize\ttfamily rend\+::mat4 nsengine\+::\+Camera\+::\+Get\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the view matrix of camera. 
+
+\begin{DoxyReturn}{Returns}
+Rend 4x4 view matrix 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_camera_a7a88618ff3fb33cfd2c316e7452470dd}\label{structnsengine_1_1_camera_a7a88618ff3fb33cfd2c316e7452470dd} 
+\index{nsengine::Camera@{nsengine::Camera}!OnInitialize@{OnInitialize}}
+\index{OnInitialize@{OnInitialize}!nsengine::Camera@{nsengine::Camera}}
+\doxysubsubsection{\texorpdfstring{OnInitialize()}{OnInitialize()}}
+{\footnotesize\ttfamily void nsengine\+::\+Camera\+::\+On\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs before the game loop starts, used to setup anything needing to be done once beforehand. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_camera_a7a88618ff3fb33cfd2c316e7452470dd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_camera_a1ee750417c8bbddf19f9e8376f9013e9}\label{structnsengine_1_1_camera_a1ee750417c8bbddf19f9e8376f9013e9} 
+\index{nsengine::Camera@{nsengine::Camera}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!nsengine::Camera@{nsengine::Camera}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily void nsengine\+::\+Camera\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs every single frame, used to update in realtime. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_camera_a1ee750417c8bbddf19f9e8376f9013e9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_camera_abec5beabcd4ffb7ca700ef4a4af6f668}\label{structnsengine_1_1_camera_abec5beabcd4ffb7ca700ef4a4af6f668} 
+\index{nsengine::Camera@{nsengine::Camera}!SetOffset@{SetOffset}}
+\index{SetOffset@{SetOffset}!nsengine::Camera@{nsengine::Camera}}
+\doxysubsubsection{\texorpdfstring{SetOffset()}{SetOffset()}}
+{\footnotesize\ttfamily void nsengine\+::\+Camera\+::\+Set\+Offset (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the offset when locking the camera to an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Offset in the x axis \\
+\hline
+{\em y} & Offset in the y axis \\
+\hline
+{\em z} & Offset in the z axis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_camera_adb5bfeb70322a48e57b2790a01c01a2d}\label{structnsengine_1_1_camera_adb5bfeb70322a48e57b2790a01c01a2d} 
+\index{nsengine::Camera@{nsengine::Camera}!SetTarget@{SetTarget}}
+\index{SetTarget@{SetTarget}!nsengine::Camera@{nsengine::Camera}}
+\doxysubsubsection{\texorpdfstring{SetTarget()}{SetTarget()}}
+{\footnotesize\ttfamily void nsengine\+::\+Camera\+::\+Set\+Target (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+
+
+Sets the target for the camera to lock on and follow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \doxylink{structnsengine_1_1_entity}{Entity} for the camera to target \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Camera.\+h\item 
+Camera.\+cpp\end{DoxyCompactItemize}

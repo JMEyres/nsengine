@@ -1,0 +1,5 @@
+<map id="nsengine::SpriteRenderer::OnTick" name="nsengine::SpriteRenderer::OnTick">
+<area shape="rect" id="Node000001" title="Runs every single frame, used to update in realtime." alt="" coords="5,5,173,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab7c6961c5ce27a524c3ec676df1f7e1f" title="Shortcut to get core." alt="" coords="221,5,368,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,24,205,24,205,29,173,29"/>
+</map>

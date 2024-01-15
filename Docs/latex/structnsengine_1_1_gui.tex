@@ -1,0 +1,183 @@
+\doxysection{nsengine\+::Gui Struct Reference}
+\hypertarget{structnsengine_1_1_gui}{}\label{structnsengine_1_1_gui}\index{nsengine::Gui@{nsengine::Gui}}
+
+
+\doxylink{structnsengine_1_1_component}{Component} handling on screen graphical user interface.  
+
+
+
+
+{\ttfamily \#include $<$Gui.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Gui\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_gui__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Gui\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_gui__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_a8bfa3d908b210affebc2de04cc38751a}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_a26395cf840af8f4e59cb9929302235bf}{Set\+Path}} (sys\+::string \+\_\+path)
+\begin{DoxyCompactList}\small\item\em Set the path to chosen font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9}{Set\+Text}} (sys\+::string \+\_\+text)
+\begin{DoxyCompactList}\small\item\em Set the text to display to screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389}{Enable\+As\+Timer}} (bool toggle)
+\begin{DoxyCompactList}\small\item\em Sets the GUI text to be a timer. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structnsengine_1_1_gui_a6e1c1baafc676bd7c41374f3f901f93f}{Get\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Get the timer in seconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342}{Set\+Timer}} (float value)
+\begin{DoxyCompactList}\small\item\em Set the timer to a specific value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_component}{Component} handling on screen graphical user interface. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389}\label{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389} 
+\index{nsengine::Gui@{nsengine::Gui}!EnableAsTimer@{EnableAsTimer}}
+\index{EnableAsTimer@{EnableAsTimer}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{EnableAsTimer()}{EnableAsTimer()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Enable\+As\+Timer (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})}
+
+
+
+Sets the GUI text to be a timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em toggle} & True/\+False of being a timer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_gui_a6e1c1baafc676bd7c41374f3f901f93f}\label{structnsengine_1_1_gui_a6e1c1baafc676bd7c41374f3f901f93f} 
+\index{nsengine::Gui@{nsengine::Gui}!GetTimer@{GetTimer}}
+\index{GetTimer@{GetTimer}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{GetTimer()}{GetTimer()}}
+{\footnotesize\ttfamily float nsengine\+::\+Gui\+::\+Get\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the timer in seconds. 
+
+\begin{DoxyReturn}{Returns}
+Seconds value of timer 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_gui_a8bfa3d908b210affebc2de04cc38751a}\label{structnsengine_1_1_gui_a8bfa3d908b210affebc2de04cc38751a} 
+\index{nsengine::Gui@{nsengine::Gui}!OnDisplay@{OnDisplay}}
+\index{OnDisplay@{OnDisplay}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{OnDisplay()}{OnDisplay()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+On\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Last function to run, used for displaying to screen i.\+e. rendering. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_gui_a8bfa3d908b210affebc2de04cc38751a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_gui_a26395cf840af8f4e59cb9929302235bf}\label{structnsengine_1_1_gui_a26395cf840af8f4e59cb9929302235bf} 
+\index{nsengine::Gui@{nsengine::Gui}!SetPath@{SetPath}}
+\index{SetPath@{SetPath}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{SetPath()}{SetPath()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Path (\begin{DoxyParamCaption}\item[{sys\+::string}]{\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Set the path to chosen font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & String path to font \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9}\label{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9} 
+\index{nsengine::Gui@{nsengine::Gui}!SetText@{SetText}}
+\index{SetText@{SetText}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{sys\+::string}]{\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Set the text to display to screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+text} & String of text \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342}\label{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342} 
+\index{nsengine::Gui@{nsengine::Gui}!SetTimer@{SetTimer}}
+\index{SetTimer@{SetTimer}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{SetTimer()}{SetTimer()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Timer (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the timer to a specific value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Time for the timer to display \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gui.\+h\item 
+Gui.\+cpp\end{DoxyCompactItemize}

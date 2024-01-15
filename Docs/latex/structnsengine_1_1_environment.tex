@@ -1,0 +1,99 @@
+\doxysection{nsengine\+::Environment Struct Reference}
+\hypertarget{structnsengine_1_1_environment}{}\label{structnsengine_1_1_environment}\index{nsengine::Environment@{nsengine::Environment}}
+
+
+Class containing data about the environment or \textquotesingle{}world\textquotesingle{}.  
+
+
+
+
+{\ttfamily \#include $<$Environment.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_environment_a061f97e4220b34c060bc9ef447e75c24}{Add\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Adds an entity to the environment and pushes it back to an internal list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_environment_abd92496c13b66bec1ee4d122c48f3f8c}{Add\+Camera}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_camera}{Camera}} $>$ cam)
+\begin{DoxyCompactList}\small\item\em Adds a camera to the environments internal list, so this camera can be grabbed and referenced elsewhere. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_environment_aed01838cd037a5da07fb68ef0c53e69b}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Gets the core object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_camera}{Camera}} $>$ \mbox{\hyperlink{structnsengine_1_1_environment_a1baeac775041c484221898007020d23f}{Get\+Camera}} (int cam\+Index)
+\begin{DoxyCompactList}\small\item\em Get a specific camera by id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_environment_acd0789873af2006e142a579250891ce8}\label{structnsengine_1_1_environment_acd0789873af2006e142a579250891ce8} 
+struct {\bfseries Core}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class containing data about the environment or \textquotesingle{}world\textquotesingle{}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_environment_abd92496c13b66bec1ee4d122c48f3f8c}\label{structnsengine_1_1_environment_abd92496c13b66bec1ee4d122c48f3f8c} 
+\index{nsengine::Environment@{nsengine::Environment}!AddCamera@{AddCamera}}
+\index{AddCamera@{AddCamera}!nsengine::Environment@{nsengine::Environment}}
+\doxysubsubsection{\texorpdfstring{AddCamera()}{AddCamera()}}
+{\footnotesize\ttfamily void nsengine\+::\+Environment\+::\+Add\+Camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_camera}{Camera}} $>$}]{cam }\end{DoxyParamCaption})}
+
+
+
+Adds a camera to the environments internal list, so this camera can be grabbed and referenced elsewhere. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam} & \doxylink{structnsengine_1_1_camera}{Camera} to add to the list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_environment_a061f97e4220b34c060bc9ef447e75c24}\label{structnsengine_1_1_environment_a061f97e4220b34c060bc9ef447e75c24} 
+\index{nsengine::Environment@{nsengine::Environment}!AddEntity@{AddEntity}}
+\index{AddEntity@{AddEntity}!nsengine::Environment@{nsengine::Environment}}
+\doxysubsubsection{\texorpdfstring{AddEntity()}{AddEntity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ nsengine\+::\+Environment\+::\+Add\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adds an entity to the environment and pushes it back to an internal list. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to that entity 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_environment_a1baeac775041c484221898007020d23f}\label{structnsengine_1_1_environment_a1baeac775041c484221898007020d23f} 
+\index{nsengine::Environment@{nsengine::Environment}!GetCamera@{GetCamera}}
+\index{GetCamera@{GetCamera}!nsengine::Environment@{nsengine::Environment}}
+\doxysubsubsection{\texorpdfstring{GetCamera()}{GetCamera()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_camera}{Camera}} $>$ nsengine\+::\+Environment\+::\+Get\+Camera (\begin{DoxyParamCaption}\item[{int}]{cam\+Index }\end{DoxyParamCaption})}
+
+
+
+Get a specific camera by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+Index} & ID of camera to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to selected camera 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_environment_aed01838cd037a5da07fb68ef0c53e69b}\label{structnsengine_1_1_environment_aed01838cd037a5da07fb68ef0c53e69b} 
+\index{nsengine::Environment@{nsengine::Environment}!GetCore@{GetCore}}
+\index{GetCore@{GetCore}!nsengine::Environment@{nsengine::Environment}}
+\doxysubsubsection{\texorpdfstring{GetCore()}{GetCore()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ nsengine\+::\+Environment\+::\+Get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the core object. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to core 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Environment.\+h\item 
+Environment.\+cpp\end{DoxyCompactItemize}

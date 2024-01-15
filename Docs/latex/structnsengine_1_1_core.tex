@@ -1,0 +1,142 @@
+\doxysection{nsengine\+::Core Struct Reference}
+\hypertarget{structnsengine_1_1_core}{}\label{structnsengine_1_1_core}\index{nsengine::Core@{nsengine::Core}}
+
+
+Main manager for the rest of the engine.  
+
+
+
+
+{\ttfamily \#include $<$Core.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_core_a94e5bc726f259bd0185c11c4e630a73a}\label{structnsengine_1_1_core_a94e5bc726f259bd0185c11c4e630a73a} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start the program. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_core_a9e6f4d6469625ed95ad23e78b70e80e3}\label{structnsengine_1_1_core_a9e6f4d6469625ed95ad23e78b70e80e3} 
+void {\bfseries Stop} ()
+\begin{DoxyCompactList}\small\item\em Stop the program. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_environment}{Environment}} $>$ \mbox{\hyperlink{structnsengine_1_1_core_a3693c8366f6ad2132ed89a9e406965d0}{Create\+Environment}} ()
+\begin{DoxyCompactList}\small\item\em Create an environment. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_input}{Input}} $>$ \mbox{\hyperlink{structnsengine_1_1_core_aa27c227a42831956a4156edd96d2ade6}{Get\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Gets the input manager. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ \mbox{\hyperlink{structnsengine_1_1_core_a4190cab968f2c55ce73bc84adb1b90d8}{Get\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Get the resource manager. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structnsengine_1_1_core_aab8cac43df6357670a219d9b61e485ad}{Get\+Delta\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Works out delta time. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{structnsengine_1_1_core_abd4327662c5c6f345c3d9a5ce70d9ba4}{Find}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ T $>$ $>$ \&out)
+\begin{DoxyCompactList}\small\item\em Finds a list of all components of a specific type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_core_a8982be37c32da6bdfa35ff482328d7de}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the core manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_core_aa04785215c118197b7f04ed1eaba1ca2}\label{structnsengine_1_1_core_aa04785215c118197b7f04ed1eaba1ca2} 
+rp3d\+::\+Physics\+Common {\bfseries physics\+Common}
+\item 
+\Hypertarget{structnsengine_1_1_core_ac617df1d95646b89db0ab4327a66f81d}\label{structnsengine_1_1_core_ac617df1d95646b89db0ab4327a66f81d} 
+rp3d\+::\+Physics\+World \texorpdfstring{$\ast$}{*} {\bfseries physics\+World}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main manager for the rest of the engine. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_core_a3693c8366f6ad2132ed89a9e406965d0}\label{structnsengine_1_1_core_a3693c8366f6ad2132ed89a9e406965d0} 
+\index{nsengine::Core@{nsengine::Core}!CreateEnvironment@{CreateEnvironment}}
+\index{CreateEnvironment@{CreateEnvironment}!nsengine::Core@{nsengine::Core}}
+\doxysubsubsection{\texorpdfstring{CreateEnvironment()}{CreateEnvironment()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_environment}{Environment}} $>$ nsengine\+::\+Core\+::\+Create\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create an environment. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to that environment 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_core_abd4327662c5c6f345c3d9a5ce70d9ba4}\label{structnsengine_1_1_core_abd4327662c5c6f345c3d9a5ce70d9ba4} 
+\index{nsengine::Core@{nsengine::Core}!Find@{Find}}
+\index{Find@{Find}!nsengine::Core@{nsengine::Core}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void nsengine\+::\+Core\+::\+Find (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ T $>$ $>$ \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds a list of all components of a specific type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type to find \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em out} & List of components \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_core_aab8cac43df6357670a219d9b61e485ad}\label{structnsengine_1_1_core_aab8cac43df6357670a219d9b61e485ad} 
+\index{nsengine::Core@{nsengine::Core}!GetDeltaTime@{GetDeltaTime}}
+\index{GetDeltaTime@{GetDeltaTime}!nsengine::Core@{nsengine::Core}}
+\doxysubsubsection{\texorpdfstring{GetDeltaTime()}{GetDeltaTime()}}
+{\footnotesize\ttfamily float nsengine\+::\+Core\+::\+Get\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Works out delta time. 
+
+\begin{DoxyReturn}{Returns}
+Delta time in float format 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_core_aa27c227a42831956a4156edd96d2ade6}\label{structnsengine_1_1_core_aa27c227a42831956a4156edd96d2ade6} 
+\index{nsengine::Core@{nsengine::Core}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!nsengine::Core@{nsengine::Core}}
+\doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_input}{Input}} $>$ nsengine\+::\+Core\+::\+Get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the input manager. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the input for use elsewhere 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_core_a4190cab968f2c55ce73bc84adb1b90d8}\label{structnsengine_1_1_core_a4190cab968f2c55ce73bc84adb1b90d8} 
+\index{nsengine::Core@{nsengine::Core}!GetResources@{GetResources}}
+\index{GetResources@{GetResources}!nsengine::Core@{nsengine::Core}}
+\doxysubsubsection{\texorpdfstring{GetResources()}{GetResources()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ nsengine\+::\+Core\+::\+Get\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the resource manager. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the resource manager 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_core_a8982be37c32da6bdfa35ff482328d7de}\label{structnsengine_1_1_core_a8982be37c32da6bdfa35ff482328d7de} 
+\index{nsengine::Core@{nsengine::Core}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!nsengine::Core@{nsengine::Core}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ nsengine\+::\+Core\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the core manager. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to core 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core.\+h\item 
+Core.\+cpp\end{DoxyCompactItemize}

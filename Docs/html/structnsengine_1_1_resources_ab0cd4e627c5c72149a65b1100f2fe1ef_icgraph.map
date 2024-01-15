@@ -1,0 +1,6 @@
+<map id="nsengine::Resources::Load" name="nsengine::Resources::Load">
+<area shape="rect" id="Node000001" title="Load resource of specified type." alt="" coords="197,29,340,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="299,16,287,10,268,8,250,10,240,15,235,21,237,28,232,29,230,19,236,10,249,5,268,3,289,5,301,11"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_resources.html#a1a1ccbedae23286d0155a84450025437" title="Load an animation from a directory." alt="" coords="5,29,149,72"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="181,53,149,53,149,48,181,48"/>
+</map>

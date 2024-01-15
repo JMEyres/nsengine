@@ -1,0 +1,138 @@
+\doxysection{nsengine\+::Audio Struct Reference}
+\hypertarget{structnsengine_1_1_audio}{}\label{structnsengine_1_1_audio}\index{nsengine::Audio@{nsengine::Audio}}
+
+
+\doxylink{structnsengine_1_1_audio}{Audio} resource hold information on audio clips.  
+
+
+
+
+{\ttfamily \#include $<$Audio.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Audio\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{structnsengine_1_1_audio__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Audio\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{structnsengine_1_1_audio__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf}{On\+Load}} ()
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a}{Load\+Ogg}} (const std\+::string \&\+\_\+path, std\+::vector$<$ unsigned char $>$ \&\+\_\+buffer, ALenum \&\+\_\+format, ALsizei \&\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Loads ogg file from specified path. \end{DoxyCompactList}\item 
+ALuint \mbox{\hyperlink{structnsengine_1_1_audio_adc9d0a48806444e4f7c8ffbfd4c327a6}{Get\+Source\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Gets the source id of audio resource. \end{DoxyCompactList}\item 
+ALuint \mbox{\hyperlink{structnsengine_1_1_audio_a19e4f6b9b1167941b66835b2ae1aaafb}{Get\+Buffer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Gets the buffer id of audio resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structnsengine_1_1_resource_a57f1ea61c1f8c8d0f6ac9b22f4919f3b}{Get\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Get the path of resource from current working directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0}\label{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0} 
+ALuint {\bfseries source\+Id} = 0
+\item 
+\Hypertarget{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07}\label{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07} 
+ALuint {\bfseries buffer\+Id} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ {\bfseries resources}
+\item 
+std\+::string {\bfseries cwd} = std\+::filesystem\+::current\+\_\+path().string()
+\item 
+std\+::string {\bfseries path}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Load} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_audio}{Audio} resource hold information on audio clips. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_audio_a19e4f6b9b1167941b66835b2ae1aaafb}\label{structnsengine_1_1_audio_a19e4f6b9b1167941b66835b2ae1aaafb} 
+\index{nsengine::Audio@{nsengine::Audio}!GetBufferID@{GetBufferID}}
+\index{GetBufferID@{GetBufferID}!nsengine::Audio@{nsengine::Audio}}
+\doxysubsubsection{\texorpdfstring{GetBufferID()}{GetBufferID()}}
+{\footnotesize\ttfamily ALuint nsengine\+::\+Audio\+::\+Get\+Buffer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the buffer id of audio resource. 
+
+\begin{DoxyReturn}{Returns}
+integer buffer audio source id 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_audio_adc9d0a48806444e4f7c8ffbfd4c327a6}\label{structnsengine_1_1_audio_adc9d0a48806444e4f7c8ffbfd4c327a6} 
+\index{nsengine::Audio@{nsengine::Audio}!GetSourceID@{GetSourceID}}
+\index{GetSourceID@{GetSourceID}!nsengine::Audio@{nsengine::Audio}}
+\doxysubsubsection{\texorpdfstring{GetSourceID()}{GetSourceID()}}
+{\footnotesize\ttfamily ALuint nsengine\+::\+Audio\+::\+Get\+Source\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the source id of audio resource. 
+
+\begin{DoxyReturn}{Returns}
+integer audio source id 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a}\label{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a} 
+\index{nsengine::Audio@{nsengine::Audio}!LoadOgg@{LoadOgg}}
+\index{LoadOgg@{LoadOgg}!nsengine::Audio@{nsengine::Audio}}
+\doxysubsubsection{\texorpdfstring{LoadOgg()}{LoadOgg()}}
+{\footnotesize\ttfamily void nsengine\+::\+Audio\+::\+Load\+Ogg (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+path,  }\item[{std\+::vector$<$ unsigned char $>$ \&}]{\+\_\+buffer,  }\item[{ALenum \&}]{\+\_\+format,  }\item[{ALsizei \&}]{\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Loads ogg file from specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & String path to source audio file \\
+\hline
+{\em \+\_\+buffer} & Raw audio data \\
+\hline
+{\em \+\_\+format} & Format of audio data \\
+\hline
+{\em \+\_\+freq} & Frequence of audio data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf}\label{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf} 
+\index{nsengine::Audio@{nsengine::Audio}!OnLoad@{OnLoad}}
+\index{OnLoad@{OnLoad}!nsengine::Audio@{nsengine::Audio}}
+\doxysubsubsection{\texorpdfstring{OnLoad()}{OnLoad()}}
+{\footnotesize\ttfamily void nsengine\+::\+Audio\+::\+On\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Audio.\+h\item 
+Audio.\+cpp\end{DoxyCompactItemize}

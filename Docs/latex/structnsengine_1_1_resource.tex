@@ -1,0 +1,77 @@
+\doxysection{nsengine\+::Resource Struct Reference}
+\hypertarget{structnsengine_1_1_resource}{}\label{structnsengine_1_1_resource}\index{nsengine::Resource@{nsengine::Resource}}
+
+
+Base class for all resources to inherit from.  
+
+
+
+
+{\ttfamily \#include $<$Resource.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Resource\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_resource__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_resource_a40262bfa598da74f5cefeb84b144240f}\label{structnsengine_1_1_resource_a40262bfa598da74f5cefeb84b144240f} 
+virtual void {\bfseries On\+Load} ()=0
+\item 
+std\+::string \mbox{\hyperlink{structnsengine_1_1_resource_a57f1ea61c1f8c8d0f6ac9b22f4919f3b}{Get\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Get the path of resource from current working directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}\label{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1} 
+void {\bfseries Load} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_resource_ae5ea6137ff33872a4f750a4b90009547}\label{structnsengine_1_1_resource_ae5ea6137ff33872a4f750a4b90009547} 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ {\bfseries resources}
+\item 
+\Hypertarget{structnsengine_1_1_resource_add128ce1c4560d3a06b886ecc757dee5}\label{structnsengine_1_1_resource_add128ce1c4560d3a06b886ecc757dee5} 
+std\+::string {\bfseries cwd} = std\+::filesystem\+::current\+\_\+path().string()
+\item 
+\Hypertarget{structnsengine_1_1_resource_abb23fb1b03eeac301953608989433a6c}\label{structnsengine_1_1_resource_abb23fb1b03eeac301953608989433a6c} 
+std\+::string {\bfseries path}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_resource_afcf7d8fa858ef60c15c2813b0e8970d3}\label{structnsengine_1_1_resource_afcf7d8fa858ef60c15c2813b0e8970d3} 
+struct {\bfseries Resources}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all resources to inherit from. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_resource_a57f1ea61c1f8c8d0f6ac9b22f4919f3b}\label{structnsengine_1_1_resource_a57f1ea61c1f8c8d0f6ac9b22f4919f3b} 
+\index{nsengine::Resource@{nsengine::Resource}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!nsengine::Resource@{nsengine::Resource}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}}
+{\footnotesize\ttfamily std\+::string nsengine\+::\+Resource\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the path of resource from current working directory. 
+
+\begin{DoxyReturn}{Returns}
+String path with current working directory at the start 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Resource.\+h\item 
+Resource.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+\doxysection{Capsule\+Collider.\+h}
+\hypertarget{_capsule_collider_8h_source}{}\label{_capsule_collider_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <reactphysics3d/reactphysics3d.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_capsule_collider}{CapsuleCollider}}\ :\ \mbox{\hyperlink{structnsengine_1_1_component}{Component}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_capsule_collider_ac0b743ef192c37f7817790227f24a79e}{CreateCollider}}(\textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{float}\ height);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ rp3d::CapsuleShape*\ \mbox{\hyperlink{structnsengine_1_1_capsule_collider_adee03291b2efe0d090127a431a9febd9}{GetCollisionShape}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ rp3d::CapsuleShape*\ capsule;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height;}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}

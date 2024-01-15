@@ -1,0 +1,7 @@
+<map id="nsengine::Camera::OnInitialize" name="nsengine::Camera::OnInitialize">
+<area shape="rect" id="Node000001" title="Runs before the game loop starts, used to setup anything needing to be done once beforehand." alt="" coords="5,43,204,69"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab1810de9f6ab841eb92cde5d9e2f7ffe" title="Gets the current entity." alt="" coords="285,5,432,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,42,269,34,269,40,204,47"/>
+<area shape="rect" id="Node000003" href="$structnsengine_1_1_camera.html#a2c62b7ca5cb2fdff08b309534836fb73" title="Initial setup of the camera by default." alt="" coords="252,72,465,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,65,237,69,236,74,204,70"/>
+</map>

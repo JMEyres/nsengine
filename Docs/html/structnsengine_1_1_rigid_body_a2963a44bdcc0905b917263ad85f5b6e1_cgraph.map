@@ -1,0 +1,5 @@
+<map id="nsengine::RigidBody::OnPhysicsTick" name="nsengine::RigidBody::OnPhysicsTick">
+<area shape="rect" id="Node000001" title="Runs every frame before on tick used to handle physics, ticks during physics step." alt="" coords="5,5,146,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab1810de9f6ab841eb92cde5d9e2f7ffe" title="Gets the current entity." alt="" coords="194,5,341,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,24,178,24,178,29,146,29"/>
+</map>

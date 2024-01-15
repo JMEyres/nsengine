@@ -1,0 +1,5 @@
+<map id="nsengine::AudioSource" name="nsengine::AudioSource">
+<area shape="rect" id="Node000001" title="Component to control audio." alt="" coords="5,80,161,107"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html" title="Base class for all ECS components to inherit from." alt="" coords="9,5,157,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,48,86,80,80,80,80,48"/>
+</map>

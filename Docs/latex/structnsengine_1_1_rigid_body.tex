@@ -1,0 +1,276 @@
+\doxysection{nsengine\+::Rigid\+Body Struct Reference}
+\hypertarget{structnsengine_1_1_rigid_body}{}\label{structnsengine_1_1_rigid_body}\index{nsengine::RigidBody@{nsengine::RigidBody}}
+
+
+\doxylink{structnsengine_1_1_component}{Component} responsible for creating and storing data for a rigidbody, used for collision.  
+
+
+
+
+{\ttfamily \#include $<$Rigid\+Body.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Rigid\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_rigid_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Rigid\+Body\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{structnsengine_1_1_rigid_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a2963a44bdcc0905b917263ad85f5b6e1}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a227721d9b195df01d6b7caa589cd9c66}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a4b0a2fbfa7dfe3933c7481fe068c8d13}{Set\+Type}} (rp3d\+::\+Body\+Type \+\_\+type)
+\begin{DoxyCompactList}\small\item\em Set the type for the rigid body. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a702d99a4d34e02fabc1f59e9f2c10bd8}{Add\+Collision\+Shape}} (rp3d\+::\+Collision\+Shape \texorpdfstring{$\ast$}{*}\+\_\+shape)
+\begin{DoxyCompactList}\small\item\em Add a collision shape to the rigidbody. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_ae80d591811265a9755aa57928fd8e820}{Add\+Trigger\+Collision\+Shape}} (rp3d\+::\+Collision\+Shape \texorpdfstring{$\ast$}{*}\+\_\+shape)
+\begin{DoxyCompactList}\small\item\em Add a trigger collision shape to the rigidbody used when rigidbody doesnt need to collide with other rigidbodies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a719522ef95460e04545dc9ae4593ad4d}{Set\+Bounciness}} (float \+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the bounciness level of the rigidbody. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a63cd75dffdec7e3c5e57e2f62f6c443e}{Move}} (float \+\_\+x, float \+\_\+y, float \+\_\+z)
+\begin{DoxyCompactList}\small\item\em Move the rigidbody with simulated physics forces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_af91b700398e82cfb4fa4d6b191159e7a}{Set\+Position}} (float \+\_\+x, float \+\_\+y, float \+\_\+z)
+\begin{DoxyCompactList}\small\item\em Force set the position of the rigidbody and by extension the transform. \end{DoxyCompactList}\item 
+rend\+::vec3 \mbox{\hyperlink{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58}{Get\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Get the position of the current rigidbody. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b}\label{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b} 
+void {\bfseries Disable} ()
+\begin{DoxyCompactList}\small\item\em Disable rigidbody. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39}\label{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39} 
+void {\bfseries Enable} ()
+\item 
+rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnsengine_1_1_rigid_body_a7fd421746536c94a5d41fbd0f96aaf44}{Get\+Rigid\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Get the current rigidbody. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_component}{Component} responsible for creating and storing data for a rigidbody, used for collision. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_rigid_body_a702d99a4d34e02fabc1f59e9f2c10bd8}\label{structnsengine_1_1_rigid_body_a702d99a4d34e02fabc1f59e9f2c10bd8} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!AddCollisionShape@{AddCollisionShape}}
+\index{AddCollisionShape@{AddCollisionShape}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{AddCollisionShape()}{AddCollisionShape()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Add\+Collision\+Shape (\begin{DoxyParamCaption}\item[{rp3d\+::\+Collision\+Shape \texorpdfstring{$\ast$}{*}}]{\+\_\+shape }\end{DoxyParamCaption})}
+
+
+
+Add a collision shape to the rigidbody. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+shape} & Collision shape to be added \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_rigid_body_ae80d591811265a9755aa57928fd8e820}\label{structnsengine_1_1_rigid_body_ae80d591811265a9755aa57928fd8e820} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!AddTriggerCollisionShape@{AddTriggerCollisionShape}}
+\index{AddTriggerCollisionShape@{AddTriggerCollisionShape}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{AddTriggerCollisionShape()}{AddTriggerCollisionShape()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Add\+Trigger\+Collision\+Shape (\begin{DoxyParamCaption}\item[{rp3d\+::\+Collision\+Shape \texorpdfstring{$\ast$}{*}}]{\+\_\+shape }\end{DoxyParamCaption})}
+
+
+
+Add a trigger collision shape to the rigidbody used when rigidbody doesnt need to collide with other rigidbodies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+shape} & Collision shape to be added \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58}\label{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!GetPos@{GetPos}}
+\index{GetPos@{GetPos}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetPos()}{GetPos()}}
+{\footnotesize\ttfamily rend\+::vec3 nsengine\+::\+Rigid\+Body\+::\+Get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the position of the current rigidbody. 
+
+\begin{DoxyReturn}{Returns}
+Vector position of rigidbody in xyz axis 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_rigid_body_a7fd421746536c94a5d41fbd0f96aaf44}\label{structnsengine_1_1_rigid_body_a7fd421746536c94a5d41fbd0f96aaf44} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!GetRigidBody@{GetRigidBody}}
+\index{GetRigidBody@{GetRigidBody}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetRigidBody()}{GetRigidBody()}}
+{\footnotesize\ttfamily rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} nsengine\+::\+Rigid\+Body\+::\+Get\+Rigid\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current rigidbody. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the given rigidbody 
+\end{DoxyReturn}
+\Hypertarget{structnsengine_1_1_rigid_body_a63cd75dffdec7e3c5e57e2f62f6c443e}\label{structnsengine_1_1_rigid_body_a63cd75dffdec7e3c5e57e2f62f6c443e} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!Move@{Move}}
+\index{Move@{Move}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Move (\begin{DoxyParamCaption}\item[{float}]{\+\_\+x,  }\item[{float}]{\+\_\+y,  }\item[{float}]{\+\_\+z }\end{DoxyParamCaption})}
+
+
+
+Move the rigidbody with simulated physics forces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & Force to move in x axis \\
+\hline
+{\em \+\_\+y} & Force to move in y axis \\
+\hline
+{\em \+\_\+z} & Force to move in z axis \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{structnsengine_1_1_rigid_body_a63cd75dffdec7e3c5e57e2f62f6c443e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_rigid_body_a227721d9b195df01d6b7caa589cd9c66}\label{structnsengine_1_1_rigid_body_a227721d9b195df01d6b7caa589cd9c66} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!OnInitialize@{OnInitialize}}
+\index{OnInitialize@{OnInitialize}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{OnInitialize()}{OnInitialize()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+On\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs before the game loop starts, used to setup anything needing to be done once beforehand. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{structnsengine_1_1_rigid_body_a227721d9b195df01d6b7caa589cd9c66_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_rigid_body_a2963a44bdcc0905b917263ad85f5b6e1}\label{structnsengine_1_1_rigid_body_a2963a44bdcc0905b917263ad85f5b6e1} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!OnPhysicsTick@{OnPhysicsTick}}
+\index{OnPhysicsTick@{OnPhysicsTick}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{OnPhysicsTick()}{OnPhysicsTick()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+On\+Physics\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs every frame before on tick used to handle physics, ticks during physics step. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{structnsengine_1_1_rigid_body_a2963a44bdcc0905b917263ad85f5b6e1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_rigid_body_a719522ef95460e04545dc9ae4593ad4d}\label{structnsengine_1_1_rigid_body_a719522ef95460e04545dc9ae4593ad4d} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!SetBounciness@{SetBounciness}}
+\index{SetBounciness@{SetBounciness}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetBounciness()}{SetBounciness()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Set\+Bounciness (\begin{DoxyParamCaption}\item[{float}]{\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Set the bounciness level of the rigidbody. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+value} & Bounciness level between 0 and 1, 0 being not bouncy at all, 1 being fully bouncy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_rigid_body_af91b700398e82cfb4fa4d6b191159e7a}\label{structnsengine_1_1_rigid_body_af91b700398e82cfb4fa4d6b191159e7a} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{\+\_\+x,  }\item[{float}]{\+\_\+y,  }\item[{float}]{\+\_\+z }\end{DoxyParamCaption})}
+
+
+
+Force set the position of the rigidbody and by extension the transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & Position on x axis \\
+\hline
+{\em \+\_\+y} & Position on y axis \\
+\hline
+{\em \+\_\+z} & Position on z axis \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{structnsengine_1_1_rigid_body_af91b700398e82cfb4fa4d6b191159e7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_rigid_body_a4b0a2fbfa7dfe3933c7481fe068c8d13}\label{structnsengine_1_1_rigid_body_a4b0a2fbfa7dfe3933c7481fe068c8d13} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!SetType@{SetType}}
+\index{SetType@{SetType}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Set\+Type (\begin{DoxyParamCaption}\item[{rp3d\+::\+Body\+Type}]{\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Set the type for the rigid body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+type} & Static, Dynamic or Kinematic rigidbody \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Rigid\+Body.\+h\item 
+Rigid\+Body.\+cpp\end{DoxyCompactItemize}

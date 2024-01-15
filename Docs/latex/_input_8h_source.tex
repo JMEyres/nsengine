@@ -1,0 +1,71 @@
+\doxysection{Input.\+h}
+\hypertarget{_input_8h_source}{}\label{_input_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ KEY\_Q\ 'q'}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ KEY\_W\ 'w'}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ KEY\_E\ 'e'}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ KEY\_R\ 'r'}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ KEY\_T\ 't'}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ KEY\_Y\ 'y'}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ KEY\_U\ 'u'}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ KEY\_I\ 'i'}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ KEY\_O\ 'o'}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ KEY\_P\ 'p'}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ KEY\_A\ 'a'}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ KEY\_S\ 's'}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ KEY\_D\ 'd'}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ KEY\_F\ 'f'}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ KEY\_G\ 'g'}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ KEY\_H\ 'h'}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ KEY\_J\ 'j'}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ KEY\_K\ 'k'}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ KEY\_L\ 'l'}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ KEY\_Z\ 'z'}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ KEY\_X\ 'x'}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ KEY\_C\ 'c'}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ KEY\_V\ 'v'}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ KEY\_B\ 'b'}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KEY\_N\ 'n'}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ KEY\_M\ 'm'}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ KEY\_SPACE\ 32}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ KEY\_RIGHT\ 1073741903}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ KEY\_LEFT\ 1073741904}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ KEY\_DOWN\ 1073741905}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ KEY\_UP\ 1073741906}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ KEY\_LSHIFT\ 1073742049}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ KEY\_LCTRL\ 1073742048}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ KEY\_ESCAPE\ 27}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ KEY\_TAB\ 9}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ KEY\_RETURN\ 13}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }nsengine\ }
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_input}{Input}}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnsengine_1_1_input_a2d9f6769ce209b96ff9aea97aa45c224}{IsKeyHeld}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnsengine_1_1_input_ae3039cfbfa29184fe90073aceadf129e}{IsKeyPressed}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnsengine_1_1_input_a2c524ba322ab13ed3037f337d17dc09e}{IsKeyReleased}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_input_a564401bad4095dc83b363d93d6084870}{ClearInput}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structnsengine_1_1_input_aff752a2229d750a596e9ce25a5389661}{GetMouseX}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structnsengine_1_1_input_af3aa805cdd4747975ab0b406624c0a4c}{GetMouseY}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_core}{Core}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mouseX,\ mouseY;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::vector<int>\ keys;\ \textcolor{comment}{//\ keys\ held\ down}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::vector<int>\ pressedKeys;\ \textcolor{comment}{//\ keys\ pressed\ that\ frame}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::vector<int>\ releasedKeys;\ \textcolor{comment}{//\ keys\ released\ that\ frame}}
+\DoxyCodeLine{00080\ \ \ \ \ \};}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,53 @@
+\doxysection{Rigid\+Body.\+h}
+\hypertarget{_rigid_body_8h_source}{}\label{_rigid_body_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Component.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}BoxCollider.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <reactphysics3d/reactphysics3d.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_rigid_body}{RigidBody}}\ :\ \mbox{\hyperlink{structnsengine_1_1_component}{Component}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a2963a44bdcc0905b917263ad85f5b6e1}{OnPhysicsTick}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a227721d9b195df01d6b7caa589cd9c66}{OnInitialize}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a4b0a2fbfa7dfe3933c7481fe068c8d13}{SetType}}(rp3d::BodyType\ \_type);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a702d99a4d34e02fabc1f59e9f2c10bd8}{AddCollisionShape}}(rp3d::CollisionShape*\ \_shape);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_ae80d591811265a9755aa57928fd8e820}{AddTriggerCollisionShape}}(rp3d::CollisionShape*\ \_shape);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a719522ef95460e04545dc9ae4593ad4d}{SetBounciness}}(\textcolor{keywordtype}{float}\ \_value);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a63cd75dffdec7e3c5e57e2f62f6c443e}{Move}}(\textcolor{keywordtype}{float}\ \_x,\ \textcolor{keywordtype}{float}\ \_y,\ \textcolor{keywordtype}{float}\ \_z);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_af91b700398e82cfb4fa4d6b191159e7a}{SetPosition}}(\textcolor{keywordtype}{float}\ \_x,\ \textcolor{keywordtype}{float}\ \_y,\ \textcolor{keywordtype}{float}\ \_z);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ rend::vec3\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58}{GetPos}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b}{Disable}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Enable();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ rp3d::RigidBody*\ \mbox{\hyperlink{structnsengine_1_1_rigid_body_a7fd421746536c94a5d41fbd0f96aaf44}{GetRigidBody}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ rp3d::RigidBody*\ rb;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ rp3d::BodyType\ rbType\ =\ rp3d::BodyType::DYNAMIC;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ rp3d::Collider*\ collider;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ rp3d::Collider*\ triggerCollider;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ rp3d::CollisionShape*\ collisionShape;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ rp3d::CollisionShape*\ triggerCollisionShape;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ rp3d::Vector3\ originalPosition;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isTrigger\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ disable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bounciness\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ \}}
+
+\end{DoxyCode}

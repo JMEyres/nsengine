@@ -1,0 +1,5 @@
+<map id="nsengine::TriangleRenderer" name="nsengine::TriangleRenderer">
+<area shape="rect" id="Node000001" title="Component to simply render a triangle to screen." alt="" coords="5,80,184,107"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html" title="Base class for all ECS components to inherit from." alt="" coords="21,5,168,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,48,97,80,92,80,92,48"/>
+</map>

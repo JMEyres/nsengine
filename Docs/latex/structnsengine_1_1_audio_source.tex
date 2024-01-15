@@ -1,0 +1,119 @@
+\doxysection{nsengine\+::Audio\+Source Struct Reference}
+\hypertarget{structnsengine_1_1_audio_source}{}\label{structnsengine_1_1_audio_source}\index{nsengine::AudioSource@{nsengine::AudioSource}}
+
+
+\doxylink{structnsengine_1_1_component}{Component} to control audio.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Source.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Audio\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{structnsengine_1_1_audio_source__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Audio\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{structnsengine_1_1_audio_source__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_audio_source_a8e5b9a6e54083e489a55335f7a8dc8b6}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_audio_source_ac7861f7ddd1c14bd22c8b976d32ec691}{Set\+Audio}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_audio}{Audio}} $>$ \+\_\+audio)
+\begin{DoxyCompactList}\small\item\em Set the audio source from audio resource. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_audio_source_a1a7f51a20c65a9f5c0d9b6379a7fc887}\label{structnsengine_1_1_audio_source_a1a7f51a20c65a9f5c0d9b6379a7fc887} 
+void {\bfseries Play} ()
+\begin{DoxyCompactList}\small\item\em Play audio source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_audio_source_a7dd1711387992ff8103a85c404fc8bfa}\label{structnsengine_1_1_audio_source_a7dd1711387992ff8103a85c404fc8bfa} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_audio}{Audio}} $>$ {\bfseries audio\+Ptr}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structnsengine_1_1_component}{Component} to control audio. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_audio_source_a8e5b9a6e54083e489a55335f7a8dc8b6}\label{structnsengine_1_1_audio_source_a8e5b9a6e54083e489a55335f7a8dc8b6} 
+\index{nsengine::AudioSource@{nsengine::AudioSource}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!nsengine::AudioSource@{nsengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily void nsengine\+::\+Audio\+Source\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs every single frame, used to update in realtime. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{nsengine\+::\+Component}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{structnsengine_1_1_audio_source_a8e5b9a6e54083e489a55335f7a8dc8b6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_audio_source_ac7861f7ddd1c14bd22c8b976d32ec691}\label{structnsengine_1_1_audio_source_ac7861f7ddd1c14bd22c8b976d32ec691} 
+\index{nsengine::AudioSource@{nsengine::AudioSource}!SetAudio@{SetAudio}}
+\index{SetAudio@{SetAudio}!nsengine::AudioSource@{nsengine::AudioSource}}
+\doxysubsubsection{\texorpdfstring{SetAudio()}{SetAudio()}}
+{\footnotesize\ttfamily void nsengine\+::\+Audio\+Source\+::\+Set\+Audio (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_audio}{Audio}} $>$}]{\+\_\+audio }\end{DoxyParamCaption})}
+
+
+
+Set the audio source from audio resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+audio} & \doxylink{structnsengine_1_1_audio}{Audio} resource, contains audio data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Audio\+Source.\+h\item 
+Audio\+Source.\+cpp\end{DoxyCompactItemize}

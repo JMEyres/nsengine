@@ -1,0 +1,5 @@
+<map id="nsengine::BoxCollider::CreateCollider" name="nsengine::BoxCollider::CreateCollider">
+<area shape="rect" id="Node000001" title="Create box collider for use in rigidbody and collision detection." alt="" coords="5,5,153,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab7c6961c5ce27a524c3ec676df1f7e1f" title="Shortcut to get core." alt="" coords="201,5,348,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,24,185,24,185,29,153,29"/>
+</map>

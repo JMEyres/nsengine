@@ -1,0 +1,30 @@
+\doxysection{Audio.\+h}
+\hypertarget{_audio_8h_source}{}\label{_audio_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Resource.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <AL/al.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <AL/alc.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rend/rend.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_audio}{Audio}}\ :\ \mbox{\hyperlink{structnsengine_1_1_resource}{Resource}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ OnLoad();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a}{LoadOgg}}(\textcolor{keyword}{const}\ std::string\&\ \_path,\ std::vector<unsigned\ char>\&\ \_buffer,\ ALenum\&\ \_format,\ ALsizei\&\ \_freq);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ALuint\ \mbox{\hyperlink{structnsengine_1_1_audio_adc9d0a48806444e4f7c8ffbfd4c327a6}{GetSourceID}}()\ \{\ \textcolor{keywordflow}{return}\ sourceId;\ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ ALuint\ \mbox{\hyperlink{structnsengine_1_1_audio_a19e4f6b9b1167941b66835b2ae1aaafb}{GetBufferID}}()\ \{\ \textcolor{keywordflow}{return}\ bufferId;\ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::shared\_ptr<Audio>\ audio;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ALuint\ sourceId\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ALuint\ bufferId\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

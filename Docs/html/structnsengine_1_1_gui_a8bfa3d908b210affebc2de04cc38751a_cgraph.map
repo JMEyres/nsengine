@@ -1,0 +1,7 @@
+<map id="nsengine::Gui::OnDisplay" name="nsengine::Gui::OnDisplay">
+<area shape="rect" id="Node000001" title="Last function to run, used for displaying to screen i.e. rendering." alt="" coords="5,43,175,69"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab7c6961c5ce27a524c3ec676df1f7e1f" title="Shortcut to get core." alt="" coords="226,5,374,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,42,211,36,211,42,175,47"/>
+<area shape="rect" id="Node000003" href="$structnsengine_1_1_gui.html#affd9425d3da7154982053d7207db17a9" title="Set the text to display to screen." alt="" coords="223,72,377,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,65,208,70,207,75,175,70"/>
+</map>

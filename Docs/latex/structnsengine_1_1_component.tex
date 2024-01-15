@@ -1,0 +1,165 @@
+\doxysection{nsengine\+::Component Struct Reference}
+\hypertarget{structnsengine_1_1_component}{}\label{structnsengine_1_1_component}\index{nsengine::Component@{nsengine::Component}}
+
+
+Base class for all ECS components to inherit from.  
+
+
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+
+
+Inheritance diagram for nsengine\+::Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_component__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+\Hypertarget{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}\label{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2} 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}\label{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a} 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}\label{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6} 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82}\label{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82} 
+struct {\bfseries Entity}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all ECS components to inherit from. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}\label{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f} 
+\index{nsengine::Component@{nsengine::Component}!GetCore@{GetCore}}
+\index{GetCore@{GetCore}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{GetCore()}{GetCore()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ nsengine\+::\+Component\+::\+Get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Shortcut to get core. 
+
+\begin{DoxyReturn}{Returns}
+shared\+\_\+ptr to core 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}\label{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe} 
+\index{nsengine::Component@{nsengine::Component}!GetEntity@{GetEntity}}
+\index{GetEntity@{GetEntity}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{GetEntity()}{GetEntity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ nsengine\+::\+Component\+::\+Get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current entity. 
+
+\begin{DoxyReturn}{Returns}
+The parent entity 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}\label{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308} 
+\index{nsengine::Component@{nsengine::Component}!OnDisplay@{OnDisplay}}
+\index{OnDisplay@{OnDisplay}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{OnDisplay()}{OnDisplay()}}
+{\footnotesize\ttfamily void nsengine\+::\+Component\+::\+On\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Last function to run, used for displaying to screen i.\+e. rendering. 
+
+
+
+Reimplemented in \mbox{\hyperlink{structnsengine_1_1_gui_a8bfa3d908b210affebc2de04cc38751a}{nsengine\+::\+Gui}}, and \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_a64647653133769d582f588330bf3062c}{nsengine\+::\+Sprite\+Renderer}}.
+
+\Hypertarget{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}\label{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11} 
+\index{nsengine::Component@{nsengine::Component}!OnInitialize@{OnInitialize}}
+\index{OnInitialize@{OnInitialize}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{OnInitialize()}{OnInitialize()}}
+{\footnotesize\ttfamily void nsengine\+::\+Component\+::\+On\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs before the game loop starts, used to setup anything needing to be done once beforehand. 
+
+
+
+Reimplemented in \mbox{\hyperlink{structnsengine_1_1_camera_a7a88618ff3fb33cfd2c316e7452470dd}{nsengine\+::\+Camera}}, \mbox{\hyperlink{structnsengine_1_1_rigid_body_a227721d9b195df01d6b7caa589cd9c66}{nsengine\+::\+Rigid\+Body}}, and \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_a63bd213db5a4e36104cbd59740053da9}{nsengine\+::\+Sprite\+Renderer}}.
+
+\Hypertarget{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}\label{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d} 
+\index{nsengine::Component@{nsengine::Component}!OnPhysicsTick@{OnPhysicsTick}}
+\index{OnPhysicsTick@{OnPhysicsTick}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{OnPhysicsTick()}{OnPhysicsTick()}}
+{\footnotesize\ttfamily void nsengine\+::\+Component\+::\+On\+Physics\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs every frame before on tick used to handle physics, ticks during physics step. 
+
+
+
+Reimplemented in \mbox{\hyperlink{structnsengine_1_1_rigid_body_a2963a44bdcc0905b917263ad85f5b6e1}{nsengine\+::\+Rigid\+Body}}.
+
+\Hypertarget{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}\label{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab} 
+\index{nsengine::Component@{nsengine::Component}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily void nsengine\+::\+Component\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs every single frame, used to update in realtime. 
+
+
+
+Reimplemented in \mbox{\hyperlink{structnsengine_1_1_audio_source_a8e5b9a6e54083e489a55335f7a8dc8b6}{nsengine\+::\+Audio\+Source}}, \mbox{\hyperlink{structnsengine_1_1_camera_a1ee750417c8bbddf19f9e8376f9013e9}{nsengine\+::\+Camera}}, and \mbox{\hyperlink{structnsengine_1_1_sprite_renderer_a2068ec6170e8caa38291a9d6d8a964a2}{nsengine\+::\+Sprite\+Renderer}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Component.\+h\item 
+Component.\+cpp\end{DoxyCompactItemize}

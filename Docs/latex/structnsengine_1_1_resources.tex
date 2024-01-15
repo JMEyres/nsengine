@@ -1,0 +1,101 @@
+\doxysection{nsengine\+::Resources Struct Reference}
+\hypertarget{structnsengine_1_1_resources}{}\label{structnsengine_1_1_resources}\index{nsengine::Resources@{nsengine::Resources}}
+
+
+Class responsible for all resources.  
+
+
+
+
+{\ttfamily \#include $<$Resources.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{Load}} (const std\+::string \&\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Load resource of specified type. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_texture}{Texture}} $>$ $>$ \mbox{\hyperlink{structnsengine_1_1_resources_a1a1ccbedae23286d0155a84450025437}{Load\+Animation}} (std\+::string \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\+\_\+path}}, \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{int}} \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\+\_\+frame\+Count}})
+\begin{DoxyCompactList}\small\item\em Load an animation from a directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnsengine_1_1_resources_acd0789873af2006e142a579250891ce8}\label{structnsengine_1_1_resources_acd0789873af2006e142a579250891ce8} 
+\mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{struct}} {\bfseries Core}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class responsible for all resources. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}\label{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef} 
+\index{nsengine::Resources@{nsengine::Resources}!Load@{Load}}
+\index{Load@{Load}!nsengine::Resources@{nsengine::Resources}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ nsengine\+::\+Resources\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load resource of specified type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of resource to load \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path the resource to load \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to loaded resource 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_resources_a1a1ccbedae23286d0155a84450025437}\label{structnsengine_1_1_resources_a1a1ccbedae23286d0155a84450025437} 
+\index{nsengine::Resources@{nsengine::Resources}!LoadAnimation@{LoadAnimation}}
+\index{LoadAnimation@{LoadAnimation}!nsengine::Resources@{nsengine::Resources}}
+\doxysubsubsection{\texorpdfstring{LoadAnimation()}{LoadAnimation()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_texture}{Texture}} $>$ $>$ nsengine\+::\+Resources\+::\+Load\+Animation (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+path,  }\item[{\mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{int}}}]{\+\_\+frame\+Count }\end{DoxyParamCaption})}
+
+
+
+Load an animation from a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to directory \\
+\hline
+{\em frame\+Count} & Numebr of animation frames \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of all textures in given directory used for animation 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{structnsengine_1_1_resources_a1a1ccbedae23286d0155a84450025437_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Resources.\+h\item 
+Resources.\+cpp\end{DoxyCompactItemize}

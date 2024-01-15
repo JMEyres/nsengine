@@ -1,0 +1,39 @@
+\doxysection{Environment.\+h}
+\hypertarget{_environment_8h_source}{}\label{_environment_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include<memory>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Transform.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }Entity;\ \textcolor{comment}{//\ just\ says\ it\ exists\ -\/\ not\ defined\ yet}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }Core;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }Camera;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_environment}{Environment}}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::shared\_ptr<Entity>\ \mbox{\hyperlink{structnsengine_1_1_environment_a061f97e4220b34c060bc9ef447e75c24}{AddEntity}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structnsengine_1_1_environment_abd92496c13b66bec1ee4d122c48f3f8c}{AddCamera}}(std::shared\_ptr<Camera>\ cam);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::shared\_ptr<Core>\ \mbox{\hyperlink{structnsengine_1_1_environment_aed01838cd037a5da07fb68ef0c53e69b}{GetCore}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::shared\_ptr<Camera>\ \mbox{\hyperlink{structnsengine_1_1_environment_a1baeac775041c484221898007020d23f}{GetCamera}}(\textcolor{keywordtype}{int}\ camIndex);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_core}{Core}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::weak\_ptr<Core>\ core;\ \textcolor{comment}{//\ core\ owns\ environments}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::weak\_ptr<Environment>\ self;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Entity>\ >\ entities;\ \textcolor{comment}{//\ List\ of\ entities}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Camera>\ >\ cameras;\ \textcolor{comment}{//\ List\ of\ entities}}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}

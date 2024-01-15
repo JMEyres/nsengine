@@ -1,0 +1,101 @@
+\doxysection{nsengine\+::Capsule\+Collider Struct Reference}
+\hypertarget{structnsengine_1_1_capsule_collider}{}\label{structnsengine_1_1_capsule_collider}\index{nsengine::CapsuleCollider@{nsengine::CapsuleCollider}}
+
+
+Inheritance diagram for nsengine\+::Capsule\+Collider\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{structnsengine_1_1_capsule_collider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nsengine\+::Capsule\+Collider\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{structnsengine_1_1_capsule_collider__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structnsengine_1_1_capsule_collider_ac0b743ef192c37f7817790227f24a79e}{Create\+Collider}} (float radius, float height)
+\begin{DoxyCompactList}\small\item\em Create a capsule collider. \end{DoxyCompactList}\item 
+rp3d\+::\+Capsule\+Shape \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnsengine_1_1_capsule_collider_adee03291b2efe0d090127a431a9febd9}{Get\+Collision\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Gets the collision shape of the box collider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_ae9c3175e760c913e7fd24e405e2eab11}{On\+Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Runs before the game loop starts, used to setup anything needing to be done once beforehand. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Create} ()
+\begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab7c6961c5ce27a524c3ec676df1f7e1f}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Shortcut to get core. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structnsengine_1_1_capsule_collider_ac0b743ef192c37f7817790227f24a79e}\label{structnsengine_1_1_capsule_collider_ac0b743ef192c37f7817790227f24a79e} 
+\index{nsengine::CapsuleCollider@{nsengine::CapsuleCollider}!CreateCollider@{CreateCollider}}
+\index{CreateCollider@{CreateCollider}!nsengine::CapsuleCollider@{nsengine::CapsuleCollider}}
+\doxysubsubsection{\texorpdfstring{CreateCollider()}{CreateCollider()}}
+{\footnotesize\ttfamily void nsengine\+::\+Capsule\+Collider\+::\+Create\+Collider (\begin{DoxyParamCaption}\item[{float}]{radius,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+
+
+Create a capsule collider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radius} & Radius of capsule \\
+\hline
+{\em height} & Height of capsule \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_capsule_collider_ac0b743ef192c37f7817790227f24a79e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_capsule_collider_adee03291b2efe0d090127a431a9febd9}\label{structnsengine_1_1_capsule_collider_adee03291b2efe0d090127a431a9febd9} 
+\index{nsengine::CapsuleCollider@{nsengine::CapsuleCollider}!GetCollisionShape@{GetCollisionShape}}
+\index{GetCollisionShape@{GetCollisionShape}!nsengine::CapsuleCollider@{nsengine::CapsuleCollider}}
+\doxysubsubsection{\texorpdfstring{GetCollisionShape()}{GetCollisionShape()}}
+{\footnotesize\ttfamily rp3d\+::\+Capsule\+Shape \texorpdfstring{$\ast$}{*} nsengine\+::\+Capsule\+Collider\+::\+Get\+Collision\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the collision shape of the box collider. 
+
+\begin{DoxyReturn}{Returns}
+Collision shape as Capsule shape from React Physics 3D 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Capsule\+Collider.\+h\item 
+Capsule\+Collider.\+cpp\end{DoxyCompactItemize}

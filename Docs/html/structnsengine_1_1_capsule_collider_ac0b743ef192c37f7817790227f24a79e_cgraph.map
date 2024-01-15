@@ -1,0 +1,5 @@
+<map id="nsengine::CapsuleCollider::CreateCollider" name="nsengine::CapsuleCollider::CreateCollider">
+<area shape="rect" id="Node000001" title="Create a capsule collider." alt="" coords="5,5,177,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab7c6961c5ce27a524c3ec676df1f7e1f" title="Shortcut to get core." alt="" coords="225,5,372,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,24,209,24,209,29,177,29"/>
+</map>

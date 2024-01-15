@@ -1,0 +1,7 @@
+<map id="nsengine::RigidBody::OnInitialize" name="nsengine::RigidBody::OnInitialize">
+<area shape="rect" id="Node000001" title="Runs before the game loop starts, used to setup anything needing to be done once beforehand." alt="" coords="5,39,146,81"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab7c6961c5ce27a524c3ec676df1f7e1f" title="Shortcut to get core." alt="" coords="194,5,341,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,45,178,39,179,45,147,50"/>
+<area shape="rect" id="Node000003" href="$structnsengine_1_1_component.html#ab1810de9f6ab841eb92cde5d9e2f7ffe" title="Gets the current entity." alt="" coords="194,72,341,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,70,179,75,178,81,146,75"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="nsengine::Renderer" name="nsengine::Renderer">
+<area shape="rect" id="Node000001" title="Component responsible for rendering models." alt="" coords="12,80,146,107"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html" title="Base class for all ECS components to inherit from." alt="" coords="5,5,153,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,48,82,80,76,80,76,48"/>
+</map>

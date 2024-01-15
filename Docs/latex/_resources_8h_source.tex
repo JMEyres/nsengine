@@ -1,0 +1,44 @@
+\doxysection{Resources.\+h}
+\hypertarget{_resources_8h_source}{}\label{_resources_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include<memory>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\#include\ "{}Resource.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }nsengine}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }Resource;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }Texture;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_resources}{Resources}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{Load}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\_path}})}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{i}}\ =\ 0;\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{i}}\ <\ resources.size();\ ++\mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{i}})}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resources.at(\mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{i}})-\/>GetPath()\ ==\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\_path}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::dynamic\_pointer\_cast<T>(resources.at(\mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{i}}));}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{rtn}}\ =\ std::make\_shared<T>();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{rtn}}-\/>resources\ =\ self;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{rtn}}-\/>path\ =\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\_path}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{rtn}}-\/>Load();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ resources.push\_back(\mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{rtn}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{rtn}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Texture>>\ \mbox{\hyperlink{structnsengine_1_1_resources_a1a1ccbedae23286d0155a84450025437}{LoadAnimation}}(std::string\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\_path}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structnsengine_1_1_resources_ab0cd4e627c5c72149a65b1100f2fe1ef}{\_frameCount}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnsengine_1_1_core}{Core}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Resource>\ >\ resources;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::weak\_ptr<Resources>\ self;}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
