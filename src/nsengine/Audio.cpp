@@ -3,7 +3,7 @@
 
 namespace nsengine
 {
-	void Audio::onLoad()
+	void Audio::OnLoad()
 	{
 		/*************************************************************************
 		* Preparing buffer
@@ -11,7 +11,7 @@ namespace nsengine
 		ALenum format = 0;
 		ALsizei freq = 0;
 		std::vector<unsigned char> bufferData;
-		load_ogg(getPath().c_str(), bufferData, format, freq);
+		LoadOgg(GetPath().c_str(), bufferData, format, freq);
 
 		alGenBuffers(1, &bufferId);
 
@@ -25,7 +25,7 @@ namespace nsengine
 		alGenSources(1, &sourceId);
 	}
 
-	void Audio::load_ogg(const std::string& _path, std::vector<unsigned char>& _buffer,
+	void Audio::LoadOgg(const std::string& _path, std::vector<unsigned char>& _buffer,
 		ALenum& _format, ALsizei& _freq)
 	{
 		int channels = 0;

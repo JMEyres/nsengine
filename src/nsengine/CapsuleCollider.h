@@ -7,10 +7,16 @@ namespace nsengine
 {
 	struct CapsuleCollider : Component
 	{
-		void createCollider(float radius, float height);
+		/// @brief Create a capsule collider
+		/// @param radius Radius of capsule
+		/// @param height Height of capsule
+		void CreateCollider(float radius, float height);
 
-		rp3d::CapsuleShape* capsule;
+		/// @brief Gets the collision shape of the box collider
+		/// @return Collision shape as Capsule shape from React Physics 3D
+		rp3d::CapsuleShape* GetCollisionShape();
 	private:
+		rp3d::CapsuleShape* capsule;
 		float radius;
 		float height;
 	};

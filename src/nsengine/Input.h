@@ -41,18 +41,38 @@
 
 namespace nsengine 
 {
+	/// @brief Class handling the input from keyboard and mouse
 	struct Input
 	{
-		bool isKeyHeld(int key);
-		bool isKeyPressed(int key);
-		bool isKeyReleased(int key);
-		void clearInput();
+		/// @brief Checks if specified key is being held
+		/// @param key Key to check for
+		/// @return True/False depending on if key is held
+		bool IsKeyHeld(int key);
 
-		int mouseX, mouseY;
-		int oldMousePosX, oldMousPosY;
+		/// @brief Checks if specified key has been pressed that frame
+		/// @param key Key to check for
+		/// @return True/False depending on if the key was presssed that frame
+		bool IsKeyPressed(int key);
+
+		/// @brief Checks if specified key was released that frame
+		/// @param key Key to check for
+		/// @return True/False depending on if the key was released that frame
+		bool IsKeyReleased(int key);
+
+		/// @brief Clear the list of held and pressed keys
+		void ClearInput();
+
+		/// @brief Gets the relative x position of the mouse
+		/// @return Integer relative x position of the mouse
+		int GetMouseX();
+
+		/// @brief Gets the relative y position of the mouse
+		/// @return Integer relative y position of the mouse
+		int GetMouseY();
 	private:
 		friend struct Core;
 
+		int mouseX, mouseY;
 		std::vector<int> keys; // keys held down
 		std::vector<int> pressedKeys; // keys pressed that frame
 		std::vector<int> releasedKeys; // keys released that frame

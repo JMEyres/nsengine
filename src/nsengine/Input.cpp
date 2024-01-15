@@ -2,7 +2,7 @@
 
 namespace nsengine
 {
-	bool Input::isKeyHeld(int key)
+	bool Input::IsKeyHeld(int key)
 	{
 		for (size_t ki = 0; ki < keys.size(); ++ki)
 		{
@@ -14,7 +14,7 @@ namespace nsengine
 		return false;
 	}
 
-	bool Input::isKeyPressed(int key)
+	bool Input::IsKeyPressed(int key)
 	{
 		for (size_t ki = 0; ki < pressedKeys.size(); ++ki)
 		{
@@ -27,7 +27,7 @@ namespace nsengine
 		return false;
 	}
 
-	bool Input::isKeyReleased(int key)
+	bool Input::IsKeyReleased(int key)
 	{
 		for (size_t ki = 0; ki < releasedKeys.size(); ++ki)
 		{
@@ -39,9 +39,19 @@ namespace nsengine
 		return false;
 	}
 
-	void Input::clearInput()
+	void Input::ClearInput()
 	{
 		pressedKeys.clear();
 		releasedKeys.clear();
+	}
+
+	int Input::GetMouseX()
+	{
+		return mouseX;
+	}
+
+	int Input::GetMouseY()
+	{
+		return mouseY;
 	}
 }

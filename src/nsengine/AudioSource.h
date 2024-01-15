@@ -14,12 +14,16 @@
 
 namespace nsengine
 {
+	/// @brief Component to control audio
 	struct AudioSource : Component
 	{
-		void onTick();
+		void OnTick();
 
-		void setAudio(std::shared_ptr<Audio> audio);
-		void play();
+		/// @brief Set the audio source from audio resource
+		/// @param _audio Audio resource, contains audio data
+		void SetAudio(std::shared_ptr<Audio> _audio);
+		/// @brief Play audio source
+		void Play();
 	protected:
 		std::shared_ptr<Audio> audioPtr;
 	};

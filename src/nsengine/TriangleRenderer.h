@@ -9,14 +9,15 @@ namespace nsengine
 {
 	struct Texture;
 	struct Camera;
+	/// @brief Component to simply render a triangle to screen
 	struct TriangleRenderer : Component
 	{
 	private:
 		rend::Mesh mesh;
 		rend::Shader shader;
 
-		void onInitialize();
-		void onDisplay();
+		void OnInitialize();
+		void OnDisplay();
 		int id;
 	};
 }

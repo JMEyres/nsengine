@@ -14,7 +14,6 @@
 #include <reactphysics3d/reactphysics3d.h>
 #include <AL/al.h>
 #include <AL/alc.h>
-//#include "Resources.h"
 
 
 namespace nsengine
@@ -23,18 +22,38 @@ namespace nsengine
     struct Input;
     struct Resources;
 
+    /// @brief Main manager for the rest of the engine
     struct Core
     {
-        static std::shared_ptr<Core> initialize(); // constructs initialize function
+        /// @brief Initializes the core manager
+        /// @return Pointer to core
+        static std::shared_ptr<Core> Initialize();
 
-        void start();
-        void stop();
+        /// @brief Start the program
+        void Start();
 
-        std::shared_ptr<Environment> createEnvironment();
-        std::shared_ptr<Input> getInput();
-        std::shared_ptr<Resources> getResources();
-        float getDeltaTime();
+        /// @brief Stop the program
+        void Stop();
 
+        /// @brief Create an environment
+        /// @return Pointer to that environment
+        std::shared_ptr<Environment> CreateEnvironment();
+
+        /// @brief Gets the input manager
+        /// @return Pointer to the input for use elsewhere
+        std::shared_ptr<Input> GetInput();
+
+        /// @brief Get the resource manager
+        /// @return Pointer to the resource manager
+        std::shared_ptr<Resources> GetResources();
+
+        /// @brief Works out delta time
+        /// @return Delta time in float format
+        float GetDeltaTime();
+
+        /// @brief Finds a list of all components of a specific type
+        /// @tparam T Type to find
+        /// @param out List of components
         template <typename T>
         void Find(std::vector<std::shared_ptr<T> >& out)
         {

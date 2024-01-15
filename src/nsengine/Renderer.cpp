@@ -9,20 +9,24 @@
 
 namespace nsengine
 {
-	void Renderer::onInitialize()
+	void Renderer::SetPath(std::string _path)
 	{
-		model = getCore()->getResources()->load<Model>(path)->model;
+		path = _path;
 	}
 
-	void Renderer::onDisplay()
-	{		
-		std::shared_ptr<Camera> cam = getEntity()->getEnvironment()->getCamera(0);
-		modelShader.projection(cam->projMatrix);
-		modelShader.view(cam->viewMatrix);
+	void Renderer::OnInitialize()
+	{
+		model = GetCore()->GetResources()->Load<Model>(path)->GetModel();
+	}
 
-		modelShader.model(getEntity()->getTransform()->Model());
+	void Renderer::OnDisplay()
+	{		
+		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
+		modelShader.projection(cam->GetProj());
+		modelShader.view(cam->GetView());
+
+		modelShader.model(GetEntity()->GetTransform()->Model());
 		modelShader.model(*model);
-		
 		modelShader.render();
 	}
 }

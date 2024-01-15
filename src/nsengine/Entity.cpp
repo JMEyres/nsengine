@@ -2,45 +2,44 @@
 
 namespace nsengine
 {
-	void Entity::initialize()
+	void Entity::Initialize()
 	{
 		for (size_t ci = 0; ci < components.size(); ++ci)
 		{
-			//std::cout << typeid(components.at(ci)->self).name() << std::endl;
-			components.at(ci)->initialize();
+			components.at(ci)->Initialize();
 		}
 	}
 
-	void Entity::tick()
+	void Entity::Tick()
 	{
 		for (size_t ci = 0; ci < components.size(); ++ci)
 		{
-			components.at(ci)->tick();
+			components.at(ci)->Tick();
 		}
 	}
 
-	void Entity::physicsTick()
+	void Entity::PhysicsTick()
 	{
 		for (size_t ci = 0; ci < components.size(); ++ci)
 		{
-			components.at(ci)->physicsTick();
+			components.at(ci)->PhysicsTick();
 		}
 	}
 
-	void Entity::display()
+	void Entity::Display()
 	{
 		for (size_t ci = 0; ci < components.size(); ++ci)
 		{
-			components.at(ci)->display();
+			components.at(ci)->Display();
 		}
 	}
 
-	std::shared_ptr<Environment> Entity::getEnvironment()
+	std::shared_ptr<Environment> Entity::GetEnvironment()
 	{
 		return environment.lock();
 	}
 
-	std::shared_ptr<Transform> Entity::getTransform()
+	std::shared_ptr<Transform> Entity::GetTransform()
 	{
 		return transform.lock();
 	}

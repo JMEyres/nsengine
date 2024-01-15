@@ -2,9 +2,13 @@
 
 namespace nsengine
 {
-	void Model::onLoad() 
+	void Model::OnLoad() 
 	{
-		model = std::make_shared<rend::Model>(getPath().c_str());
-		//model->load();
+		model = std::make_shared<rend::Model>(GetPath().c_str());
 	};
+
+	std::shared_ptr<rend::Model> Model::GetModel()
+	{
+		return model;
+	}
 }

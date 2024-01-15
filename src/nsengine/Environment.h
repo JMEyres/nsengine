@@ -11,13 +11,26 @@ namespace nsengine
 	struct Entity; // just says it exists - not defined yet
 	struct Core;
 	struct Camera;
+
+	/// @brief Class containing data about the environment or 'world'
 	struct Environment
 	{
-		std::shared_ptr<Entity> addEntity(); // constructs addEntity function
-		void addCamera(std::shared_ptr<Camera> cam);
+		/// @brief Adds an entity to the environment and pushes it back to an internal list 
+		/// @return Pointer to that entity
+		std::shared_ptr<Entity> AddEntity();
 
-		std::shared_ptr<Core> getCore();
-		std::shared_ptr<Camera> getCamera(int camIndex);
+		/// @brief Adds a camera to the environments internal list, so this camera can be grabbed and referenced elsewhere
+		/// @param cam Camera to add to the list
+		void AddCamera(std::shared_ptr<Camera> cam);
+
+		/// @brief Gets the core object
+		/// @return Pointer to core
+		std::shared_ptr<Core> GetCore();
+
+		/// @brief Get a specific camera by id
+		/// @param camIndex ID of camera to return
+		/// @return Pointer to selected camera
+		std::shared_ptr<Camera> GetCamera(int camIndex);
 
 	private:
 		friend struct Core;

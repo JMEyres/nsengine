@@ -5,7 +5,7 @@
 
 namespace nsengine
 {
-	void TriangleRenderer::onInitialize()
+	void TriangleRenderer::OnInitialize()
 	{
 		mesh.load(rend::TRIANGLE_MESH);
 		shader.load(rend::TEXTURE_SHADER);
@@ -13,16 +13,16 @@ namespace nsengine
 		shader.attribute("a_Position", *mesh.positions()); // set to mesh points
 
 		shader.uniform("u_Color", rend::vec4(0.5f, 1.0f, 0.0f, 1.0f)); // choose colour
-		id = getEntity()->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/canosprite.png")->id;
+		id = GetCore()->GetResources()->Load<Texture>("/Textures/canosprite.png")->GetID();
 	}
 
-	void TriangleRenderer::onDisplay()
+	void TriangleRenderer::OnDisplay()
 	{
-		std::shared_ptr<Camera> cam = getEntity()->getEnvironment()->getCamera(0);
+		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
 
-		shader.uniform("u_Projection",cam->projMatrix);
+		shader.uniform("u_Projection",cam->GetProj());
 		
-		shader.uniform("u_Model", getEntity()->getTransform()->Model());
+		shader.uniform("u_Model", GetEntity()->GetTransform()->Model());
 		glActiveTexture(GL_TEXTURE0); // activate texture at index 0
 		glBindTexture(GL_TEXTURE_2D, id); // load texture
 		shader.uniform("u_Texture", 0); // assign uniform to index 0

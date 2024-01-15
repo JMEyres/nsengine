@@ -4,30 +4,41 @@
 
 namespace nsengine
 {
-	void Gui::setPath(sys::string _path)
+	void Gui::SetPath(sys::string _path)
 	{
 		sys::string fullPath = "./Resources" + _path;
 		path = fullPath;
 	}
 
-	void Gui::setText(sys::string _text)
+	void Gui::SetText(sys::string _text)
 	{
 		text = _text;
 	}
 
-	void Gui::enableAsTimer(bool _toggle)
+	void Gui::EnableAsTimer(bool _toggle)
 	{
 		timer = _toggle;
 	}
 
-	void Gui::onDisplay()
+	void Gui::SetTimer(float value)
+	{
+		frameTimer = value;
+	}
+
+	float Gui::GetTimer()
+	{
+		return frameTimer;
+	}
+
+
+	void Gui::OnDisplay()
 	{
 		if(timer)
 		{
-			float dt = getCore()->getDeltaTime();
+			float dt = GetCore()->GetDeltaTime();
 			frameTimer += dt;
-
-			setText(sys::to_string(frameTimer));
+			sys::string timer = sys::to_string(frameTimer);
+			SetText(timer);
 		}
 
 		rend::Font font(path);

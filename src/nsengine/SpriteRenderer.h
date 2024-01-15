@@ -10,13 +10,16 @@
 
 namespace nsengine
 {
+	/// @brief Component responsible for rendering sprites
 	struct SpriteRenderer : Component
 	{
-		void onInitialize();
-		void onDisplay();
-		void onTick();
+		void OnInitialize();
+		void OnDisplay();
+		void OnTick();
 
-		void Animate(std::vector<std::shared_ptr<Texture>>);
+		/// @brief Animates the sprite with given frames
+		/// @param _animFrames Frames of the animation
+		void Animate(std::vector<std::shared_ptr<Texture>> _animFrames);
 
 	private:
 		rend::Mesh mesh;
@@ -28,5 +31,4 @@ namespace nsengine
 		int frameCount = 0;
 		std::vector<int> ids;
 	};
-
 }

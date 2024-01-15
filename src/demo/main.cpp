@@ -1,5 +1,6 @@
 #include<nsengine/nsengine.h>
 #include<chrono>
+#include<filesystem>
 
 using namespace nsengine;
 
@@ -7,84 +8,100 @@ using namespace nsengine;
 
 struct Controller : Component
 {
-	void onTick()
+	void OnTick()
 	{
-		float dt = getCore()->getDeltaTime();
+		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
+		float dt = GetCore()->GetDeltaTime();
 
 		glm::vec2 oldMouse;
 
-		glm::vec2 currentMouse = glm::vec2(getCore()->getInput()->mouseX, getCore()->getInput()->mouseY);
+		glm::vec2 currentMouse = glm::vec2(GetCore()->GetInput()->GetMouseX(), GetCore()->GetInput()->GetMouseY());
 		glm::vec2 mouseDelta = oldMouse - currentMouse;
 
-		getEntity()->getTransform()->Rotate(0, mouseDelta.x * 0.1f, 0);
+		GetEntity()->GetTransform()->Rotate(0, mouseDelta.x * 0.1f, 0);
 
 		oldMouse = currentMouse;
-		glm::vec3 otherPos = box->getTransform()->getPosition();
-		glm::vec3 otherSize = box->getComponent<BoxCollider>()->getSize();
-		if (getEntity()->getComponent<BoxCollider>()->isColliding(otherPos, otherSize))
-			std::cout << "HIT" << std::endl;
-		// ^^^ do same check for pickup, if collision true do pickup logic
-		// then destroy
-		// for anim do sprite animation
 
-		if (getCore()->getInput()->isKeyHeld(KEY_W))
-			getEntity()->getComponent<RigidBody>()->move(0, 0, speed * dt);
-		if (getCore()->getInput()->isKeyHeld(KEY_A))
-			getEntity()->getComponent<RigidBody>()->move(speed * dt, 0, 0);
-		if (getCore()->getInput()->isKeyHeld(KEY_S))
-			getEntity()->getComponent<RigidBody>()->move(0, 0, -speed * dt);
-		if (getCore()->getInput()->isKeyHeld(KEY_D))
-			getEntity()->getComponent<RigidBody>()->move(-speed * dt, 0, 0);
-		if (getCore()->getInput()->isKeyReleased(KEY_SPACE))
+		glm::vec3 finishPos = finish->GetTransform()->GetPosition();
+		glm::vec3 finishSize = finish->GetComponent<BoxCollider>()->GetSize();
+		if (GetEntity()->GetComponent<BoxCollider>()->IsColliding(finishPos, finishSize) && !finished)
 		{
-			getEntity()->getComponent<RigidBody>()->move(0, 500, 0);
-			getEntity()->getComponent<AudioSource>()->play();
+			finished = true;
+			std::cout << "Finish" << std::endl;
+			finish->GetComponent<AudioSource>()->Play();
 		}
-		if (getCore()->getInput()->isKeyPressed(KEY_ESCAPE))
-			getCore()->stop();
-		
+
+		if (pickup)
+		{
+			glm::vec3 otherPos = pickup->GetTransform()->GetPosition();
+			glm::vec3 otherSize = pickup->GetComponent<BoxCollider>()->GetSize();
+			if (GetEntity()->GetComponent<BoxCollider>()->IsColliding(otherPos, otherSize))
+			{
+				pickup->GetComponent<RigidBody>()->Disable();
+				cam->GetEntity()->GetComponent<Gui>()->SetTimer(cam->GetEntity()->GetComponent<Gui>()->GetTimer()-5);
+			}
+		}
+
+		if (GetCore()->GetInput()->IsKeyHeld(KEY_W))
+			GetEntity()->GetComponent<RigidBody>()->Move(0, 0, speed * dt);
+		if (GetCore()->GetInput()->IsKeyHeld(KEY_A))
+			GetEntity()->GetComponent<RigidBody>()->Move(speed * dt, 0, 0);
+		if (GetCore()->GetInput()->IsKeyHeld(KEY_S))
+			GetEntity()->GetComponent<RigidBody>()->Move(0, 0, -speed * dt);
+		if (GetCore()->GetInput()->IsKeyHeld(KEY_D))
+			GetEntity()->GetComponent<RigidBody>()->Move(-speed * dt, 0, 0);
+		if (GetCore()->GetInput()->IsKeyReleased(KEY_SPACE))
+		{
+			GetEntity()->GetComponent<RigidBody>()->Move(0, 500, 0);
+			GetEntity()->GetComponent<AudioSource>()->Play();
+		}
+		if (GetCore()->GetInput()->IsKeyPressed(KEY_ESCAPE))
+			GetCore()->Stop();
 	}
-	std::shared_ptr<Entity> box;
+
+	std::shared_ptr<Entity> finish;
+	std::shared_ptr<Entity> pickup;
 private:
 	float angle = 360.0f;
 	float speed = 1000.0f;
+	bool finished = false;
 };
 
 struct CameraController : Component
 {
-	void onTick()
+	void OnTick()
 	{
-		float dt = getCore()->getDeltaTime();
+		float dt = GetCore()->GetDeltaTime();
 		
-		if (getCore()->getInput()->isKeyHeld(KEY_TAB))
+		if (GetCore()->GetInput()->IsKeyHeld(KEY_TAB))
 			follow = !follow;
 
 		if(follow)
-			getEntity()->getComponent<Camera>()->Follow();
+			GetEntity()->GetComponent<Camera>()->Follow();
 		else
 		{
-			if (getCore()->getInput()->isKeyHeld(KEY_RIGHT))
-				getEntity()->getTransform()->Rotate(0, -angle * dt, 0);
-			if (getCore()->getInput()->isKeyHeld(KEY_LEFT))
-				getEntity()->getTransform()->Rotate(0, angle * dt, 0);
-			if (getCore()->getInput()->isKeyHeld(KEY_DOWN))
-				getEntity()->getTransform()->Rotate(angle * dt, 0, 0);
-			if (getCore()->getInput()->isKeyHeld(KEY_UP))
-				getEntity()->getTransform()->Rotate(-angle * dt, 0, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_RIGHT))
+				GetEntity()->GetTransform()->Rotate(0, -angle * dt, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_LEFT))
+				GetEntity()->GetTransform()->Rotate(0, angle * dt, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_DOWN))
+				GetEntity()->GetTransform()->Rotate(angle * dt, 0, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_UP))
+				GetEntity()->GetTransform()->Rotate(-angle * dt, 0, 0);
 
 			// Move
-			if (getCore()->getInput()->isKeyHeld(KEY_J))
-				getEntity()->getTransform()->Move(-speed * dt, 0, 0);
-			if (getCore()->getInput()->isKeyHeld(KEY_L))
-				getEntity()->getTransform()->Move(speed * dt, 0, 0);
-			if (getCore()->getInput()->isKeyHeld(KEY_K))
-				getEntity()->getTransform()->Move(0, 0, speed * dt);
-			if (getCore()->getInput()->isKeyHeld(KEY_I))
-				getEntity()->getTransform()->Move(0, 0, -speed * dt);
-			if (getCore()->getInput()->isKeyHeld(KEY_O))
-				getEntity()->getTransform()->Move(0, speed * dt, 0);
-			if (getCore()->getInput()->isKeyHeld(KEY_U))
-				getEntity()->getTransform()->Move(0, -speed * dt, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_J))
+				GetEntity()->GetTransform()->Move(-speed * dt, 0, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_L))
+				GetEntity()->GetTransform()->Move(speed * dt, 0, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_K))
+				GetEntity()->GetTransform()->Move(0, 0, speed * dt);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_I))
+				GetEntity()->GetTransform()->Move(0, 0, -speed * dt);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_O))
+				GetEntity()->GetTransform()->Move(0, speed * dt, 0);
+			if (GetCore()->GetInput()->IsKeyHeld(KEY_U))
+				GetEntity()->GetTransform()->Move(0, -speed * dt, 0);
 		}
 	}
 private:
@@ -96,143 +113,166 @@ private:
 
 int main()
 {
-	std::shared_ptr<Core> core = Core::initialize(); // initializes core
+	std::shared_ptr<Core> core = Core::Initialize(); // initializes core
 
-	std::shared_ptr<Environment> environment = core->createEnvironment();
+	std::shared_ptr<Environment> environment = core->CreateEnvironment();
 
-	std::shared_ptr<Entity> curuthers = environment->addEntity();
-	std::shared_ptr<Entity> quad = environment->addEntity(); // creating entity, core holds on list
-	std::shared_ptr<Entity> floor = environment->addEntity(); 
-	std::shared_ptr<Entity> box = environment->addEntity(); 
-	std::shared_ptr<Entity> box2 = environment->addEntity(); 
-	std::shared_ptr<Entity> box3 = environment->addEntity(); 
-	std::shared_ptr<Entity> box4 = environment->addEntity(); 
-	std::shared_ptr<Entity> box5 = environment->addEntity(); 
-	std::shared_ptr<Entity> camera = environment->addEntity(); 
-	std::shared_ptr<Entity> pickup = environment->addEntity(); 
+	std::shared_ptr<Entity> curuthers = environment->AddEntity();
+	std::shared_ptr<Entity> quad = environment->AddEntity(); // creating entity, core holds on list
+	std::shared_ptr<Entity> floor = environment->AddEntity(); 
+	std::shared_ptr<Entity> box = environment->AddEntity(); 
+	std::shared_ptr<Entity> box2 = environment->AddEntity(); 
+	std::shared_ptr<Entity> box3 = environment->AddEntity(); 
+	std::shared_ptr<Entity> box4 = environment->AddEntity(); 
+	std::shared_ptr<Entity> box5 = environment->AddEntity(); 
+	std::shared_ptr<Entity> camera = environment->AddEntity(); 
+	std::shared_ptr<Entity> pickup = environment->AddEntity(); 
+	std::shared_ptr<Entity> finish = environment->AddEntity(); 
 	
-	camera->addComponent<Camera>();
-	camera->addComponent<Gui>();
-	camera->getComponent<Camera>()->SetTarget(curuthers);
-	camera->getComponent<Camera>()->SetOffset(1.0f, 4.5f, 0.0f);
-	camera->addComponent<CameraController>();
+	camera->AddComponent<Camera>();
+	camera->AddComponent<Gui>();
+	camera->AddComponent<CameraController>();
 
-	camera->getComponent<Gui>()->setPath("/Fonts/console.png");
-	camera->getComponent<Gui>()->enableAsTimer(true);
+	camera->GetComponent<Camera>()->SetTarget(curuthers);
+	camera->GetComponent<Camera>()->SetOffset(1.0f, 4.5f, 0.0f);
 
-	curuthers->addComponent<AudioSource>();
-	curuthers->getComponent<AudioSource>()->setAudio(curuthers->getEnvironment()->getCore()->getResources()->load<Audio>("/Audio/jump.ogg"));
+	camera->GetComponent<Gui>()->SetPath("/Fonts/console.png");
+	camera->GetComponent<Gui>()->EnableAsTimer(true);
 
-	curuthers->addComponent<Controller>();
+	curuthers->AddComponent<AudioSource>();
+	curuthers->GetComponent<AudioSource>()->SetAudio(curuthers->GetEnvironment()->GetCore()->GetResources()->Load<Audio>("/Audio/jump.ogg"));
 
-	quad->addComponent<SpriteRenderer>(); // creating component, entity holds on list
+	finish->AddComponent<AudioSource>();
+	finish->GetComponent<AudioSource>()->SetAudio(curuthers->GetEnvironment()->GetCore()->GetResources()->Load<Audio>("/Audio/dixie_horn.ogg"));
+
+	curuthers->AddComponent<Controller>();
+
+	quad->AddComponent<SpriteRenderer>(); // creating component, entity holds on list
+	pickup->AddComponent<SpriteRenderer>();
 
 	std::vector<std::shared_ptr<Texture>> spriteAnim;
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_1.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_2.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_3.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_4.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_5.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_6.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_7.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_9.png"));
-	spriteAnim.push_back(quad->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_8.png"));
+	spriteAnim = quad->GetEnvironment()->GetCore()->GetResources()->LoadAnimation("/Textures/SpriteAnim", 9);
+	quad->GetComponent<SpriteRenderer>()->Animate(spriteAnim);
+
+	std::vector<std::shared_ptr<Texture>> clockAnim;
+	clockAnim = pickup->GetEnvironment()->GetCore()->GetResources()->LoadAnimation("/Textures/Clock", 27);
+	pickup->GetComponent<SpriteRenderer>()->Animate(clockAnim);
+
+	curuthers->AddComponent<Renderer>();
+	floor->AddComponent<Renderer>();
+
+	box->AddComponent<Renderer>();
+	box2->AddComponent<Renderer>();
+	box3->AddComponent<Renderer>();
+	box4->AddComponent<Renderer>();
+	box5->AddComponent<Renderer>();
+
+	curuthers->AddComponent<CapsuleCollider>();
+	curuthers->GetComponent<CapsuleCollider>()->CreateCollider(1.0f, 1.0f);
+
+	curuthers->AddComponent<BoxCollider>();
+	curuthers->GetComponent<BoxCollider>()->CreateCollider(10.0f, 10.0f, 10.0f);
+
+	pickup->AddComponent<BoxCollider>();
+	pickup->GetComponent<BoxCollider>()->CreateCollider(1.0f, 1.0f, 1.0f);
+
+	floor->AddComponent<BoxCollider>();
+	floor->GetComponent<BoxCollider>()->CreateCollider(50.0f, 1.0f, 50.0f);
 	
-	quad->getComponent<SpriteRenderer>()->Animate(spriteAnim);
+	box->AddComponent<BoxCollider>();
+	box->GetComponent<BoxCollider>()->CreateCollider(5.0f, 11.0f, 5.0f);
 
-	curuthers->addComponent<Renderer>();
-	floor->addComponent<Renderer>();
+	box2->AddComponent<BoxCollider>();
+	box2->GetComponent<BoxCollider>()->CreateCollider(5.0f, 11.0f, 5.0f);
 
-	box->addComponent<Renderer>();
-	box2->addComponent<Renderer>();
-	box3->addComponent<Renderer>();
-	box4->addComponent<Renderer>();
-	box5->addComponent<Renderer>();
+	box3->AddComponent<BoxCollider>();
+	box3->GetComponent<BoxCollider>()->CreateCollider(5.0f, 11.0f, 5.0f);
 
-	curuthers->addComponent<CapsuleCollider>();
-	curuthers->getComponent<CapsuleCollider>()->createCollider(1.0f, 1.0f);
-	curuthers->addComponent<BoxCollider>();
-	curuthers->getComponent<BoxCollider>()->createCollider(10.0f, 10.0f, 10.0f);
+	box4->AddComponent<BoxCollider>();
+	box4->GetComponent<BoxCollider>()->CreateCollider(5.0f, 11.0f, 5.0f);
 
-	floor->addComponent<BoxCollider>();
-	floor->getComponent<BoxCollider>()->createCollider(50.0f, 1.0f, 50.0f);
+	box5->AddComponent<BoxCollider>();
+	box5->GetComponent<BoxCollider>()->CreateCollider(5.0f, 11.0f, 5.0f);
+
+	finish->AddComponent<BoxCollider>();
+	finish->GetComponent<BoxCollider>()->CreateCollider(5.0f, 11.0f, 5.0f);
+
+	curuthers->AddComponent<RigidBody>();
+	floor->AddComponent<RigidBody>();
+	pickup->AddComponent<RigidBody>();
+	box->AddComponent<RigidBody>();
+	box2->AddComponent<RigidBody>();
+	box3->AddComponent<RigidBody>();
+	box4->AddComponent<RigidBody>();
+	box5->AddComponent<RigidBody>();
+	finish->AddComponent<RigidBody>();
+
+	floor->GetComponent<RigidBody>()->SetBounciness(0.5f);
+
+	curuthers->GetComponent<Renderer>()->SetPath("/Models/curuthers.obj");
+	floor->GetComponent<Renderer>()->SetPath("/Models/floor.obj");
+	box->GetComponent<Renderer>()->SetPath("/Models/Cube.obj");
+	box2->GetComponent<Renderer>()->SetPath("/Models/Cube.obj");
+	box3->GetComponent<Renderer>()->SetPath("/Models/Cube.obj");
+	box4->GetComponent<Renderer>()->SetPath("/Models/Cube.obj");
+	box5->GetComponent<Renderer>()->SetPath("/Models/Cube.obj");
 	
-	box->addComponent<BoxCollider>();
-	box->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
+	curuthers->GetComponent<RigidBody>()->AddCollisionShape(curuthers->GetComponent<CapsuleCollider>()->GetCollisionShape());
+	floor->GetComponent<RigidBody>()->AddCollisionShape(floor->GetComponent<BoxCollider>()->GetCollisionShape());
+	pickup->GetComponent<RigidBody>()->AddCollisionShape(pickup->GetComponent<BoxCollider>()->GetCollisionShape());
+	box->GetComponent<RigidBody>()->AddCollisionShape(box->GetComponent<BoxCollider>()->GetCollisionShape());
+	box2->GetComponent<RigidBody>()->AddCollisionShape(box2->GetComponent<BoxCollider>()->GetCollisionShape());
+	box3->GetComponent<RigidBody>()->AddCollisionShape(box3->GetComponent<BoxCollider>()->GetCollisionShape());
+	box4->GetComponent<RigidBody>()->AddCollisionShape(box4->GetComponent<BoxCollider>()->GetCollisionShape());
+	box5->GetComponent<RigidBody>()->AddCollisionShape(box5->GetComponent<BoxCollider>()->GetCollisionShape());
 
-	box2->addComponent<BoxCollider>();
-	box2->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
+	curuthers->GetComponent<RigidBody>()->AddTriggerCollisionShape(curuthers->GetComponent<BoxCollider>()->GetCollisionShape());
+	finish->GetComponent<RigidBody>()->AddTriggerCollisionShape(finish->GetComponent<BoxCollider>()->GetCollisionShape());
 
-	box3->addComponent<BoxCollider>();
-	box3->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
-
-	box4->addComponent<BoxCollider>();
-	box4->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
-
-	box5->addComponent<BoxCollider>();
-	box5->getComponent<BoxCollider>()->createCollider(5.0f, 11.0f, 5.0f);
-
-	curuthers->addComponent<RigidBody>();
-	floor->addComponent<RigidBody>();
-	floor->getComponent<RigidBody>()->setBounciness(1);
-	box->addComponent<RigidBody>();
-	box2->addComponent<RigidBody>();
-	box3->addComponent<RigidBody>();
-	box4->addComponent<RigidBody>();
-	box5->addComponent<RigidBody>();
-
-	curuthers->getComponent<Renderer>()->path = "/Models/curuthers.obj";
-	floor->getComponent<Renderer>()->path = "/Models/floor.obj";
-	box->getComponent<Renderer>()->path = "/Models/Cube.obj";
-	box2->getComponent<Renderer>()->path = "/Models/Cube.obj";
-	box3->getComponent<Renderer>()->path = "/Models/Cube.obj";
-	box4->getComponent<Renderer>()->path = "/Models/Cube.obj";
-	box5->getComponent<Renderer>()->path = "/Models/Cube.obj";
+	floor->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
+	box->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
+	box2->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
+	box3->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
+	box4->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
+	box5->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
+	finish->GetComponent<RigidBody>()->SetType(rp3d::BodyType::STATIC);
 	
-	curuthers->getComponent<RigidBody>()->addCollisionShape(curuthers->getComponent<CapsuleCollider>()->capsule);
-	curuthers->getComponent<RigidBody>()->addTriggerCollisionShape(curuthers->getComponent<BoxCollider>()->box);
-	floor->getComponent<RigidBody>()->addCollisionShape(floor->getComponent<BoxCollider>()->box);
-	box->getComponent<RigidBody>()->addCollisionShape(box->getComponent<BoxCollider>()->box);
-	box2->getComponent<RigidBody>()->addCollisionShape(box2->getComponent<BoxCollider>()->box);
-	box3->getComponent<RigidBody>()->addCollisionShape(box3->getComponent<BoxCollider>()->box);
-	box4->getComponent<RigidBody>()->addCollisionShape(box4->getComponent<BoxCollider>()->box);
-	box5->getComponent<RigidBody>()->addCollisionShape(box5->getComponent<BoxCollider>()->box);
+	quad->GetTransform()->SetPosition(rend::vec3(0,35,-50));
+	quad->GetTransform()->SetScale(rend::vec3(50));
 
-	floor->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
-	box->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
-	box2->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
-	box3->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
-	box4->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
-	box5->getComponent<RigidBody>()->setType(rp3d::BodyType::STATIC);
-	
-	quad->getTransform()->setPosition(rend::vec3(0,35,-50));
-	quad->getTransform()->setScale(rend::vec3(50));
+	pickup->GetTransform()->SetPosition(rend::vec3(15, 17.5f, 0));
+	pickup->GetTransform()->SetRotation(rend::vec3(0, -90, 0));
+	pickup->GetTransform()->SetScale(rend::vec3(5));
 
-	curuthers->getTransform()->setPosition(rend::vec3(0.0f, 5.0f, 0.0f));
-	curuthers->getTransform()->setRotation(rend::vec3(0.0f, 90.0f, 0.0f));
-	curuthers->getTransform()->setScale(rend::vec3(1.0f, 1.0f, 1.0f));
+	curuthers->GetTransform()->SetPosition(rend::vec3(0.0f, 5.0f, 0.0f));
+	curuthers->GetTransform()->SetRotation(rend::vec3(0.0f, 90.0f, 0.0f));
+	curuthers->GetTransform()->SetScale(rend::vec3(1.0f, 1.0f, 1.0f));
 
-	floor->getTransform()->setPosition(rend::vec3(0.0f, -1.0f, 0.0f));
-	floor->getTransform()->setScale(rend::vec3(100.0f, 1.0f, 100.0f));
+	floor->GetTransform()->SetPosition(rend::vec3(0.0f, -1.0f, 0.0f));
+	floor->GetTransform()->SetScale(rend::vec3(100.0f, 1.0f, 100.0f));
 
-	box->getTransform()->setPosition(rend::vec3(-5.0f, 10.0f, 0.0f));
-	box->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
+	box->GetTransform()->SetPosition(rend::vec3(-5.0f, 10.0f, 0.0f));
+	box->GetTransform()->SetScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
-	box2->getTransform()->setPosition(rend::vec3(15.0f, 4.0f, 0.0f));
-	box2->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
+	box2->GetTransform()->SetPosition(rend::vec3(15.0f, 4.0f, 0.0f));
+	box2->GetTransform()->SetScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
-	box3->getTransform()->setPosition(rend::vec3(25.0f, 6.0f, 0.0f));
-	box3->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
+	box3->GetTransform()->SetPosition(rend::vec3(25.0f, 6.0f, 0.0f));
+	box3->GetTransform()->SetScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
-	box4->getTransform()->setPosition(rend::vec3(35.0f, 8.0f, 0.0f));
-	box4->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
+	box4->GetTransform()->SetPosition(rend::vec3(35.0f, 8.0f, 0.0f));
+	box4->GetTransform()->SetScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
-	box5->getTransform()->setPosition(rend::vec3(45.0f, 10.0f, 0.0f));
-	box5->getTransform()->setScale(rend::vec3(10.0f, 10.0f, 10.0f));
+	box5->GetTransform()->SetPosition(rend::vec3(45.0f, 10.0f, 0.0f));
+	box5->GetTransform()->SetScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
-	curuthers->getComponent<Controller>()->box = box;
+	finish->GetTransform()->SetPosition(rend::vec3(45.0f, 12.0f, 0.0f));
+	finish->GetTransform()->SetScale(rend::vec3(10.0f, 10.0f, 10.0f));
 
-	core->start();
+	curuthers->GetComponent<Controller>()->finish = finish;
+	curuthers->GetComponent<Controller>()->pickup = pickup;
+
+	core->Start();
 
 	return 0;
 }

@@ -1,9 +1,10 @@
 #include "SpriteRenderer.h"
 #include "Resources.h"
+#include <iostream>
 
 namespace nsengine
 {
-	void SpriteRenderer::onInitialize()
+	void SpriteRenderer::OnInitialize()
 	{
 		mesh.load(rend::QUAD_MESH);
 		shader.load(rend::PLANE_SHADER);
@@ -11,17 +12,16 @@ namespace nsengine
 		shader.attribute("a_Position", *mesh.positions()); // set to mesh points
 
 		shader.uniform("u_Color", rend::vec4(0.5f, 1.0f, 0.0f, 1.0f)); // choose colour
-		currentID = getEntity()->getEnvironment()->getCore()->getResources()->load<Texture>("/Textures/SpriteAnim/_1.png")->id;
 	}
 
-	void SpriteRenderer::onDisplay()
+	void SpriteRenderer::OnDisplay()
 	{
-		std::shared_ptr<Camera> cam = getEntity()->getEnvironment()->getCamera(0);
+		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
 
-		shader.uniform("u_Projection", cam->projMatrix);
-		shader.uniform("u_View", cam->viewMatrix);
+		shader.uniform("u_Projection", cam->GetProj());
+		shader.uniform("u_View", cam->GetView());
 
-		shader.uniform("u_Model", getEntity()->getTransform()->Model());
+		shader.uniform("u_Model", GetEntity()->GetTransform()->Model());
 		glActiveTexture(GL_TEXTURE0); // activate texture at index 0
 		glBindTexture(GL_TEXTURE_2D, currentID); // load texture
 		shader.uniform("u_Texture", 0); // assign uniform to index 0
@@ -29,28 +29,34 @@ namespace nsengine
 		shader.render();
 	}
 
-	void SpriteRenderer::onTick()
+	void SpriteRenderer::OnTick()
 	{
-		float dt = getCore()->getDeltaTime();
+		float dt = GetCore()->GetDeltaTime();
 		frameTimer += dt;
 
-		frameCount = frameTimer;
+		if (frameTimer >= 0.1f)
+		{
+			frameCount++;
+			frameTimer = 0;
+		}
 
-		currentID = frameCount;
 		if (frameCount == ids.size())
 		{
-			frameCount = 1;
-			frameTimer = 1;
+			frameCount = 0;
 		}
+		currentID = ids[frameCount];
 	}
 
-	void SpriteRenderer::Animate(std::vector<std::shared_ptr<Texture>> sprites)
+	void SpriteRenderer::Animate(std::vector<std::shared_ptr<Texture>> _animFrames)
 	{
 		animate = true;
-		animTextures = sprites;
+		animTextures = _animFrames;
 		for (size_t i = 0; i < animTextures.size(); ++i)
 		{
-			ids.push_back(animTextures.at(i)->id);
-		}
+			ids.push_back(animTextures.at(i)->GetID());
+		} 
+
+		frameCount = ids[0];
+		frameTimer = ids[0];
 	}
 }

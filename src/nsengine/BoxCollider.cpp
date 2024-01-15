@@ -3,10 +3,10 @@
 
 namespace nsengine
 {
-	bool BoxCollider::isColliding(glm::vec3 otherPos, glm::vec3 otherSize)
+	bool BoxCollider::IsColliding(glm::vec3 otherPos, glm::vec3 otherSize)
 	{
 		glm::vec3 thisSize = glm::vec3(size.x, size.y, size.z);
-		glm::vec3 a = getEntity()->getTransform()->getPosition();
+		glm::vec3 a = GetEntity()->GetTransform()->GetPosition();
 		glm::vec3 b = otherPos;
 		glm::vec3 ahs = thisSize / 2.0f;
 		glm::vec3 bhs = otherSize / 2.0f;
@@ -45,14 +45,19 @@ namespace nsengine
 		}
 	}
 
-	rend::vec3 BoxCollider::getSize()
+	rend::vec3 BoxCollider::GetSize()
 	{
 		return rend::vec3(size.x, size.y, size.z);
 	}
 
-	void BoxCollider::createCollider(float x, float y, float z)
+	void BoxCollider::CreateCollider(float x, float y, float z)
 	{
 		size = rp3d::Vector3(x, y, z);
-		box = getCore()->physicsCommon.createBoxShape(size);
+		box = GetCore()->physicsCommon.createBoxShape(size);
+	}
+
+	rp3d::BoxShape* BoxCollider::GetCollisionShape()
+	{
+		return box;
 	}
 }

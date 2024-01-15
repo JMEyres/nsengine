@@ -15,25 +15,32 @@ namespace nsengine
 	struct Transform;
 	struct Camera;
 
+	/// @brief Class containing all the data for the entities
 	struct Entity
 	{
+		/// @brief Adds a component of the given type to the entity and adds it to a list
+		/// @tparam T Type of entity to be added
+		/// @return Returns the created component
 		template <typename T>
-		std::shared_ptr<T> addComponent() // constructing addComponent
+		std::shared_ptr<T> AddComponent()
 		{
 			std::shared_ptr<T> rtn = std::make_shared<T>();
 
-			rtn->core = getEnvironment()->getCore();
+			rtn->core = GetEnvironment()->GetCore();
 			rtn->entity = self;
 			rtn->self = rtn;
 
 			components.push_back(rtn);
-			rtn->onCreate();
+			rtn->OnCreate();
 
 			return rtn;
 		}
 
+		/// @brief Gets a component of a given type on the current entity
+		/// @tparam c type of component
+		/// @return Component of given type
 		template <typename c>
-		std::shared_ptr<c> getComponent()
+		std::shared_ptr<c> GetComponent()
 		{
 			for (size_t ci = 0; ci < components.size(); ++ci)
 			{
@@ -43,9 +50,13 @@ namespace nsengine
 			}
 		}
 
-		std::shared_ptr<Transform> getTransform();
+		/// @brief Gets the transform on the current entity
+		/// @return Pointer to transform component of entity
+		std::shared_ptr<Transform> GetTransform();
 
-		std::shared_ptr<Environment> getEnvironment();
+		/// @brief Gets the environment entity is a part pf
+		/// @return Pointer to the environment
+		std::shared_ptr<Environment> GetEnvironment();
 
 	private:
 		friend struct Core;
@@ -59,9 +70,9 @@ namespace nsengine
 		bool alive;
 		std::vector<std::shared_ptr<Component> > components; // List of components
 
-		void initialize();
-		void tick();
-		void physicsTick();
-		void display();
+		void Initialize();
+		void Tick();
+		void PhysicsTick();
+		void Display();
 	};
 }

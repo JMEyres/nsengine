@@ -3,8 +3,13 @@
 
 namespace nsengine
 {
-	void CapsuleCollider::createCollider(float radius, float height)
+	void CapsuleCollider::CreateCollider(float radius, float height)
 	{
-		capsule = getCore()->physicsCommon.createCapsuleShape(radius, height);
+		capsule = GetCore()->physicsCommon.createCapsuleShape(radius, height);
+	}
+
+	rp3d::CapsuleShape* CapsuleCollider::GetCollisionShape()
+	{
+		return capsule;
 	}
 }

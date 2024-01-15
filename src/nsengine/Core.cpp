@@ -3,7 +3,7 @@
 
 namespace nsengine
 {
-	std::shared_ptr<Core> Core::initialize()
+	std::shared_ptr<Core> Core::Initialize()
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>(); // make_shared = new
 
@@ -62,7 +62,7 @@ namespace nsengine
 		return rtn;
 	}
 
-	void Core::start()
+	void Core::Start()
 	{
 		running = true;
 		SDL_Event event = { 0 };
@@ -74,7 +74,7 @@ namespace nsengine
 		{
 			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 			{
-				environments.at(i)->entities.at(ei)->initialize();
+				environments.at(i)->entities.at(ei)->Initialize();
 			}
 		}
 
@@ -115,7 +115,7 @@ namespace nsengine
 					for (int t = 0; t < 1; t++) {
 
 						physicsWorld->update(timeStep);
-						environments.at(i)->entities.at(ei)->physicsTick();
+						environments.at(i)->entities.at(ei)->PhysicsTick();
 					}
 				}
 			}
@@ -124,7 +124,7 @@ namespace nsengine
 			{
 				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 				{
-					environments.at(i)->entities.at(ei)->tick();
+					environments.at(i)->entities.at(ei)->Tick();
 				}
 			}
 			float time = SDL_GetTicks();
@@ -137,15 +137,15 @@ namespace nsengine
 			{
 				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 				{
-					environments.at(i)->entities.at(ei)->display();
+					environments.at(i)->entities.at(ei)->Display();
 				}
 			}
-			input->clearInput();
+			input->ClearInput();
 			SDL_Rend_SwapWindow(window);
 		}
 	}
 
-	void Core::stop()
+	void Core::Stop()
 	{
 		running = false;
 		alcMakeContextCurrent(NULL);
@@ -153,7 +153,7 @@ namespace nsengine
 		alcCloseDevice(audioDevice);
 	}
 
-	std::shared_ptr<Environment> Core::createEnvironment()
+	std::shared_ptr<Environment> Core::CreateEnvironment()
 	{
 		std::shared_ptr<Environment> rtn = std::make_shared<Environment>();
 
@@ -165,17 +165,17 @@ namespace nsengine
 		return rtn;
 	}
 
-	std::shared_ptr<Input> Core::getInput()
+	std::shared_ptr<Input> Core::GetInput()
 	{
 		return input;
 	}
 
-	std::shared_ptr<Resources> Core::getResources()
+	std::shared_ptr<Resources> Core::GetResources()
 	{
 		return resources;
 	}
 
-	float Core::getDeltaTime()
+	float Core::GetDeltaTime()
 	{
 		return deltaTime;
 	}

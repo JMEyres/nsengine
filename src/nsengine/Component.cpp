@@ -2,44 +2,44 @@
 
 namespace nsengine
 {
-	void Component::onInitialize()
+	void Component::OnInitialize()
 	{}
-	void Component::onTick()
+	void Component::OnTick()
 	{}
-	void Component::onPhysicsTick()
+	void Component::OnPhysicsTick()
 	{}
-	void Component::onCreate()
+	void Component::OnCreate()
 	{}
-	void Component::onDisplay()
+	void Component::OnDisplay()
 	{}
 
-	void Component::initialize()
+	void Component::Initialize()
 	{
-		onInitialize();
+		OnInitialize();
 	}
-	void Component::tick()
+	void Component::Tick()
 	{
-		onTick();
+		OnTick();
 	}
-	void Component::physicsTick()
+	void Component::PhysicsTick()
 	{
-		onPhysicsTick();
+		OnPhysicsTick();
 	}
-	void Component::create()
+	void Component::Create()
 	{
-		onCreate();
+		OnCreate();
 	}
-	void Component::display()
+	void Component::Display()
 	{
-		onDisplay();
+		OnDisplay();
 	}
 
-	std::shared_ptr<Entity> Component::getEntity()
+	std::shared_ptr<Entity> Component::GetEntity()
 	{
 		return entity.lock();
 	}
 
-	std::shared_ptr<Core> Component::getCore()
+	std::shared_ptr<Core> Component::GetCore()
 	{
 		return core.lock();
 	}

@@ -1,11 +1,18 @@
 #include "Texture.h"
+#include <filesystem>
+#include <iostream>
 
 namespace nsengine
 {
-	void Texture::onLoad() 
+	void Texture::OnLoad()
 	{
 		texture = std::make_shared<rend::Texture>();
-		texture->load(getPath().c_str());
-		id = texture->id();	
+		texture->load(GetPath().c_str());
+		id = texture->id();
+	}
+
+	int Texture::GetID()
+	{
+		return id;
 	}
 }

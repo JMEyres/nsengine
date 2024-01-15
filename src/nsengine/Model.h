@@ -3,11 +3,15 @@
 
 namespace nsengine
 {
+	/// @brief Model resource for loading models to displayed in game
 	struct Model : Resource
 	{
-		void onLoad();
+		void OnLoad();
 
-		std::shared_ptr<rend::Model> model;
+		/// @brief Gets the model loaded
+		/// @return Pointer to loaded model
+		std::shared_ptr<rend::Model> GetModel();
 	private:
+		std::shared_ptr<rend::Model> model;
 	};
 }
