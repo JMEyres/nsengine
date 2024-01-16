@@ -20,9 +20,9 @@ namespace nsengine
 		timer = _toggle;
 	}
 
-	void Gui::SetTimer(float value)
+	void Gui::SetTimer(float _value)
 	{
-		frameTimer = value;
+		frameTimer = _value;
 	}
 
 	float Gui::GetTimer()
@@ -30,6 +30,16 @@ namespace nsengine
 		return frameTimer;
 	}
 
+	void Gui::SetPosition(rend::vec3 _pos)
+	{
+		position = _pos;
+	}
+
+	void Gui::SetResolution(float _width, float _height)
+	{
+		resW = _width;
+		resH = _height;
+	}
 
 	void Gui::OnDisplay()
 	{
@@ -43,8 +53,8 @@ namespace nsengine
 
 		rend::Font font(path);
 		rend::TextShader textShader;
-		textShader.projection(rend::ortho(0.0f, 1152.0f, 864.0f, 0.0f, -0.1f, 1000.0f));
-		textShader.model(rend::translate(rend::mat4(1.0f), rend::vec3(100, 100, 0)));
+		textShader.projection(rend::ortho(0.0f, resW, resH, 0.0f, -0.1f, 1000.0f));
+		textShader.model(rend::translate(rend::mat4(1.0f), rend::vec3(position.x, position.y, position.z)));
 		textShader.text(text);
 		textShader.font(font);
 		textShader.render();

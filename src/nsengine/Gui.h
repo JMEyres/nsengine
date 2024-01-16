@@ -22,7 +22,7 @@ namespace nsengine
 
 		/// @brief Sets the GUI text to be a timer
 		/// @param toggle True/False of being a timer
-		void EnableAsTimer(bool toggle);
+		void EnableAsTimer(bool _toggle);
 
 		/// @brief Get the timer in seconds
 		/// @return Seconds value of timer
@@ -30,12 +30,23 @@ namespace nsengine
 
 		/// @brief Set the timer to a specific value
 		/// @param value Time for the timer to display
-		void SetTimer(float value);
+		void SetTimer(float _value);
 		
+		/// @brief Used to set the position of the on screen text element
+		/// @param _pos Position in pixels on the screen
+		void SetPosition(rend::vec3 _pos);
+
+		/// @brief Set the resolution of the onscreen gui/Canvas
+		/// @param _width Width of the window
+		/// @param _height Height of the window
+		void SetResolution(float _width, float _height);
 	private:
 		sys::string path = "./Resources/Fonts/Comic.png";
 		sys::string text = "2D/OrthoGraphic";
 		float frameTimer;
 		bool timer;
+		rend::vec3 position = rend::vec3(100, 100, 0);
+		float resW = 1152.0f;
+		float resH = 864.0f;
 	};
 }

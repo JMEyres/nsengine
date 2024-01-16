@@ -1,3 +1,69 @@
+commit 591f0f5d28f90a737fe950c54eb81617dc511c78
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Mon Jan 15 03:01:51 2024 +0000
+
+    Doxygen docs
+
+commit f0a1c522d9074a709fd688170e46c6a3689e1e6b
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Mon Jan 15 03:00:08 2024 +0000
+
+    Tidied up main file
+
+commit 72315eea7bfa6b4bfe38c91fdd1784ac87d40ae8
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Mon Jan 15 01:04:44 2024 +0000
+
+    Added clock pickup, added doxygen comments and tidied code
+
+commit 8b6b28f6ba7f6a53d38a1e196db38244f8fc5bc2
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Sun Jan 14 02:06:12 2024 +0000
+
+    Some small tidying and collision stuff
+
+commit c3790ba19fc241a3008faee9e36d0143a5ba079d
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Sat Jan 13 00:46:45 2024 +0000
+
+    Gui, mouse movement for curuthers, fixed box model, fixed sprite shader so not locked to cam
+
+commit 53bb3acb231601e508a7fa0690fc06cc64bdbcaf
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Thu Jan 11 01:48:40 2024 +0000
+
+    Mouse Camera movement
+
+commit dc0de85b055252c29ca6a231ef27b28ebf09d8ad
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Wed Jan 10 23:39:07 2024 +0000
+
+    Commiting for laptop
+
+commit 122d33c35b287644b677f18b2071523deab2ff4c
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Wed Jan 10 17:33:34 2024 +0000
+
+    Some testing for mouse movement
+
+commit 18f793d0af55538be05890733e29836e4efe2eef
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Wed Jan 10 16:51:03 2024 +0000
+
+    Movement stuff for curuthers
+
+commit da22c38290eab9528e2ecb5e6ce2956af8bb5fc0
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Wed Jan 10 00:16:36 2024 +0000
+
+    Working on getting directional movement working properly
+
+commit 6f05634b266e56efb525bb60543da28e7d329dda
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Jan 9 19:15:05 2024 +0000
+
+    Basic audio implemented with OpenAL
+
 commit 63996931aeb3f5d78a0eceb7f61f2cb3d6ed6beb
 Author: Josh Eyres <josh.m.eyres@gmail.com>
 Date:   Tue Jan 9 01:35:28 2024 +0000
