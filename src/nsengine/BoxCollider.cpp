@@ -3,7 +3,7 @@
 
 namespace nsengine
 {
-	bool BoxCollider::IsColliding(glm::vec3 otherPos, glm::vec3 otherSize)
+	bool BoxCollider::IsColliding(glm::vec3 otherPos, glm::vec3 otherSize) // AABB collision check
 	{
 		glm::vec3 thisSize = glm::vec3(size.x, size.y, size.z);
 		glm::vec3 a = GetEntity()->GetTransform()->GetPosition();
@@ -53,7 +53,7 @@ namespace nsengine
 	void BoxCollider::CreateCollider(float x, float y, float z)
 	{
 		size = rp3d::Vector3(x, y, z);
-		box = GetCore()->physicsCommon.createBoxShape(size);
+		box = GetCore()->physicsCommon.createBoxShape(size); // Create a box collider
 	}
 
 	rp3d::BoxShape* BoxCollider::GetCollisionShape()

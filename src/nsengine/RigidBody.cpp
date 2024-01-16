@@ -38,14 +38,14 @@ namespace nsengine
 	{
 		rend::vec3 movement = GetEntity()->GetTransform()->Model() * rend::vec4(_x, _y, _z, 0);
 
-		rb->applyLocalForceAtCenterOfMass(rp3d::Vector3(movement.x, movement.y, movement.z));
+		rb->applyLocalForceAtCenterOfMass(rp3d::Vector3(movement.x, movement.y, movement.z)); // apply movement by simulated forces
 
 	}
 
 	void RigidBody::SetPosition(float _x, float _y, float _z)
 	{
 		rp3d::Transform transform = rb->getTransform();
-		transform.setPosition(rp3d::Vector3(_x, _y, _z));
+		transform.setPosition(rp3d::Vector3(_x, _y, _z)); // force set rigidbody pos
 		rb->setTransform(transform);
 	}
 
@@ -66,7 +66,7 @@ namespace nsengine
 
 		rend::vec3 newPos = rend::vec3(position.x, position.y, position.z);
 
-		GetEntity()->GetTransform()->SetPosition(newPos);
+		GetEntity()->GetTransform()->SetPosition(newPos); // set entity transform to simulated physics position
 	}
 
 	void RigidBody::OnInitialize()
@@ -78,21 +78,21 @@ namespace nsengine
 
 		transform.setPosition(physicsPos);
 
-		rb = GetCore()->physicsWorld->createRigidBody(transform);
-		rb->setType(rbType);
-		rb->enableGravity(true);
-		rb->setMass(1);
-		rb->setAngularLockAxisFactor(rp3d::Vector3(0, 0, 0));
+		rb = GetCore()->physicsWorld->createRigidBody(transform); // create rigidbody
+		rb->setType(rbType); // set the type of rigidbody, defaulted to dynamic
+		rb->enableGravity(true); // enable gravity on rigid body
+		rb->setMass(1); // set mass of rigid body
+		rb->setAngularLockAxisFactor(rp3d::Vector3(0, 0, 0)); // stop rigid body rotating so characters dont roll
 		if(collisionShape)
 		{
 			collider = rb->addCollider(collisionShape, rp3d::Transform::identity()); // Collider has to have a separate transform because its local. - this is what you would use to offset collider from object
 			rp3d::Material& mat = collider->getMaterial();
-			mat.setBounciness(bounciness);
+			mat.setBounciness(bounciness); // set the bounciness of the rigid body, 0 not bouncy 1 will infinitely bounce
 		}
 
 		if (isTrigger)
 		{
-			triggerCollider = rb->addCollider(triggerCollisionShape, rp3d::Transform::identity());
+			triggerCollider = rb->addCollider(triggerCollisionShape, rp3d::Transform::identity()); // add trigger collision shape for collision events
 			triggerCollider->setIsTrigger(isTrigger);
 		}
 	}

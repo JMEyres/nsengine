@@ -26,7 +26,7 @@ namespace nsengine
 	}
 
 	void Audio::LoadOgg(const std::string& _path, std::vector<unsigned char>& _buffer,
-		ALenum& _format, ALsizei& _freq)
+		ALenum& _format, ALsizei& _freq) // used to load ogg files
 	{
 		int channels = 0;
 		int sampleRate = 0;

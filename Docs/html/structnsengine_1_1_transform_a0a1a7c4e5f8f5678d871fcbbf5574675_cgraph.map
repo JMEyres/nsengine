@@ -1,0 +1,5 @@
+<map id="nsengine::Transform::Move" name="nsengine::Transform::Move">
+<area shape="rect" id="Node000001" title="Move the Transform current position by specified amount." alt="" coords="5,5,144,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_transform.html#a339ef46ea4e2d6ee4968b2c652464177" title="Compute the model matrix of current transform." alt="" coords="192,5,330,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>

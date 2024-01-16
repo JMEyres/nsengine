@@ -30,13 +30,13 @@ Collaboration diagram for nsengine\+::Audio\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf}{On\+Load}} ()
+\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{void}} \mbox{\hyperlink{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf}{On\+Load}} ()
 \item 
-void \mbox{\hyperlink{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a}{Load\+Ogg}} (const std\+::string \&\+\_\+path, std\+::vector$<$ unsigned char $>$ \&\+\_\+buffer, ALenum \&\+\_\+format, ALsizei \&\+\_\+freq)
+\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{void}} \mbox{\hyperlink{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a}{Load\+Ogg}} (\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{const}} std\+::string \&\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{\+\_\+path}}, std\+::vector$<$ \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{unsigned}} \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{char}} $>$ \&\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{\+\_\+buffer}}, \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALenum}} \&\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{\+\_\+format}}, \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALsizei}} \&\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{\+\_\+freq}})
 \begin{DoxyCompactList}\small\item\em Loads ogg file from specified path. \end{DoxyCompactList}\item 
-ALuint \mbox{\hyperlink{structnsengine_1_1_audio_adc9d0a48806444e4f7c8ffbfd4c327a6}{Get\+Source\+ID}} ()
+\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} \mbox{\hyperlink{structnsengine_1_1_audio_adc9d0a48806444e4f7c8ffbfd4c327a6}{Get\+Source\+ID}} ()
 \begin{DoxyCompactList}\small\item\em Gets the source id of audio resource. \end{DoxyCompactList}\item 
-ALuint \mbox{\hyperlink{structnsengine_1_1_audio_a19e4f6b9b1167941b66835b2ae1aaafb}{Get\+Buffer\+ID}} ()
+\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} \mbox{\hyperlink{structnsengine_1_1_audio_a19e4f6b9b1167941b66835b2ae1aaafb}{Get\+Buffer\+ID}} ()
 \begin{DoxyCompactList}\small\item\em Gets the buffer id of audio resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
 \begin{DoxyCompactItemize}
@@ -46,26 +46,24 @@ std\+::string \mbox{\hyperlink{structnsengine_1_1_resource_a57f1ea61c1f8c8d0f6ac
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0}\label{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0} 
-ALuint {\bfseries source\+Id} = 0
+\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} \mbox{\hyperlink{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0}{source\+Id}} = 0
 \item 
-\Hypertarget{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07}\label{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07} 
-ALuint {\bfseries buffer\+Id} = 0
+\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} \mbox{\hyperlink{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07}{buffer\+Id}} = 0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ {\bfseries resources}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_resources}{Resources}} $>$ \mbox{\hyperlink{structnsengine_1_1_resource_ae5ea6137ff33872a4f750a4b90009547}{resources}}
 \item 
-std\+::string {\bfseries cwd} = std\+::filesystem\+::current\+\_\+path().string()
+std\+::string \mbox{\hyperlink{structnsengine_1_1_resource_add128ce1c4560d3a06b886ecc757dee5}{cwd}} = std\+::filesystem\+::current\+\_\+path().\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{string}}()
 \item 
-std\+::string {\bfseries path}
+std\+::string \mbox{\hyperlink{structnsengine_1_1_resource_abb23fb1b03eeac301953608989433a6c}{path}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries Load} ()
+void \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{Load}} ()
 \end{DoxyCompactItemize}
 
 
@@ -77,7 +75,7 @@ void {\bfseries Load} ()
 \index{nsengine::Audio@{nsengine::Audio}!GetBufferID@{GetBufferID}}
 \index{GetBufferID@{GetBufferID}!nsengine::Audio@{nsengine::Audio}}
 \doxysubsubsection{\texorpdfstring{GetBufferID()}{GetBufferID()}}
-{\footnotesize\ttfamily ALuint nsengine\+::\+Audio\+::\+Get\+Buffer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} nsengine\+::\+Audio\+::\+Get\+Buffer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -90,7 +88,7 @@ integer buffer audio source id
 \index{nsengine::Audio@{nsengine::Audio}!GetSourceID@{GetSourceID}}
 \index{GetSourceID@{GetSourceID}!nsengine::Audio@{nsengine::Audio}}
 \doxysubsubsection{\texorpdfstring{GetSourceID()}{GetSourceID()}}
-{\footnotesize\ttfamily ALuint nsengine\+::\+Audio\+::\+Get\+Source\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} nsengine\+::\+Audio\+::\+Get\+Source\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -103,7 +101,7 @@ integer audio source id
 \index{nsengine::Audio@{nsengine::Audio}!LoadOgg@{LoadOgg}}
 \index{LoadOgg@{LoadOgg}!nsengine::Audio@{nsengine::Audio}}
 \doxysubsubsection{\texorpdfstring{LoadOgg()}{LoadOgg()}}
-{\footnotesize\ttfamily void nsengine\+::\+Audio\+::\+Load\+Ogg (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+path,  }\item[{std\+::vector$<$ unsigned char $>$ \&}]{\+\_\+buffer,  }\item[{ALenum \&}]{\+\_\+format,  }\item[{ALsizei \&}]{\+\_\+freq }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{void}} nsengine\+::\+Audio\+::\+Load\+Ogg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{const}} std\+::string \&}]{\+\_\+path,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{unsigned}} \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{char}} $>$ \&}]{\+\_\+buffer,  }\item[{\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALenum}} \&}]{\+\_\+format,  }\item[{\mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALsizei}} \&}]{\+\_\+freq }\end{DoxyParamCaption})}
 
 
 
@@ -120,19 +118,50 @@ Loads ogg file from specified path.
 {\em \+\_\+freq} & Frequence of audio data \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_audio_a01fcbdcdc99075c0dc4cbe1d0e42065a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf}\label{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf} 
 \index{nsengine::Audio@{nsengine::Audio}!OnLoad@{OnLoad}}
 \index{OnLoad@{OnLoad}!nsengine::Audio@{nsengine::Audio}}
 \doxysubsubsection{\texorpdfstring{OnLoad()}{OnLoad()}}
-{\footnotesize\ttfamily void nsengine\+::\+Audio\+::\+On\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{void}} nsengine\+::\+Audio\+::\+On\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Implements \mbox{\hyperlink{structnsengine_1_1_resource}{nsengine\+::\+Resource}}.
+Implements \mbox{\hyperlink{structnsengine_1_1_resource_a40262bfa598da74f5cefeb84b144240f}{nsengine\+::\+Resource}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnsengine_1_1_audio_a6b14766b112592efd54a648189b1aabf_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07}\label{structnsengine_1_1_audio_a7e45443f96dd962fb4cc8f298080cf07} 
+\index{nsengine::Audio@{nsengine::Audio}!bufferId@{bufferId}}
+\index{bufferId@{bufferId}!nsengine::Audio@{nsengine::Audio}}
+\doxysubsubsection{\texorpdfstring{bufferId}{bufferId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} nsengine\+::\+Audio\+::buffer\+Id = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0}\label{structnsengine_1_1_audio_a41606fe3b3ac7bdbacb1954f2ebe14d0} 
+\index{nsengine::Audio@{nsengine::Audio}!sourceId@{sourceId}}
+\index{sourceId@{sourceId}!nsengine::Audio@{nsengine::Audio}}
+\doxysubsubsection{\texorpdfstring{sourceId}{sourceId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnsengine_1_1_resource_aa4b45f14dfad0255266ffca2122d56f1}{ALuint}} nsengine\+::\+Audio\+::source\+Id = 0\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Audio.\+h\item 
-Audio.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_audio_8h}{Audio.\+h}}\item 
+\mbox{\hyperlink{_audio_8cpp}{Audio.\+cpp}}\end{DoxyCompactItemize}

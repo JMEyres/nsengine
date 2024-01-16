@@ -4,7 +4,7 @@
 namespace nsengine
 {
 	Transform::Transform() :
-		scale(1, 1, 1)
+		scale(1, 1, 1) // init to a scale so it exists
 	{}
 
 	void Transform::SetRotation(rend::vec3 _angle)
@@ -29,7 +29,7 @@ namespace nsengine
 
 	void Transform::Move(float _x, float _y, float _z)
 	{
-		rend::vec3 movement = Model() * rend::vec4(_x, _y, _z, 0);
+		rend::vec3 movement = Model() * rend::vec4(_x, _y, _z, 0); // move by local orientation
 		position += movement;
 	}
 

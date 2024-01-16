@@ -13,7 +13,7 @@ namespace nsengine
 	void AudioSource::OnTick()
 	{
 		glm::vec3 pos = GetEntity()->GetTransform()->GetPosition();
-		alSource3f(audioPtr->GetSourceID(), AL_POSITION, pos.x, pos.y, pos.z);
+		alSource3f(audioPtr->GetSourceID(), AL_POSITION, pos.x, pos.y, pos.z); // set audio source position
 	}
 
 	void AudioSource::Play()

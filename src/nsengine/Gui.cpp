@@ -43,7 +43,7 @@ namespace nsengine
 
 	void Gui::OnDisplay()
 	{
-		if(timer)
+		if(timer) // if set to be a timer
 		{
 			float dt = GetCore()->GetDeltaTime();
 			frameTimer += dt;
@@ -53,10 +53,10 @@ namespace nsengine
 
 		rend::Font font(path);
 		rend::TextShader textShader;
-		textShader.projection(rend::ortho(0.0f, resW, resH, 0.0f, -0.1f, 1000.0f));
-		textShader.model(rend::translate(rend::mat4(1.0f), rend::vec3(position.x, position.y, position.z)));
-		textShader.text(text);
-		textShader.font(font);
+		textShader.projection(rend::ortho(0.0f, resW, resH, 0.0f, -0.1f, 1000.0f)); // bounds of gui
+		textShader.model(rend::translate(rend::mat4(1.0f), rend::vec3(position.x, position.y, position.z))); // set position of text
+		textShader.text(text); // set text
+		textShader.font(font); // set font
 		textShader.render();
 	}
 

@@ -80,15 +80,15 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">Environment.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_environment_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&lt;memory&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;vector&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Transform.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_8h.html">Entity.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_transform_8h.html">Transform.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>nsengine</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacensengine.html">nsengine</a></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">struct </span>Entity; <span class="comment">// just says it exists - not defined yet</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">struct </span>Core;</div>
@@ -106,7 +106,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        std::shared_ptr&lt;Camera&gt; <a class="code hl_function" href="structnsengine_1_1_environment.html#a1baeac775041c484221898007020d23f">GetCamera</a>(<span class="keywordtype">int</span> camIndex);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structnsengine_1_1_core.html">Core</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structnsengine_1_1_environment.html#acd0789873af2006e142a579250891ce8">   36</a></span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structnsengine_1_1_core.html">Core</a>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::weak_ptr&lt;Core&gt; core; <span class="comment">// core owns environments</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::weak_ptr&lt;Environment&gt; self;</div>
@@ -116,6 +116,9 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    };</div>
 </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div></div>
+<div class="ttc" id="a_transform_8h_html"><div class="ttname"><a href="_transform_8h.html">Transform.h</a></div></div>
+<div class="ttc" id="anamespacensengine_html"><div class="ttname"><a href="namespacensengine.html">nsengine</a></div><div class="ttdef"><b>Definition</b> Audio.cpp:5</div></div>
 <div class="ttc" id="astructnsengine_1_1_core_html"><div class="ttname"><a href="structnsengine_1_1_core.html">nsengine::Core</a></div><div class="ttdoc">Main manager for the rest of the engine.</div><div class="ttdef"><b>Definition</b> Core.h:27</div></div>
 <div class="ttc" id="astructnsengine_1_1_environment_html"><div class="ttname"><a href="structnsengine_1_1_environment.html">nsengine::Environment</a></div><div class="ttdoc">Class containing data about the environment or 'world'.</div><div class="ttdef"><b>Definition</b> Environment.h:17</div></div>
 <div class="ttc" id="astructnsengine_1_1_environment_html_a061f97e4220b34c060bc9ef447e75c24"><div class="ttname"><a href="structnsengine_1_1_environment.html#a061f97e4220b34c060bc9ef447e75c24">nsengine::Environment::AddEntity</a></div><div class="ttdeci">std::shared_ptr&lt; Entity &gt; AddEntity()</div><div class="ttdoc">Adds an entity to the environment and pushes it back to an internal list.</div><div class="ttdef"><b>Definition</b> Environment.cpp:5</div></div>

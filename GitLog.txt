@@ -1,3 +1,9 @@
+commit 0a82c012a67b3460f5ed45c5c147bc1575a7365a
+Author: Josh Eyres <josh.m.eyres@gmail.com>
+Date:   Tue Jan 16 00:16:09 2024 +0000
+
+    Added setpos and setres to gui
+
 commit 591f0f5d28f90a737fe950c54eb81617dc511c78
 Author: Josh Eyres <josh.m.eyres@gmail.com>
 Date:   Mon Jan 15 03:01:51 2024 +0000

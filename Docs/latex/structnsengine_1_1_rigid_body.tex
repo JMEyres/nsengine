@@ -48,11 +48,9 @@ void \mbox{\hyperlink{structnsengine_1_1_rigid_body_af91b700398e82cfb4fa4d6b1911
 \begin{DoxyCompactList}\small\item\em Force set the position of the rigidbody and by extension the transform. \end{DoxyCompactList}\item 
 rend\+::vec3 \mbox{\hyperlink{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58}{Get\+Pos}} ()
 \begin{DoxyCompactList}\small\item\em Get the position of the current rigidbody. \end{DoxyCompactList}\item 
-\Hypertarget{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b}\label{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b} 
-void {\bfseries Disable} ()
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b}{Disable}} ()
 \begin{DoxyCompactList}\small\item\em Disable rigidbody. \end{DoxyCompactList}\item 
-\Hypertarget{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39}\label{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39} 
-void {\bfseries Enable} ()
+void \mbox{\hyperlink{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39}{Enable}} ()
 \item 
 rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnsengine_1_1_rigid_body_a7fd421746536c94a5d41fbd0f96aaf44}{Get\+Rigid\+Body}} ()
 \begin{DoxyCompactList}\small\item\em Get the current rigidbody. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -61,7 +59,7 @@ rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnsengine
 \item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1ddea689f587bab}{On\+Tick}} ()
 \begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
-virtual void {\bfseries On\+Create} ()
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}{On\+Create}} ()
 \begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
 \begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
@@ -73,12 +71,12 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}{core}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}{self}}
 \end{DoxyCompactItemize}
 
 
@@ -116,6 +114,38 @@ Add a trigger collision shape to the rigidbody used when rigidbody doesnt need t
 {\em \+\_\+shape} & Collision shape to be added \\
 \hline
 \end{DoxyParams}
+\Hypertarget{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b}\label{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!Disable@{Disable}}
+\index{Disable@{Disable}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{Disable()}{Disable()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disable rigidbody. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{structnsengine_1_1_rigid_body_a840302cfc16c1f06f50457531f2a2a6b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39}\label{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39} 
+\index{nsengine::RigidBody@{nsengine::RigidBody}!Enable@{Enable}}
+\index{Enable@{Enable}!nsengine::RigidBody@{nsengine::RigidBody}}
+\doxysubsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily void nsengine\+::\+Rigid\+Body\+::\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{structnsengine_1_1_rigid_body_ac063f216191f2bec45440500d1a27a39_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58}\label{structnsengine_1_1_rigid_body_a5cd97b11611bfd0730573cb7155a7e58} 
 \index{nsengine::RigidBody@{nsengine::RigidBody}!GetPos@{GetPos}}
 \index{GetPos@{GetPos}!nsengine::RigidBody@{nsengine::RigidBody}}
@@ -161,8 +191,7 @@ Move the rigidbody with simulated physics forces.
 {\em \+\_\+z} & Force to move in z axis \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -272,5 +301,5 @@ Set the type for the rigid body.
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Rigid\+Body.\+h\item 
-Rigid\+Body.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_rigid_body_8h}{Rigid\+Body.\+h}}\item 
+\mbox{\hyperlink{_rigid_body_8cpp}{Rigid\+Body.\+cpp}}\end{DoxyCompactItemize}

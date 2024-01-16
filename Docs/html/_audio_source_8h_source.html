@@ -80,11 +80,11 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">AudioSource.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_audio_source_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Component.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Audio.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_8h.html">Entity.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_audio_8h.html">Audio.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;AL/al.h&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;AL/alc.h&gt;</span></div>
@@ -94,7 +94,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>nsengine</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacensengine.html">nsengine</a></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structnsengine_1_1_audio_source.html">   18</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structnsengine_1_1_audio_source.html">AudioSource</a> : <a class="code hl_struct" href="structnsengine_1_1_component.html">Component</a></div>
@@ -104,12 +104,17 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_audio_source.html#ac7861f7ddd1c14bd22c8b976d32ec691">SetAudio</a>(std::shared_ptr&lt;Audio&gt; _audio);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_audio_source.html#a1a7f51a20c65a9f5c0d9b6379a7fc887">Play</a>();</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        std::shared_ptr&lt;Audio&gt; audioPtr;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structnsengine_1_1_audio_source.html#a7dd1711387992ff8103a85c404fc8bfa">   28</a></span>        std::shared_ptr&lt;Audio&gt; <a class="code hl_variable" href="structnsengine_1_1_audio_source.html#a7dd1711387992ff8103a85c404fc8bfa">audioPtr</a>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
 </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="ttc" id="a_audio_8h_html"><div class="ttname"><a href="_audio_8h.html">Audio.h</a></div></div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div></div>
+<div class="ttc" id="anamespacensengine_html"><div class="ttname"><a href="namespacensengine.html">nsengine</a></div><div class="ttdef"><b>Definition</b> Audio.cpp:5</div></div>
 <div class="ttc" id="astructnsengine_1_1_audio_source_html"><div class="ttname"><a href="structnsengine_1_1_audio_source.html">nsengine::AudioSource</a></div><div class="ttdoc">Component to control audio.</div><div class="ttdef"><b>Definition</b> AudioSource.h:19</div></div>
 <div class="ttc" id="astructnsengine_1_1_audio_source_html_a1a7f51a20c65a9f5c0d9b6379a7fc887"><div class="ttname"><a href="structnsengine_1_1_audio_source.html#a1a7f51a20c65a9f5c0d9b6379a7fc887">nsengine::AudioSource::Play</a></div><div class="ttdeci">void Play()</div><div class="ttdoc">Play audio source.</div><div class="ttdef"><b>Definition</b> AudioSource.cpp:19</div></div>
+<div class="ttc" id="astructnsengine_1_1_audio_source_html_a7dd1711387992ff8103a85c404fc8bfa"><div class="ttname"><a href="structnsengine_1_1_audio_source.html#a7dd1711387992ff8103a85c404fc8bfa">nsengine::AudioSource::audioPtr</a></div><div class="ttdeci">std::shared_ptr&lt; Audio &gt; audioPtr</div><div class="ttdef"><b>Definition</b> AudioSource.h:28</div></div>
 <div class="ttc" id="astructnsengine_1_1_audio_source_html_a8e5b9a6e54083e489a55335f7a8dc8b6"><div class="ttname"><a href="structnsengine_1_1_audio_source.html#a8e5b9a6e54083e489a55335f7a8dc8b6">nsengine::AudioSource::OnTick</a></div><div class="ttdeci">void OnTick()</div><div class="ttdoc">Runs every single frame, used to update in realtime.</div><div class="ttdef"><b>Definition</b> AudioSource.cpp:13</div></div>
 <div class="ttc" id="astructnsengine_1_1_audio_source_html_ac7861f7ddd1c14bd22c8b976d32ec691"><div class="ttname"><a href="structnsengine_1_1_audio_source.html#ac7861f7ddd1c14bd22c8b976d32ec691">nsengine::AudioSource::SetAudio</a></div><div class="ttdeci">void SetAudio(std::shared_ptr&lt; Audio &gt; _audio)</div><div class="ttdoc">Set the audio source from audio resource.</div><div class="ttdef"><b>Definition</b> AudioSource.cpp:5</div></div>
 <div class="ttc" id="astructnsengine_1_1_component_html"><div class="ttname"><a href="structnsengine_1_1_component.html">nsengine::Component</a></div><div class="ttdoc">Base class for all ECS components to inherit from.</div><div class="ttdef"><b>Definition</b> Component.h:11</div></div>

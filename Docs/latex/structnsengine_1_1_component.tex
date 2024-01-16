@@ -11,7 +11,8 @@ Base class for all ECS components to inherit from.
 
 
 
-Inheritance diagram for nsengine\+::Component\+:\nopagebreak
+Inheritance diagram for nsengine\+::Component\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,8 +28,7 @@ virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1dd
 \begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
 \begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
-\Hypertarget{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}\label{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2} 
-virtual void {\bfseries On\+Create} ()
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}{On\+Create}} ()
 \begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
 \begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
@@ -39,20 +39,17 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}\label{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a} 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}{core}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}\label{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6} 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}{self}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82}\label{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82} 
-struct {\bfseries Entity}
+struct \mbox{\hyperlink{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82}{Entity}}
 \end{DoxyCompactItemize}
 
 
@@ -93,14 +90,23 @@ Gets the current entity.
 \begin{DoxyReturn}{Returns}
 The parent entity 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}\label{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2} 
+\index{nsengine::Component@{nsengine::Component}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily void nsengine\+::\+Component\+::\+On\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs when component is initially created. 
+
 \Hypertarget{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}\label{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308} 
 \index{nsengine::Component@{nsengine::Component}!OnDisplay@{OnDisplay}}
 \index{OnDisplay@{OnDisplay}!nsengine::Component@{nsengine::Component}}
@@ -159,7 +165,31 @@ Reimplemented in \mbox{\hyperlink{structnsengine_1_1_audio_source_a8e5b9a6e54083
 
 
 
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82}\label{structnsengine_1_1_component_a4de4c6926260be1262f425df15fc9c82} 
+\index{nsengine::Component@{nsengine::Component}!Entity@{Entity}}
+\index{Entity@{Entity}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{Entity}{Entity}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}\label{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a} 
+\index{nsengine::Component@{nsengine::Component}!core@{core}}
+\index{core@{core}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{core}{core}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{structnsengine_1_1_core}{Core}}$>$ nsengine\+::\+Component\+::core}
+
+\Hypertarget{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}\label{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6} 
+\index{nsengine::Component@{nsengine::Component}!self@{self}}
+\index{self@{self}!nsengine::Component@{nsengine::Component}}
+\doxysubsubsection{\texorpdfstring{self}{self}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{structnsengine_1_1_component}{Component}}$>$ nsengine\+::\+Component\+::self\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Component.\+h\item 
-Component.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_component_8h}{Component.\+h}}\item 
+\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}

@@ -36,12 +36,16 @@ void \mbox{\hyperlink{structnsengine_1_1_gui_a26395cf840af8f4e59cb9929302235bf}{
 \begin{DoxyCompactList}\small\item\em Set the path to chosen font. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9}{Set\+Text}} (sys\+::string \+\_\+text)
 \begin{DoxyCompactList}\small\item\em Set the text to display to screen. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389}{Enable\+As\+Timer}} (bool toggle)
+void \mbox{\hyperlink{structnsengine_1_1_gui_a0788909fe9fa44f2d0f4a7e5a9575b59}{Enable\+As\+Timer}} (bool \+\_\+toggle)
 \begin{DoxyCompactList}\small\item\em Sets the GUI text to be a timer. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{structnsengine_1_1_gui_a6e1c1baafc676bd7c41374f3f901f93f}{Get\+Timer}} ()
 \begin{DoxyCompactList}\small\item\em Get the timer in seconds. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342}{Set\+Timer}} (float value)
-\begin{DoxyCompactList}\small\item\em Set the timer to a specific value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{structnsengine_1_1_gui_a40df5a10414d1c34d9d879fe9f8e312b}{Set\+Timer}} (float \+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the timer to a specific value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_aa9788ca34f7b4670132f728d0231c5d6}{Set\+Position}} (rend\+::vec3 \+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Used to set the position of the on screen text element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structnsengine_1_1_gui_af0b213c273739c188c331873875fa5c5}{Set\+Resolution}} (float \+\_\+width, float \+\_\+height)
+\begin{DoxyCompactList}\small\item\em Set the resolution of the onscreen gui/\+Canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,7 +55,7 @@ virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1dd
 \begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
 \begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
-virtual void {\bfseries On\+Create} ()
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}{On\+Create}} ()
 \begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_ab1810de9f6ab841eb92cde5d9e2f7ffe}{Get\+Entity}} ()
 \begin{DoxyCompactList}\small\item\em Gets the current entity. \end{DoxyCompactList}\item 
@@ -61,12 +65,12 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}{core}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}{self}}
 \end{DoxyCompactItemize}
 
 
@@ -74,11 +78,11 @@ std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component
 \doxylink{structnsengine_1_1_component}{Component} handling on screen graphical user interface. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389}\label{structnsengine_1_1_gui_a498905688af3a0bded66369bbda56389} 
+\Hypertarget{structnsengine_1_1_gui_a0788909fe9fa44f2d0f4a7e5a9575b59}\label{structnsengine_1_1_gui_a0788909fe9fa44f2d0f4a7e5a9575b59} 
 \index{nsengine::Gui@{nsengine::Gui}!EnableAsTimer@{EnableAsTimer}}
 \index{EnableAsTimer@{EnableAsTimer}!nsengine::Gui@{nsengine::Gui}}
 \doxysubsubsection{\texorpdfstring{EnableAsTimer()}{EnableAsTimer()}}
-{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Enable\+As\+Timer (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Enable\+As\+Timer (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+toggle }\end{DoxyParamCaption})}
 
 
 
@@ -138,6 +142,38 @@ Set the path to chosen font.
 {\em \+\_\+path} & String path to font \\
 \hline
 \end{DoxyParams}
+\Hypertarget{structnsengine_1_1_gui_aa9788ca34f7b4670132f728d0231c5d6}\label{structnsengine_1_1_gui_aa9788ca34f7b4670132f728d0231c5d6} 
+\index{nsengine::Gui@{nsengine::Gui}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{rend\+::vec3}]{\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Used to set the position of the on screen text element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos} & Position in pixels on the screen \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structnsengine_1_1_gui_af0b213c273739c188c331873875fa5c5}\label{structnsengine_1_1_gui_af0b213c273739c188c331873875fa5c5} 
+\index{nsengine::Gui@{nsengine::Gui}!SetResolution@{SetResolution}}
+\index{SetResolution@{SetResolution}!nsengine::Gui@{nsengine::Gui}}
+\doxysubsubsection{\texorpdfstring{SetResolution()}{SetResolution()}}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Resolution (\begin{DoxyParamCaption}\item[{float}]{\+\_\+width,  }\item[{float}]{\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Set the resolution of the onscreen gui/\+Canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+width} & Width of the window \\
+\hline
+{\em \+\_\+height} & Height of the window \\
+\hline
+\end{DoxyParams}
 \Hypertarget{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9}\label{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9} 
 \index{nsengine::Gui@{nsengine::Gui}!SetText@{SetText}}
 \index{SetText@{SetText}!nsengine::Gui@{nsengine::Gui}}
@@ -160,11 +196,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{structnsengine_1_1_gui_affd9425d3da7154982053d7207db17a9_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342}\label{structnsengine_1_1_gui_af37d87b63527dab00aa27dee1d45b342} 
+\Hypertarget{structnsengine_1_1_gui_a40df5a10414d1c34d9d879fe9f8e312b}\label{structnsengine_1_1_gui_a40df5a10414d1c34d9d879fe9f8e312b} 
 \index{nsengine::Gui@{nsengine::Gui}!SetTimer@{SetTimer}}
 \index{SetTimer@{SetTimer}!nsengine::Gui@{nsengine::Gui}}
 \doxysubsubsection{\texorpdfstring{SetTimer()}{SetTimer()}}
-{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Timer (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void nsengine\+::\+Gui\+::\+Set\+Timer (\begin{DoxyParamCaption}\item[{float}]{\+\_\+value }\end{DoxyParamCaption})}
 
 
 
@@ -179,5 +215,5 @@ Set the timer to a specific value.
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Gui.\+h\item 
-Gui.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_gui_8h}{Gui.\+h}}\item 
+\mbox{\hyperlink{_gui_8cpp}{Gui.\+cpp}}\end{DoxyCompactItemize}

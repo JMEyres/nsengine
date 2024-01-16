@@ -1,0 +1,9 @@
+<map id="nsengine::Texture::OnLoad" name="nsengine::Texture::OnLoad">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,138,81"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_resource.html#a57f1ea61c1f8c8d0f6ac9b22f4919f3b" title="Get the path of resource from current working directory." alt="" coords="186,5,322,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,45,170,39,171,45,139,50"/>
+<area shape="rect" id="Node000003" href="$structnsengine_1_1_resource.html#aa4b45f14dfad0255266ffca2122d56f1" title=" " alt="" coords="186,72,322,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,70,171,75,170,81,138,75"/>
+<area shape="rect" id="Node000004" href="$structnsengine_1_1_resource.html#a40262bfa598da74f5cefeb84b144240f" title=" " alt="" coords="370,72,506,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="322,91,354,91,354,96,322,96"/>
+</map>

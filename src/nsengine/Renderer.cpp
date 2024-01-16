@@ -21,12 +21,13 @@ namespace nsengine
 
 	void Renderer::OnDisplay()
 	{		
+		// set to main camera view/projection matrix
 		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
 		modelShader.projection(cam->GetProj());
 		modelShader.view(cam->GetView());
 
-		modelShader.model(GetEntity()->GetTransform()->Model());
-		modelShader.model(*model);
-		modelShader.render();
+		modelShader.model(GetEntity()->GetTransform()->Model()); // get transform of entity
+		modelShader.model(*model); // set model
+		modelShader.render(); // render
 	}
 }

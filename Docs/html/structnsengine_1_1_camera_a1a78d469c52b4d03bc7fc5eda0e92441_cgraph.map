@@ -1,0 +1,5 @@
+<map id="nsengine::Camera::UpdateCamera" name="nsengine::Camera::UpdateCamera">
+<area shape="rect" id="Node000001" title="Used to update the camera matrixes when moved/each frame." alt="" coords="5,5,181,48"/>
+<area shape="rect" id="Node000002" href="$structnsengine_1_1_component.html#ab1810de9f6ab841eb92cde5d9e2f7ffe" title="Gets the current entity." alt="" coords="229,5,376,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,24,213,24,213,29,181,29"/>
+</map>

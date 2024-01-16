@@ -4,7 +4,7 @@
 
 namespace nsengine
 {
-	void SpriteRenderer::OnInitialize()
+	void SpriteRenderer::OnInitialize() // Init with default values
 	{
 		mesh.load(rend::QUAD_MESH);
 		shader.load(rend::PLANE_SHADER);
@@ -18,7 +18,7 @@ namespace nsengine
 	{
 		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
 
-		shader.uniform("u_Projection", cam->GetProj());
+		shader.uniform("u_Projection", cam->GetProj()); // Set to cam projection/view matrix so it is in view
 		shader.uniform("u_View", cam->GetView());
 
 		shader.uniform("u_Model", GetEntity()->GetTransform()->Model());
@@ -35,26 +35,26 @@ namespace nsengine
 		float dt = GetCore()->GetDeltaTime();
 		frameTimer += dt;
 
-		if (frameTimer >= 0.1f)
+		if (frameTimer >= 0.1f) // change this to change speed of animation
 		{
 			frameCount++;
 			frameTimer = 0;
 		}
 
-		if (frameCount == ids.size())
+		if (frameCount == ids.size()) // when it hits the last frame reset
 		{
 			frameCount = 0;
 		}
 		currentID = ids[frameCount];
 	}
 
-	void SpriteRenderer::Animate(std::vector<std::shared_ptr<Texture>> _animFrames)
+	void SpriteRenderer::Animate(std::vector<std::shared_ptr<Texture>> _animFrames) // Set sprite to animate
 	{
 		animate = true;
 		animTextures = _animFrames;
 		for (size_t i = 0; i < animTextures.size(); ++i)
 		{
-			ids.push_back(animTextures.at(i)->GetID());
+			ids.push_back(animTextures.at(i)->GetID()); // push frame ids to buffer
 		} 
 
 		frameCount = ids[0];

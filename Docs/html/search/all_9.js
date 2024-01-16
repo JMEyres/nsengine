@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['model_0',['Model',['../structnsengine_1_1_model.html',1,'nsengine::Model'],['../structnsengine_1_1_transform.html#a339ef46ea4e2d6ee4968b2c652464177',1,'nsengine::Transform::Model()']]],
-  ['move_1',['Move',['../structnsengine_1_1_rigid_body.html#a63cd75dffdec7e3c5e57e2f62f6c443e',1,'nsengine::RigidBody::Move()'],['../structnsengine_1_1_transform.html#a0a1a7c4e5f8f5678d871fcbbf5574675',1,'nsengine::Transform::Move()']]]
+  ['load_0',['Load',['../structnsengine_1_1_resource.html#aa4b45f14dfad0255266ffca2122d56f1',1,'nsengine::Resource::Load()'],['../structnsengine_1_1_resources.html#ab0cd4e627c5c72149a65b1100f2fe1ef',1,'nsengine::Resources::Load(const std::string &amp;_path)']]],
+  ['loadanimation_1',['LoadAnimation',['../structnsengine_1_1_resources.html#a1a1ccbedae23286d0155a84450025437',1,'nsengine::Resources']]],
+  ['loadogg_2',['LoadOgg',['../structnsengine_1_1_audio.html#a01fcbdcdc99075c0dc4cbe1d0e42065a',1,'nsengine::Audio']]]
 ];

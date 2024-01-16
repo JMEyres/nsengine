@@ -7,13 +7,14 @@ namespace nsengine
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>(); // make_shared = new
 
-		rtn->physicsWorld = rtn->physicsCommon.createPhysicsWorld();
+		rtn->physicsWorld = rtn->physicsCommon.createPhysicsWorld(); // create physics environment
 
 		rtn->self = rtn;
 		rtn->running = false;
 		rtn->input = std::make_shared<Input>();
 		rtn->resources = std::make_shared<Resources>();
 
+		// Defining SDL/Rend window
 		if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		{
 			throw std::runtime_error("Failed to initialize SDL");
@@ -62,25 +63,25 @@ namespace nsengine
 		return rtn;
 	}
 
-	void Core::Start()
+	void Core::Start() // main function
 	{
 		running = true;
 		SDL_Event event = { 0 };
-		physicsWorld->setGravity(rp3d::Vector3(0, -2, 0));
+		physicsWorld->setGravity(rp3d::Vector3(0, -2, 0)); // set physics gravity of world
 
-		SDL_SetRelativeMouseMode(SDL_TRUE);
+		SDL_SetRelativeMouseMode(SDL_TRUE); // lock mouse to window
 
 		for (size_t i = 0; i < environments.size(); ++i)
 		{
 			for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 			{
-				environments.at(i)->entities.at(ei)->Initialize();
+				environments.at(i)->entities.at(ei)->Initialize(); // initialize components
 			}
 		}
 
 		while (running)
 		{
-			while (SDL_PollEvent(&event))
+			while (SDL_PollEvent(&event)) // input handling
 			{
 				switch (event.type)
 				{
@@ -105,7 +106,7 @@ namespace nsengine
 				}
 			}
 
-			SDL_GetRelativeMouseState(&input->mouseX, &input->mouseY);
+			SDL_GetRelativeMouseState(&input->mouseX, &input->mouseY); // mouse handling
 			float timeStep = 1.0f / 60.0f;
 
 			for (size_t i = 0; i < environments.size(); ++i)
@@ -115,7 +116,7 @@ namespace nsengine
 					for (int t = 0; t < 1; t++) {
 
 						physicsWorld->update(timeStep);
-						environments.at(i)->entities.at(ei)->PhysicsTick();
+						environments.at(i)->entities.at(ei)->PhysicsTick(); // Physics simulation tick for components
 					}
 				}
 			}
@@ -124,13 +125,15 @@ namespace nsengine
 			{
 				for (size_t ei = 0; ei < environments.at(i)->entities.size(); ++ei)
 				{
-					environments.at(i)->entities.at(ei)->Tick();
+					environments.at(i)->entities.at(ei)->Tick(); // Regular tick
 				}
 			}
+			// get delta time
 			float time = SDL_GetTicks();
 			float diff = time - lastTime;
 			deltaTime = diff / 1000.0f;
 			lastTime = time;
+
 			SDL_Rend_ClearWindow(window);
 
 			for (size_t i = 0; i < environments.size(); ++i)
@@ -147,6 +150,7 @@ namespace nsengine
 
 	void Core::Stop()
 	{
+		// Clean up
 		running = false;
 		alcMakeContextCurrent(NULL);
 		alcDestroyContext(audioContext);

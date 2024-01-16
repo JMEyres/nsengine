@@ -80,13 +80,13 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">Gui.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Component.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
+<a href="_gui_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_8h.html">Entity.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;rend/rend.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;sys/string.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>nsengine</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacensengine.html">nsengine</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">struct </span>Camera;</div>
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
@@ -98,27 +98,38 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#affd9425d3da7154982053d7207db17a9">SetText</a>(sys::string _text);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#a498905688af3a0bded66369bbda56389">EnableAsTimer</a>(<span class="keywordtype">bool</span> toggle);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#a0788909fe9fa44f2d0f4a7e5a9575b59">EnableAsTimer</a>(<span class="keywordtype">bool</span> _toggle);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">float</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#a6e1c1baafc676bd7c41374f3f901f93f">GetTimer</a>();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#af37d87b63527dab00aa27dee1d45b342">SetTimer</a>(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#a40df5a10414d1c34d9d879fe9f8e312b">SetTimer</a>(<span class="keywordtype">float</span> _value);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        sys::string path = <span class="stringliteral">&quot;./Resources/Fonts/Comic.png&quot;</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        sys::string text = <span class="stringliteral">&quot;2D/OrthoGraphic&quot;</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">float</span> frameTimer;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">bool</span> timer;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#aa9788ca34f7b4670132f728d0231c5d6">SetPosition</a>(rend::vec3 _pos);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_gui.html#af0b213c273739c188c331873875fa5c5">SetResolution</a>(<span class="keywordtype">float</span> _width, <span class="keywordtype">float</span> _height);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        sys::string path = <span class="stringliteral">&quot;./Resources/Fonts/Comic.png&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        sys::string text = <span class="stringliteral">&quot;2D/OrthoGraphic&quot;</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">float</span> frameTimer;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">bool</span> timer;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        rend::vec3 position = rend::vec3(100, 100, 0);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">float</span> resW = 1152.0f;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">float</span> resH = 864.0f;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div></div>
+<div class="ttc" id="anamespacensengine_html"><div class="ttname"><a href="namespacensengine.html">nsengine</a></div><div class="ttdef"><b>Definition</b> Audio.cpp:5</div></div>
 <div class="ttc" id="astructnsengine_1_1_component_html"><div class="ttname"><a href="structnsengine_1_1_component.html">nsengine::Component</a></div><div class="ttdoc">Base class for all ECS components to inherit from.</div><div class="ttdef"><b>Definition</b> Component.h:11</div></div>
 <div class="ttc" id="astructnsengine_1_1_gui_html"><div class="ttname"><a href="structnsengine_1_1_gui.html">nsengine::Gui</a></div><div class="ttdoc">Component handling on screen graphical user interface.</div><div class="ttdef"><b>Definition</b> Gui.h:12</div></div>
+<div class="ttc" id="astructnsengine_1_1_gui_html_a0788909fe9fa44f2d0f4a7e5a9575b59"><div class="ttname"><a href="structnsengine_1_1_gui.html#a0788909fe9fa44f2d0f4a7e5a9575b59">nsengine::Gui::EnableAsTimer</a></div><div class="ttdeci">void EnableAsTimer(bool _toggle)</div><div class="ttdoc">Sets the GUI text to be a timer.</div><div class="ttdef"><b>Definition</b> Gui.cpp:18</div></div>
 <div class="ttc" id="astructnsengine_1_1_gui_html_a26395cf840af8f4e59cb9929302235bf"><div class="ttname"><a href="structnsengine_1_1_gui.html#a26395cf840af8f4e59cb9929302235bf">nsengine::Gui::SetPath</a></div><div class="ttdeci">void SetPath(sys::string _path)</div><div class="ttdoc">Set the path to chosen font.</div><div class="ttdef"><b>Definition</b> Gui.cpp:7</div></div>
-<div class="ttc" id="astructnsengine_1_1_gui_html_a498905688af3a0bded66369bbda56389"><div class="ttname"><a href="structnsengine_1_1_gui.html#a498905688af3a0bded66369bbda56389">nsengine::Gui::EnableAsTimer</a></div><div class="ttdeci">void EnableAsTimer(bool toggle)</div><div class="ttdoc">Sets the GUI text to be a timer.</div><div class="ttdef"><b>Definition</b> Gui.cpp:18</div></div>
+<div class="ttc" id="astructnsengine_1_1_gui_html_a40df5a10414d1c34d9d879fe9f8e312b"><div class="ttname"><a href="structnsengine_1_1_gui.html#a40df5a10414d1c34d9d879fe9f8e312b">nsengine::Gui::SetTimer</a></div><div class="ttdeci">void SetTimer(float _value)</div><div class="ttdoc">Set the timer to a specific value.</div><div class="ttdef"><b>Definition</b> Gui.cpp:23</div></div>
 <div class="ttc" id="astructnsengine_1_1_gui_html_a6e1c1baafc676bd7c41374f3f901f93f"><div class="ttname"><a href="structnsengine_1_1_gui.html#a6e1c1baafc676bd7c41374f3f901f93f">nsengine::Gui::GetTimer</a></div><div class="ttdeci">float GetTimer()</div><div class="ttdoc">Get the timer in seconds.</div><div class="ttdef"><b>Definition</b> Gui.cpp:28</div></div>
-<div class="ttc" id="astructnsengine_1_1_gui_html_a8bfa3d908b210affebc2de04cc38751a"><div class="ttname"><a href="structnsengine_1_1_gui.html#a8bfa3d908b210affebc2de04cc38751a">nsengine::Gui::OnDisplay</a></div><div class="ttdeci">void OnDisplay()</div><div class="ttdoc">Last function to run, used for displaying to screen i.e. rendering.</div><div class="ttdef"><b>Definition</b> Gui.cpp:34</div></div>
-<div class="ttc" id="astructnsengine_1_1_gui_html_af37d87b63527dab00aa27dee1d45b342"><div class="ttname"><a href="structnsengine_1_1_gui.html#af37d87b63527dab00aa27dee1d45b342">nsengine::Gui::SetTimer</a></div><div class="ttdeci">void SetTimer(float value)</div><div class="ttdoc">Set the timer to a specific value.</div><div class="ttdef"><b>Definition</b> Gui.cpp:23</div></div>
+<div class="ttc" id="astructnsengine_1_1_gui_html_a8bfa3d908b210affebc2de04cc38751a"><div class="ttname"><a href="structnsengine_1_1_gui.html#a8bfa3d908b210affebc2de04cc38751a">nsengine::Gui::OnDisplay</a></div><div class="ttdeci">void OnDisplay()</div><div class="ttdoc">Last function to run, used for displaying to screen i.e. rendering.</div><div class="ttdef"><b>Definition</b> Gui.cpp:44</div></div>
+<div class="ttc" id="astructnsengine_1_1_gui_html_aa9788ca34f7b4670132f728d0231c5d6"><div class="ttname"><a href="structnsengine_1_1_gui.html#aa9788ca34f7b4670132f728d0231c5d6">nsengine::Gui::SetPosition</a></div><div class="ttdeci">void SetPosition(rend::vec3 _pos)</div><div class="ttdoc">Used to set the position of the on screen text element.</div><div class="ttdef"><b>Definition</b> Gui.cpp:33</div></div>
+<div class="ttc" id="astructnsengine_1_1_gui_html_af0b213c273739c188c331873875fa5c5"><div class="ttname"><a href="structnsengine_1_1_gui.html#af0b213c273739c188c331873875fa5c5">nsengine::Gui::SetResolution</a></div><div class="ttdeci">void SetResolution(float _width, float _height)</div><div class="ttdoc">Set the resolution of the onscreen gui/Canvas.</div><div class="ttdef"><b>Definition</b> Gui.cpp:38</div></div>
 <div class="ttc" id="astructnsengine_1_1_gui_html_affd9425d3da7154982053d7207db17a9"><div class="ttname"><a href="structnsengine_1_1_gui.html#affd9425d3da7154982053d7207db17a9">nsengine::Gui::SetText</a></div><div class="ttdeci">void SetText(sys::string _text)</div><div class="ttdoc">Set the text to display to screen.</div><div class="ttdef"><b>Definition</b> Gui.cpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

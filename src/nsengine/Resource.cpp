@@ -7,7 +7,7 @@ namespace nsengine
 
 	std::string Resource::GetPath() 
 	{ 
-		cwd = cwd + "/Resources";
+		cwd = cwd + "/Resources"; // get the current working directory and add resources on end
 		std::string fullPath = cwd + path;
 		return fullPath;
 	}

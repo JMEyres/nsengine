@@ -80,16 +80,16 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">Transform.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Component.h&quot;</span></div>
+<a href="_transform_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;rend/rend.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>nsengine</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacensengine.html">nsengine</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structnsengine_1_1_transform.html">    8</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structnsengine_1_1_transform.html">Transform</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structnsengine_1_1_component.html">Component</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_struct" href="structnsengine_1_1_transform.html">Transform</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_function" href="structnsengine_1_1_transform.html#ac45019fa8d9fe9333997b3d1ed657ade">Transform</a>();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structnsengine_1_1_transform.html#a1c5ada90925832fe695cc6fdb525a573">SetRotation</a>(rend::vec3 _rotation);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
@@ -116,6 +116,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    };</div>
 </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="anamespacensengine_html"><div class="ttname"><a href="namespacensengine.html">nsengine</a></div><div class="ttdef"><b>Definition</b> Audio.cpp:5</div></div>
 <div class="ttc" id="astructnsengine_1_1_component_html"><div class="ttname"><a href="structnsengine_1_1_component.html">nsengine::Component</a></div><div class="ttdoc">Base class for all ECS components to inherit from.</div><div class="ttdef"><b>Definition</b> Component.h:11</div></div>
 <div class="ttc" id="astructnsengine_1_1_transform_html"><div class="ttname"><a href="structnsengine_1_1_transform.html">nsengine::Transform</a></div><div class="ttdoc">Component responsible for the entity position/rotation.</div><div class="ttdef"><b>Definition</b> Transform.h:9</div></div>
 <div class="ttc" id="astructnsengine_1_1_transform_html_a0a1a7c4e5f8f5678d871fcbbf5574675"><div class="ttname"><a href="structnsengine_1_1_transform.html#a0a1a7c4e5f8f5678d871fcbbf5574675">nsengine::Transform::Move</a></div><div class="ttdeci">void Move(float _x, float _y, float _z)</div><div class="ttdoc">Move the Transform current position by specified amount.</div><div class="ttdef"><b>Definition</b> Transform.cpp:30</div></div>
@@ -125,6 +127,7 @@ $(function() { codefold.init(0); });
 <div class="ttc" id="astructnsengine_1_1_transform_html_a358b9b6e016a445964e4b861092ffdf2"><div class="ttname"><a href="structnsengine_1_1_transform.html#a358b9b6e016a445964e4b861092ffdf2">nsengine::Transform::GetScale</a></div><div class="ttdeci">rend::vec3 GetScale()</div><div class="ttdoc">Get the current scale of the transform.</div><div class="ttdef"><b>Definition</b> Transform.cpp:46</div></div>
 <div class="ttc" id="astructnsengine_1_1_transform_html_a5232b53786c2635ab816b6c60151f2ab"><div class="ttname"><a href="structnsengine_1_1_transform.html#a5232b53786c2635ab816b6c60151f2ab">nsengine::Transform::SetPosition</a></div><div class="ttdeci">void SetPosition(rend::vec3 _position)</div><div class="ttdoc">Specifically set the position of the transform.</div><div class="ttdef"><b>Definition</b> Transform.cpp:25</div></div>
 <div class="ttc" id="astructnsengine_1_1_transform_html_aae1d636f19cb77c08ba5cd3e76f2bb1d"><div class="ttname"><a href="structnsengine_1_1_transform.html#aae1d636f19cb77c08ba5cd3e76f2bb1d">nsengine::Transform::Rotate</a></div><div class="ttdeci">void Rotate(float _x, float _y, float _z)</div><div class="ttdoc">Rotate current transform by a specified amount setup to do one at a time.</div><div class="ttdef"><b>Definition</b> Transform.cpp:20</div></div>
+<div class="ttc" id="astructnsengine_1_1_transform_html_ac45019fa8d9fe9333997b3d1ed657ade"><div class="ttname"><a href="structnsengine_1_1_transform.html#ac45019fa8d9fe9333997b3d1ed657ade">nsengine::Transform::Transform</a></div><div class="ttdeci">Transform()</div><div class="ttdef"><b>Definition</b> Transform.cpp:6</div></div>
 <div class="ttc" id="astructnsengine_1_1_transform_html_ae5bf58a9363957c50eb727ac711efdf1"><div class="ttname"><a href="structnsengine_1_1_transform.html#ae5bf58a9363957c50eb727ac711efdf1">nsengine::Transform::GetPosition</a></div><div class="ttdeci">rend::vec3 GetPosition()</div><div class="ttdoc">Get the current position of transfrom.</div><div class="ttdef"><b>Definition</b> Transform.cpp:36</div></div>
 <div class="ttc" id="astructnsengine_1_1_transform_html_afd7ba43ecb9fc46d60327bd29dacfb7b"><div class="ttname"><a href="structnsengine_1_1_transform.html#afd7ba43ecb9fc46d60327bd29dacfb7b">nsengine::Transform::SetScale</a></div><div class="ttdeci">void SetScale(rend::vec3 _scale)</div><div class="ttdoc">Set the scale of the transform.</div><div class="ttdef"><b>Definition</b> Transform.cpp:41</div></div>
 </div><!-- fragment --></div><!-- contents -->

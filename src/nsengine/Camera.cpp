@@ -6,7 +6,7 @@ namespace nsengine
 	{
 		SetupCamera();
 
-		GetEntity()->GetEnvironment()->AddCamera(std::static_pointer_cast<Camera>(self.lock()));
+		GetEntity()->GetEnvironment()->AddCamera(std::static_pointer_cast<Camera>(self.lock())); // add camera to environment list
 	}
 
 	void Camera::OnTick()
@@ -29,7 +29,7 @@ namespace nsengine
 		viewMatrix = rend::inverse(GetEntity()->GetTransform()->Model());
 
 		glm::vec3 pos = GetEntity()->GetTransform()->GetPosition();
-		alListener3f(AL_POSITION, pos.x, pos.y, pos.z);
+		alListener3f(AL_POSITION, pos.x, pos.y, pos.z); // set position of audio listener to camera position
 	}
 
 	void Camera::Follow()
@@ -41,7 +41,7 @@ namespace nsengine
 		glm::vec2 currentMouse = glm::vec2(GetCore()->GetInput()->GetMouseX(), GetCore()->GetInput()->GetMouseY());
 		glm::vec2 mouseDelta = oldMouse - currentMouse;
 
-		GetEntity()->GetTransform()->Rotate(mouseDelta.y * 0.075f, 0, 0);
+		GetEntity()->GetTransform()->Rotate(mouseDelta.y * 0.075f, 0, 0); // rotate camera by mouse movements
 
 		oldMouse = currentMouse;
 
@@ -52,7 +52,7 @@ namespace nsengine
 		glm::vec3 rot = target->GetTransform()->GetRotation();
 		pos = pos + offset;
 		GetEntity()->GetTransform()->SetPosition(pos);
-		GetEntity()->GetTransform()->SetRotation(glm::vec3(camRot.x,rot.y+180,0));
+		GetEntity()->GetTransform()->SetRotation(glm::vec3(camRot.x,rot.y+180,0)); // set camera to updated rotation
 
 		glm::vec3 targetPos = target->GetTransform()->GetPosition() + glm::vec3(3,1,0);
 		glm::vec3 cameraPos = GetEntity()->GetTransform()->GetPosition();

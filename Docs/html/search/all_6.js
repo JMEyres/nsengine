@@ -26,5 +26,7 @@ var searchData=
   ['gettimer_23',['GetTimer',['../structnsengine_1_1_gui.html#a6e1c1baafc676bd7c41374f3f901f93f',1,'nsengine::Gui']]],
   ['gettransform_24',['GetTransform',['../structnsengine_1_1_entity.html#a595ec94f7d0039551d207a16df4f2466',1,'nsengine::Entity']]],
   ['getview_25',['GetView',['../structnsengine_1_1_camera.html#abcddd66fa27ff1b554af3fd24d4d98f9',1,'nsengine::Camera']]],
-  ['gui_26',['Gui',['../structnsengine_1_1_gui.html',1,'nsengine']]]
+  ['gui_26',['Gui',['../structnsengine_1_1_gui.html',1,'nsengine']]],
+  ['gui_2ecpp_27',['Gui.cpp',['../_gui_8cpp.html',1,'']]],
+  ['gui_2eh_28',['Gui.h',['../_gui_8h.html',1,'']]]
 ];

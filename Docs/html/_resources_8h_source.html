@@ -80,12 +80,12 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">Resources.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&lt;memory&gt;</span></div>
+<a href="_resources_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&lt;memory&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&lt;vector&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;string&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//#include &quot;Resource.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>nsengine</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacensengine.html">nsengine</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">struct </span>Resource;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">struct </span>Texture;</div>
@@ -117,12 +117,13 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        std::vector&lt;std::shared_ptr&lt;Texture&gt;&gt; <a class="code hl_function" href="structnsengine_1_1_resources.html#a1a1ccbedae23286d0155a84450025437">LoadAnimation</a>(std::string <a class="code hl_function" href="structnsengine_1_1_resources.html#ab0cd4e627c5c72149a65b1100f2fe1ef">_path</a>, <span class="keywordtype">int</span> <a class="code hl_function" href="structnsengine_1_1_resources.html#ab0cd4e627c5c72149a65b1100f2fe1ef">_frameCount</a>);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structnsengine_1_1_core.html">Core</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structnsengine_1_1_resources.html#acd0789873af2006e142a579250891ce8">   44</a></span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structnsengine_1_1_core.html">Core</a>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        std::vector&lt;std::shared_ptr&lt;Resource&gt; &gt; resources;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        std::weak_ptr&lt;Resources&gt; self;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    };</div>
 </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="ttc" id="anamespacensengine_html"><div class="ttname"><a href="namespacensengine.html">nsengine</a></div><div class="ttdef"><b>Definition</b> Audio.cpp:5</div></div>
 <div class="ttc" id="astructnsengine_1_1_core_html"><div class="ttname"><a href="structnsengine_1_1_core.html">nsengine::Core</a></div><div class="ttdoc">Main manager for the rest of the engine.</div><div class="ttdef"><b>Definition</b> Core.h:27</div></div>
 <div class="ttc" id="astructnsengine_1_1_resources_html"><div class="ttname"><a href="structnsengine_1_1_resources.html">nsengine::Resources</a></div><div class="ttdoc">Class responsible for all resources.</div><div class="ttdef"><b>Definition</b> Resources.h:12</div></div>
 <div class="ttc" id="astructnsengine_1_1_resources_html_a1a1ccbedae23286d0155a84450025437"><div class="ttname"><a href="structnsengine_1_1_resources.html#a1a1ccbedae23286d0155a84450025437">nsengine::Resources::LoadAnimation</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Texture &gt; &gt; LoadAnimation(std::string _path, int _frameCount)</div><div class="ttdoc">Load an animation from a directory.</div><div class="ttdef"><b>Definition</b> Resources.cpp:7</div></div>

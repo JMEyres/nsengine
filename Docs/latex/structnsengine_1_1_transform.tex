@@ -30,6 +30,8 @@ Collaboration diagram for nsengine\+::Transform\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{structnsengine_1_1_transform_ac45019fa8d9fe9333997b3d1ed657ade}{Transform}} ()
+\item 
 void \mbox{\hyperlink{structnsengine_1_1_transform_a1c5ada90925832fe695cc6fdb525a573}{Set\+Rotation}} (rend\+::vec3 \+\_\+rotation)
 \begin{DoxyCompactList}\small\item\em Set the transform to a specific rotation. \end{DoxyCompactList}\item 
 rend\+::vec3 \mbox{\hyperlink{structnsengine_1_1_transform_a307e1ecc7d1a709552df90241031c70c}{Get\+Rotation}} ()
@@ -57,7 +59,7 @@ virtual void \mbox{\hyperlink{structnsengine_1_1_component_a8ab0d933f27c1b28a1dd
 \begin{DoxyCompactList}\small\item\em Runs every single frame, used to update in realtime. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a2ab90087c4282fb108b824bedb97fc0d}{On\+Physics\+Tick}} ()
 \begin{DoxyCompactList}\small\item\em Runs every frame before on tick used to handle physics, ticks during physics step. \end{DoxyCompactList}\item 
-virtual void {\bfseries On\+Create} ()
+virtual void \mbox{\hyperlink{structnsengine_1_1_component_aaa572687e1df7bacc9354f1840fa20d2}{On\+Create}} ()
 \begin{DoxyCompactList}\small\item\em Runs when component is initially created. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{structnsengine_1_1_component_a07fc2f8be2936417d8339730d21e4308}{On\+Display}} ()
 \begin{DoxyCompactList}\small\item\em Last function to run, used for displaying to screen i.\+e. rendering. \end{DoxyCompactList}\item 
@@ -69,17 +71,26 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ {\bfseries core}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_core}{Core}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a6c7f7d8643a16aac47bfb5d73f5fff5a}{core}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{structnsengine_1_1_component}{nsengine\+::\+Component}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ {\bfseries self}
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structnsengine_1_1_component}{Component}} $>$ \mbox{\hyperlink{structnsengine_1_1_component_a7b1322cc2b8d761964cadbef168d53a6}{self}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \doxylink{structnsengine_1_1_component}{Component} responsible for the entity position/rotation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnsengine_1_1_transform_ac45019fa8d9fe9333997b3d1ed657ade}\label{structnsengine_1_1_transform_ac45019fa8d9fe9333997b3d1ed657ade} 
+\index{nsengine::Transform@{nsengine::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!nsengine::Transform@{nsengine::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily nsengine\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{structnsengine_1_1_transform_ae5bf58a9363957c50eb727ac711efdf1}\label{structnsengine_1_1_transform_ae5bf58a9363957c50eb727ac711efdf1} 
@@ -134,6 +145,14 @@ Compute the model matrix of current transform.
 \begin{DoxyReturn}{Returns}
 \doxylink{structnsengine_1_1_model}{Model} matrix of current transform 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{structnsengine_1_1_transform_a339ef46ea4e2d6ee4968b2c652464177_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675}\label{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675} 
 \index{nsengine::Transform@{nsengine::Transform}!Move@{Move}}
 \index{Move@{Move}!nsengine::Transform@{nsengine::Transform}}
@@ -153,6 +172,14 @@ Move the \doxylink{structnsengine_1_1_transform}{Transform} current position by 
 {\em \+\_\+z} & Movement in z axis \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{structnsengine_1_1_transform_a0a1a7c4e5f8f5678d871fcbbf5574675_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{structnsengine_1_1_transform_aae1d636f19cb77c08ba5cd3e76f2bb1d}\label{structnsengine_1_1_transform_aae1d636f19cb77c08ba5cd3e76f2bb1d} 
 \index{nsengine::Transform@{nsengine::Transform}!Rotate@{Rotate}}
 \index{Rotate@{Rotate}!nsengine::Transform@{nsengine::Transform}}
@@ -222,5 +249,5 @@ Set the scale of the transform.
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Transform.\+h\item 
-Transform.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
+\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}

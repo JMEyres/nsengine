@@ -5,7 +5,7 @@
 
 namespace nsengine
 {
-	void TriangleRenderer::OnInitialize()
+	void TriangleRenderer::OnInitialize() // Init Triangle with texture and shaders
 	{
 		mesh.load(rend::TRIANGLE_MESH);
 		shader.load(rend::TEXTURE_SHADER);
@@ -13,12 +13,12 @@ namespace nsengine
 		shader.attribute("a_Position", *mesh.positions()); // set to mesh points
 
 		shader.uniform("u_Color", rend::vec4(0.5f, 1.0f, 0.0f, 1.0f)); // choose colour
-		id = GetCore()->GetResources()->Load<Texture>("/Textures/canosprite.png")->GetID();
+		id = GetCore()->GetResources()->Load<Texture>("/Textures/canosprite.png")->GetID(); // Load default sprite
 	}
 
 	void TriangleRenderer::OnDisplay()
 	{
-		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0);
+		std::shared_ptr<Camera> cam = GetEntity()->GetEnvironment()->GetCamera(0); // get main cam
 
 		shader.uniform("u_Projection",cam->GetProj());
 		

@@ -4,7 +4,7 @@
 
 namespace nsengine
 {
-	void Texture::OnLoad()
+	void Texture::OnLoad() // Set variables up when loaded
 	{
 		texture = std::make_shared<rend::Texture>();
 		texture->load(GetPath().c_str());
